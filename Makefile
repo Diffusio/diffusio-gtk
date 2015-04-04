@@ -17,7 +17,7 @@ FILES = main.o
 	$(CC) -c $< $(CFLAGS)
 
 all:$(FILES)
-	$(CC) -o test $(FILES) $(LDFLAGS)
+	$(CC) -o diffusio $(FILES) $(LDFLAGS)
 
 clean:
-	rm -f *.o test *core*
+	rm -f *.o diffusio *core*
