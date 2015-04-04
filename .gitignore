@@ -32,7 +32,7 @@
 *.dSYM/
 
 
-*.glade
+*.glade~
 main
 test
 
