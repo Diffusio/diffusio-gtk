@@ -8,7 +8,7 @@ typedef struct
 {
     GtkBuilder *builder;
     gpointer user_data;
-    GtkWidget *name_entry;
+    GtkEntry *name_entry;
     GtkWidget *new_button;
     GtkWidget *delete_button;
     GtkWidget *SessionWindow;

@@ -31,7 +31,7 @@ int main(int argc, char *argv [])
 
     sessiondata.new_button = GTK_WIDGET(gtk_builder_get_object(sessiondata.builder, "session_new_button"));
     sessiondata.delete_button = GTK_WIDGET(gtk_builder_get_object(sessiondata.builder, "session_delete_button"));
-    sessiondata.name_entry = GTK_WIDGET(gtk_builder_get_object(sessiondata.builder, "session_new_name_entry"));
+    sessiondata.name_entry = GTK_ENTRY(gtk_builder_get_object(sessiondata.builder, "session_new_name_entry"));
     sessiondata.chooser = GTK_WIDGET(gtk_builder_get_object(sessiondata.builder, "session_new_chooser"));
     sessiondata.l = GTK_WIDGET(gtk_builder_get_object(sessiondata.builder, "label2"));
 
@@ -60,8 +60,10 @@ G_MODULE_EXPORT void openAboutWindow(GtkMenuItem *menuitem, gpointer user_data)
     gtk_widget_hide (dialog);
 }
 
+
 G_MODULE_EXPORT void session_new_changed(GtkButton *button, SessionData *widget)
 {
+
     gchar *text = gtk_entry_get_text(widget->name_entry);
     gchar *folder = gtk_file_chooser_get_uri(widget->chooser);
 
@@ -77,8 +79,6 @@ G_MODULE_EXPORT void session_new_changed(GtkButton *button, SessionData *widget)
         gtk_widget_set_sensitive(widget->new_button, 1);
         gtk_widget_set_sensitive(widget->delete_button, 1);
     }
-    g_free(text);
-    g_free(folder);
 }
 
 G_MODULE_EXPORT void cb_clicked(GtkButton *button, SessionData *widget)
