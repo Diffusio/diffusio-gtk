@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.18.3 -->
 <interface>
-  <requires lib="gtk+" version="3.12"/>
+  <requires lib="gtk+" version="3.4"/>
   <object class="GtkWindow" id="MainWindow">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Diffusio</property>
@@ -28,7 +28,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem1">
+                      <object class="GtkImageMenuItem" id="menu_item_new">
                         <property name="label">gtk-new</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
@@ -38,7 +38,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem2">
+                      <object class="GtkImageMenuItem" id="menu_item_open">
                         <property name="label">gtk-open</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
@@ -48,7 +48,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem3">
+                      <object class="GtkImageMenuItem" id="menu_item_save">
                         <property name="label">gtk-save</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
@@ -58,7 +58,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem4">
+                      <object class="GtkImageMenuItem" id="menu_item_saveas">
                         <property name="label">gtk-save-as</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
@@ -75,7 +75,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem5">
+                      <object class="GtkImageMenuItem" id="menu_item_quit">
                         <property name="label">gtk-quit</property>
                         <property name="use_action_appearance">False</property>
                         <property name="visible">True</property>
@@ -171,7 +171,7 @@
                         <property name="can_focus">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="callback_about" swapped="no"/>
+                        <signal name="activate" handler="openAboutWindow" swapped="no"/>
                       </object>
                     </child>
                   </object>
@@ -191,10 +191,7 @@
             <property name="can_focus">True</property>
             <property name="shadow_type">in</property>
             <child>
-              <object class="GtkTextView" id="textview1">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-              </object>
+              <placeholder/>
             </child>
           </object>
           <packing>
@@ -260,9 +257,10 @@
   <object class="GtkWindow" id="SessionWindow">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Gestion des sessions</property>
-    <property name="default_width">800</property>
-    <property name="default_height">600</property>
+    <property name="resizable">False</property>
     <property name="icon">Images/diffusio-logo_128.png</property>
+    <property name="transient_for">MainWindow</property>
+    <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child>
       <object class="GtkNotebook" id="session_notebook">
         <property name="visible">True</property>
@@ -276,9 +274,10 @@
               <object class="GtkButtonBox" id="session_new_buttonbox">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_right">15</property>
+                <property name="margin_right">10</property>
                 <property name="margin_top">4</property>
                 <property name="margin_bottom">4</property>
+                <property name="spacing">5</property>
                 <property name="homogeneous">True</property>
                 <property name="layout_style">end</property>
                 <child>
@@ -289,6 +288,7 @@
                     <property name="receives_default">True</property>
                     <property name="margin_right">5</property>
                     <property name="use_stock">True</property>
+                    <signal name="clicked" handler="openMainWindow" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -314,13 +314,11 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="session_quit_button">
+                  <object class="GtkButton" id="session_quit_button2">
                     <property name="label">gtk-quit</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="margin_left">5</property>
-                    <property name="action_name">quit</property>
                     <property name="use_stock">True</property>
                     <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
                   </object>
@@ -363,6 +361,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="hexpand">True</property>
+                    <signal name="changed" handler="session_new_changed" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
@@ -382,16 +381,31 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkFileChooserButton" id="filechooserbutton1">
+                  <object class="GtkFileChooserButton" id="session_new_chooser">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="hexpand">False</property>
                     <property name="action">select-folder</property>
+                    <signal name="selection-changed" handler="session_new_changed" swapped="no"/>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">1</property>
                   </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">label</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
                 </child>
               </object>
               <packing>
@@ -417,11 +431,14 @@
           <object class="GtkBox" id="box4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">10</property>
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkButtonBox" id="buttonbox2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="margin_right">10</property>
                 <property name="margin_top">4</property>
                 <property name="margin_bottom">4</property>
                 <property name="spacing">10</property>
@@ -477,6 +494,40 @@
               </packing>
             </child>
             <child>
+              <object class="GtkGrid" id="grid1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="label1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_right">13</property>
+                    <property name="label" translatable="yes">Parcourir : </property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFileChooserButton" id="filechooserbutton2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
               <placeholder/>
             </child>
           </object>
@@ -503,9 +554,5 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkAction" id="quit">
-    <property name="label" translatable="yes">Quit</property>
-    <signal name="activate" handler="gtk_main_quit" swapped="no"/>
   </object>
 </interface>

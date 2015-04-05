@@ -27,12 +27,10 @@
 *.i*86
 *.x86_64
 *.hex
+diffusio
 
 # Debug files
 *.dSYM/
 
-
+# Glade save files
 *.glade~
-main
-test
-

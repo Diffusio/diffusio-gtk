@@ -11,7 +11,7 @@ CFLAGS  += `pkg-config gtk+-3.0 --cflags`
 LDFLAGS  = `pkg-config gtk+-3.0 --libs`
 LDFLAGS += `pkg-config gmodule-2.0 --libs`
 
-FILES = main.o
+FILES = main.o session.o
 
 .c.o:
 	$(CC) -c $< $(CFLAGS)
