@@ -119,12 +119,15 @@ G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget
     const gchar *folder = gtk_file_chooser_get_uri(widgets->open_chooser);
 
     if(folder != NULL)
+    {
         gtk_widget_set_sensitive(widgets->opentab_delete_button, 1);
         gtk_widget_set_sensitive(widgets->opentab_open_button, 1);
-
+    }
     else
+    {
         gtk_widget_set_sensitive(widgets->opentab_delete_button, 0);
         gtk_widget_set_sensitive(widgets->opentab_open_button, 0);
+    }
 
 }
 
