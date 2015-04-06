@@ -1,1 +1,1 @@
-make main window receive session windows entered infos
+app crash when erasing all text in the new session name gtkentry
