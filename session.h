@@ -10,13 +10,11 @@
 #define OPEN 0 
 #define CANCEL 1 
 
-typedef struct
-{
-    GtkBuilder *builder;
 
+struct SessionData
+{
     GtkWidget *SessionWindow;
 
-    gpointer user_data;
 
     GtkEntry *name_entry;
 
@@ -30,16 +28,23 @@ typedef struct
 
     GtkLabel *folder_label;
 
-} SessionData;
+};
 
+struct Data
+{
+    GtkBuilder *builder;
+    gpointer user_data;
+    struct SessionData sessiondata;
+        
+};
 
 G_MODULE_EXPORT void openAboutWindow (GtkMenuItem *menuitem, gpointer user_data);
 
-G_MODULE_EXPORT void cb_changed(GtkButton *button, SessionData *widget);
+G_MODULE_EXPORT void cb_changed(GtkButton *button, struct Data *widget);
 
-G_MODULE_EXPORT void session_new_delete(GtkWidget *widget, SessionData *widgets);
+G_MODULE_EXPORT void session_new_delete(GtkWidget *widget, struct Data *widgets);
 
-G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget, SessionData *widgets);
+G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget, struct Data *widgets);
 
-G_MODULE_EXPORT void session_open_delete_button_clicked_cb(GtkWidget *widget, SessionData *widgets);
+G_MODULE_EXPORT void session_open_delete_button_clicked_cb(GtkWidget *widget, struct Data *widgets);
 #endif
