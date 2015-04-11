@@ -8,3 +8,4 @@ How to test :
 - $ make
 - # make install
 
+![alt tag](https://raw.githubusercontent.com/diffusio/diffusio-gtk/master/Images/screen.png)
