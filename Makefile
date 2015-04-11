@@ -27,5 +27,7 @@ install:
 	cp diffusio.desktop /usr/share/applications
 	mkdir /usr/share/diffusio
 	mkdir /usr/share/diffusio/icon
+	mkdir /usr/share/diffusio/glade
+	cp diffusio.glade /usr/share/diffusio/glade
 	cp Images/diffusio-logo_128.png /usr/share/diffusio/icon
 	

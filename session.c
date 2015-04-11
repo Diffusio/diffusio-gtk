@@ -13,7 +13,7 @@ int main(int argc, char *argv [])
     data.builder = gtk_builder_new();
 
 
-    filename =  g_build_filename ("diffusio.glade", NULL);
+    filename =  g_build_filename ("/usr/share/diffusio/glade/diffusio.glade", NULL);
 
     if(!gtk_builder_add_from_file(data.builder, filename, &error))
     {
