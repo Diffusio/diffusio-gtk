@@ -21,3 +21,11 @@ all:$(FILES)
 
 clean:
 	rm -f *.o diffusio *core*
+
+install:
+	cp diffusio /usr/bin
+	cp diffusio.desktop /usr/share/applications
+	mkdir /usr/share/diffusio
+	mkdir /usr/share/diffusio/icon
+	cp Images/diffusio-logo_128.png /usr/share/diffusio/icon
+	

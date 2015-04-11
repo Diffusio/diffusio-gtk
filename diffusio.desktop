@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=0.0.1
+Name=Diffusio
+GenericName=Website Generator
+Exec=diffusio
+Terminal=false
+Type=Application
+Categories=GTK;Network;WebsiteGenerator;Utilities;
+MimeType=text/diffusio;
+GenericName[fr_FR.UTF-8]=Beautiful website generator
+Icon=/usr/share/diffusio/icon/diffusio-logo_128.png
