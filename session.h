@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define OPEN 0 
-#define CANCEL 1 
+#define OPEN 0
+#define CANCEL 1
 
 
 struct SessionData
@@ -28,6 +28,13 @@ struct SessionData
 
     GtkLabel *folder_label;
 
+};
+
+struct MainData
+{
+    GtkWidget *MainWindow;
+
+    
 };
 
 struct Data

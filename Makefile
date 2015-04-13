@@ -23,11 +23,12 @@ clean:
 	rm -f *.o diffusio *core*
 
 install:
-	cp diffusio /usr/bin
-	cp diffusio.desktop /usr/share/applications
-	mkdir /usr/share/diffusio
-	mkdir /usr/share/diffusio/icon
-	mkdir /usr/share/diffusio/glade
-	cp diffusio.glade /usr/share/diffusio/glade
-	cp Images/diffusio-logo_128.png /usr/share/diffusio/icon
+	rm -rf /usr/share/diffusio/
+	cp -fp diffusio /usr/bin
+	cp -fp diffusio.desktop /usr/share/applications
+	mkdir -p /usr/share/diffusio
+	mkdir -p /usr/share/diffusio/icon
+	mkdir -p /usr/share/diffusio/glade
+	cp -fp diffusio.glade /usr/share/diffusio/glade
+	cp -fp Images/diffusio-logo_128.png /usr/share/diffusio/icon
 	
