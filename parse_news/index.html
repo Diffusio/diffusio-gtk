@@ -11,17 +11,18 @@
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
-	<body>	  
-	 	<header id='header'>
+	<body body onmousemove="mouse_position(event)" onmousewheel="diffScroll()">	 
+
+	 	<header id='header' class="">
 	 		<div id="site_title"><span>
 Material Site
 			</span>
 			</div>
-	 		<div id="nav_div" class="elevation-3-bottom">
+	 		<div id="nav_div" class="">
 	 		<ul id="nav">
 	 			<li id="tab_1" class="selectedTab">
 	 			<a   id='a_tab_1'  onclick="setVisibleNotVisibleNotVisible(1,2,3,4)">
-TAB 1
+PRESENTATION
 	 			</a>
 	 			</li>
 	 			<li id="tab_2" class="unselectedTab">
@@ -45,30 +46,60 @@ VERY-LONG-TAB 4
 	 		<div id="tab_indicator" class="tab_indicator"></div>
 	 		<div id="tab_indicator_m" class="tab_indicator"></div>
 	 	</header>
-	 	<header id='header2'>
+	 	<header id='header2' class="elevation-1">
 	 		<div id="site_title"><span>
-<a href=# id="a_close_n"><- </a>News Reader
 			</span>
 			</div>
 	 	</header>
 	 	
 	 <section id="content_1" class='content'>
-	 		<div class="card img_card elevation-1">
-	 			<img src='sample_img_card.jpg'>
+	 		<div class="wide_div white" id="w_d_1">
+	 		<div class='v_align'>
+		 		<img src="logo.png" class="logo_left logo">
+		 		<div class='w_text'>
+		 		<span class="slog slog_right">Lorem Ipsum</span>
+		 		<p class="under_slog under_slog_right">Take the tour</p>
+		 	</div><div id="FAB_pres"  class="FAB elevation-2" onclick=""><img id="arrow_FAB"   src="s_arrow_down.png"></div>
 	 		</div>
-	 		<div class="card elevation-1 "><span class="card_header">Lorem Ipsum</span><p>Note: Some DNS providers support configuring apex domains with an ALIAS or ANAME record, but there is no industry standard for these. Some DNS providers (like DNSimple) allow an apex domain configured with an ALIAS or ANAME record to point to some other domain name.It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because .</p></div>
+	 		</div>
+	 		<div class="wide_div grey" id="w_d_2">
+	 		<div class='v_align'>
+		 		<img src="logo2.png" class="logo_right logo">
+		 		<span class="slog slog_left">This Website</span>
+		 		<p class="under_slog under_slog_left">Is really amazing.</p>
+	 		</div>
+	 		</div>
+	 		<div class="wide_div white" id="w_d_3">
+	 		<div class='v_align'>
+		 		<img src="logo.png" class="logo_left logo">
+		 		<div class='w_text'>
+		 		<span class="slog slog_right">Lorem Ipsum</span>
+		 		<p class="under_slog under_slog_right">Take the tour</p>
+		 	</div>
+	 		</div>
+	 		</div>
 	</section>
 
 
 	<section  id="content_2"  class='content'>
-<!--
-##6
-##6
-##6
-<!--
-##6
--->
+<!--#$#NEW-->
+
+<!--##7-->
+
+<div class='card elevation-1 news' id='news_7'><div class='news_datetime' id='news_datetime_7'>04/21/2045 - 14:54</div><span class='news_title'   id='news_title_7'><a class='pointer' onclick='openNews(7);'>Added via C</a> </span><p class='news_summary'>First news ahah</p><p class='news_content'  id='news_content_7'>CONTENT</p><div class='read_more'><a class='pointer' onclick='openCircleNews(7)'>READ MORE</a></div></div>
+
+
+<!--##6-->
+
+<div class='card elevation-1 news' id='news_6'><div class='news_datetime' id='news_datetime_6'>04/21/2045 - 14:54</div><span class='news_title'   id='news_title_6'><a class='pointer' onclick='openNews(6);'>Added via C</a> </span><p class='news_summary'>First news ahah</p><p class='news_content'  id='news_content_6'>CONTENT</p><div class='read_more'><a class='pointer' onclick='openCircleNews(6)'>READ MORE</a></div></div>
+
+
+<!--##5-->
+
+<div class='card elevation-1 news' id='news_5'><div class='news_datetime' id='news_datetime_5'>04/21/2045 - 14:54</div><span class='news_title'   id='news_title_5'><a class='pointer' onclick='openNews(5);'>Added via C</a> </span><p class='news_summary'>First news ahah</p><p class='news_content'  id='news_content_5'>CONTENT</p><div class='read_more'><a class='pointer' onclick='openCircleNews(5)'>READ MORE</a></div></div>
+
+
+<!--##4-->
 
 	<div class="card elevation-1 news" id="news_4">
 		 		<div class="news_datetime" id="news_datetime_4">04/21/2045 - 14:54</div>
@@ -124,13 +155,11 @@ Pages will load significantly faster because .</p></div>
 	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
 	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
 				</p>
-				<div class="read_more"><a class="pointer" onclick="openNews(4)">READ MORE</a></div>
+				<div class="read_more"><a class="pointer" onclick="openCircleNews(4)">READ MORE</a></div>
 			</div>
 
 
-<!--
-##6
--->
+<!--##3-->
 
 	 		
 			<div class="card elevation-1 news" id="news_3">
@@ -147,13 +176,11 @@ Pages will load significantly faster because .</p></div>
 	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
 	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
 				</p>
-				<div class="read_more"><a class="pointer" onclick="openNews(3)">READ MORE</a></div>
+				<div class="read_more"><a class="pointer" onclick="openCircleNews(3)">READ MORE</a></div>
 			</div>
 	 		
 
-<!--
-##6
--->
+<!--##2-->
 
 	 		<div class="card elevation-1 news" id="news_2">
 		 		<div class="news_datetime" id="news_datetime_2">04/21/2045 - 14:54</div>
@@ -169,15 +196,11 @@ Pages will load significantly faster because .</p></div>
 	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
 	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
 				</p>
-				<div class="read_more"><a class="pointer" onclick="openNews(2)">READ MORE</a></div>
+				<div class="read_more"><a class="pointer" onclick="openCircleNews(2)">READ MORE</a></div>
 			</div>
 
 
-<!--
-##6
-1
-##6
--->
+<!--##1-->
 
 
 <div class="card elevation-1 news" id="news_1">
@@ -185,17 +208,15 @@ Pages will load significantly faster because .</p></div>
 		 		<span class="news_title" id="news_title_1">
 		 		<a class="pointer" onclick="openNews(1)">A news title</a> 
 		 		</span>
-		 		<p class="news_summary">First news ahah</p>
-		 		<p class="news_content" id="
-		 		news_content_1
-		 		">
+		 		<p class="news_summary" onclick="closeCircleNews(1)">First news ahah</p>
+		 		<p class="news_content" id="news_content_1">
 	A 1 subdomain is configured with a CNAME record through your DNS provider.
 	We strongly recommend that you use a custom subdomain for these reasons:
 	It gives your GitHub Pages site the benefit of our Content Delivery Network.
 	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
 	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
 				</p>
-				<div class="read_more"><a class="pointer" onclick="openNews(1)">READ MORE</a></div>
+				<div class="read_more"><a class="pointer" onclick="openCircleNews(1)">READ MORE</a></div>
 		</div>
 		
 	</section>
@@ -215,18 +236,14 @@ Pages will load significantly faster because Denial of Service protection can be
 Pages will load significantly faster because .</p></div>
 	</section>
 	<section id="content_4" class='content'>
-	 		<div class="card elevation-1"><span class="card_header">Yeah tab 4! </span><p>A subdomain is configured with a CNAME record through your DNS provider.
-
-We strongly recommend that you use a custom subdomain for these reasons:
-
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.</p></div>
-	 		<div class="card elevation-1"><span class="card_header">Lorem Ipsum 4</span><p>Note: Some DNS providers support configuring apex domains with an ALIAS or ANAME record, but there is no industry standard for these. Some DNS providers (like DNSimple) allow an apex domain configured with an ALIAS or ANAME record to point to some other domain name.It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+	 		<div class="card img_card elevation-1">
+	 			<img src='sample_img_card.jpg'>
+	 		</div>
+	 		<div class="card elevation-1 "><span class="card_header">Lorem Ipsum</span><p>Note: Some DNS providers support configuring apex domains with an ALIAS or ANAME record, but there is no industry standard for these. Some DNS providers (like DNSimple) allow an apex domain configured with an ALIAS or ANAME record to point to some other domain name.It will not be affected by changes in the underlying IP addresses of GitHub's servers.
 Pages will load significantly faster because .</p></div>
 	</section>
 	
-	 <div onclick="toogleSocial();" id="FAB" class="elevation-2">
+	 <div onclick="toogleSocial();" id="FAB" class="FAB elevation-2">
 		 <div id='round_fab' ><img id="smartp"   src="people.png"></div>
 		<!-- <div id="help_FAB" class="elevation-2"><span id="help_FAB_content">Follow us</span></div>-->
 
@@ -239,22 +256,11 @@ Pages will load significantly faster because .</p></div>
 		</div>
 
 	</div>
-
-
 	<div id="circle_news"></div>
+	<div id="FAB_close"  class="elevation-2" onclick=""><img id="smartp"   src="arrow.png"></div>
 		<script type="text/javascript">
-		 var last_scrollpos_news;
-		 function openCircle()
-		 {
-		 
-		  document.getElementById("circle_news").style.transition = 'all 10s';
-		 document.getElementById("circle_news").style.width = 3000;
-		 document.getElementById("circle_news").style.height = 3000;
-		 document.getElementById("circle_news").style.left = event.pageX - 300 - document.getElementById("circle_news").style.width / 2;
-		}
+		 var last_scrollpos_news,current_tab;
 		
-		document.getElementById("circle_news").style.left = 300;
-		 document.getElementById("circle_news").style.top = 300;
 		function setVisibleNotVisibleNotVisible(visible, not_visible1, not_visible2, not_visible3)
 		{
 			document.getElementById('tab_indicator').style.transition = 'all 0.5s';
@@ -275,10 +281,10 @@ Pages will load significantly faster because .</p></div>
 		document.getElementById('tab_indicator_m').style.left = left;
 		document.getElementById('tab_indicator_m').style.width = width;
 		document.getElementById('a_tab_' + visible).style.color = 'white';
-		document.getElementById('a_tab_' + not_visible1).style.color = '#bdedf3';
-		document.getElementById('a_tab_' + not_visible2).style.color = '#bdedf3';
-		document.getElementById('a_tab_' + not_visible3).style.color = '#bdedf3';
-		
+		document.getElementById('a_tab_' + not_visible1).style.color = 'rgb(230,230,230)';
+		document.getElementById('a_tab_' + not_visible2).style.color = 'rgb(230,230,230';
+		document.getElementById('a_tab_' + not_visible3).style.color = 'rgb(230,230,230';
+		current_tab = visible;
 		switch(visible)
 		{	
 			case 1:
@@ -286,7 +292,13 @@ Pages will load significantly faster because .</p></div>
 				{
 					document.getElementById("content_" + i).style.left = b_wth*(i-1);
 					document.getElementById("content_" + i).style.marginLeft = 0;
+						document.getElementById('site_title').style.background = '#009688';
+            document.getElementById('nav_div').style.background = '#009688';
+				document.getElementById('header').className = 'no_shadow no_fixed';
+				document.getElementById('nav_div').className = 'no_shadow';
+				hideSocialFAB();
 				}
+                
 				break;
 			case 2:
 				document.getElementById("content_2").style.left = 0;
@@ -294,6 +306,11 @@ Pages will load significantly faster because .</p></div>
 				document.getElementById("content_1").style.marginLeft = (-1)*b_wth;
 				document.getElementById("content_3").style.left = b_wth;
 				document.getElementById("content_4").style.left = 2*b_wth;
+				document.getElementById('site_title').style.background = '#e91e63';
+            document.getElementById('nav_div').style.background = '#e91e63';
+            document.getElementById('header').className = '';
+            showSocialFAB();
+
 				break;
 			case 3:
 				document.getElementById("content_3").style.left = 0;
@@ -302,20 +319,29 @@ Pages will load significantly faster because .</p></div>
 				document.getElementById("content_1").style.marginLeft = (-2)*b_wth;
 				document.getElementById("content_2").style.marginLeft = -b_wth;
 				document.getElementById("content_4").style.left = b_wth;
+				document.getElementById('site_title').style.background = '#00BCD4';
+            document.getElementById('nav_div').style.background = '#00BCD4';
+            document.getElementById('header').className = '';
+            showSocialFAB();
+				
 				break;
 			case 4:
 				document.getElementById("content_4").style.left = 0;
 				document.getElementById("content_1").style.marginLeft = (-1)*b_wth;
 				document.getElementById("content_2").style.marginLeft = (-2)*b_wth;
 				document.getElementById("content_3").style.marginLeft = (-3)*b_wth;
+				document.getElementById('site_title').style.background = '#00BCD4';
+            document.getElementById('nav_div').style.background = '#00BCD4';
+            document.getElementById('header').className = '';
+            showSocialFAB();
+				
 				break;
 		}			
 		
 
 		}
 		document.getElementById('tab_' + 1).className = "selectedTab";
-
-
+		setVisibleNotVisibleNotVisible(1,2,3,4);
 
 		function openNews(id)
 		{
@@ -327,7 +353,7 @@ Pages will load significantly faster because .</p></div>
 			document.getElementById('news_deployed').style.top = 30;*/
 			document.getElementById('header').style.top = -100;
 			document.getElementById('header2').style.top = 0;
-			document.getElementById('FAB').style.right = -75;
+			
 			last_scrollpos_news = window.pageYOffset;
 			var all_news = document.getElementsByClassName('news');
 			var i;
@@ -405,8 +431,14 @@ Pages will load significantly faster because .</p></div>
 		}
 		var header_height = document.getElementById('header').offsetHeight;
 		document.getElementById('header').style.top = 0;
-		document.getElementById('FAB').style.right = 15;
-
+		function showSocialFAB()
+		{
+			document.getElementById('FAB').style.right = 15;
+		}
+		function hideSocialFAB()
+		{
+			document.getElementById('FAB').style.right = -75;
+		}
 		var left = document.getElementById('tab_' + 1).offsetLeft;
 		var width = document.getElementById('tab_'+ 1).offsetWidth;
 		document.getElementById('tab_indicator').style.left = document.getElementById('nav_div').offsetLeft + left;
@@ -435,11 +467,125 @@ Pages will load significantly faster because .</p></div>
 			social_on = !social_on;
 		}
 
-
 		
-		var b_wth = document.documentElement.clientWidth;
+		var b_wth = document.documentElement.clientWidth + 50;
 		var b_hgt = document.documentElement.clientHeight;
 
+		 document.getElementById('content_1').style.width = b_wth;
+		var all_w_d = document.getElementsByClassName('wide_div');
+		var all_w_d_l = all_w_d.length;
+		var z;
+		for (z=0;z<all_w_d_l;z++)
+        {
+         all_w_d[z].style.height = b_hgt * 0.8;
+        }
+   
+		var cursorX, cursorY;
+		function mouse_position(e)
+		{
+			cursorX = e.clientX;
+   			cursorY = e.clientY;
+		}
+
+		function scrollFuncP(e) {
+			    if ( typeof scrollFuncP.x == 'undefined' ) {
+			        scrollFuncP.x=document.body.scrollTop;
+			    }
+			    var diffX=scrollFuncP.x-document.body.scrollTop;
+
+			    if( diffX<0 ) {
+			      if(current_tab == 1)
+			       	{
+			       		document.getElementById('header').className = 'no_fixed no_shadow';	
+			       	}
+			    } else if( diffX>0 ) {
+			       	if(current_tab == 1)
+			       	{
+			       		document.getElementById('header').className = 'no_shadow';	
+			       	}
+			    } else {
+			        // First scroll event
+			    }
+			    scrollFuncP.x=document.body.scrollTop;
+			}
+			document.body.onscroll=scrollFuncP;
+		function openCircleNews(id)
+		{
+			document.getElementById('circle_news').style.top = cursorY + document.body.scrollTop;
+			document.getElementById('circle_news').style.left = cursorX;
+			document.getElementById('circle_news').style.opacity = 1;
+			
+			document.getElementById('news_' + id).style.zIndex = 160;
+			document.body.style.overflow='hidden';
+			document.getElementById('header2').style.top = 0;
+			document.getElementById('news_' + id).style.maxHeight = document.documentElement.clientHeight - 50;
+			document.getElementById('news_' + id).style.overflow = 'auto';
+			function scrollFunc(e) {
+			    if ( typeof scrollFunc.x == 'undefined' ) {
+			        scrollFunc.x=document.getElementById('news_' + id).scrollTop;
+			    }
+			    var diffX=scrollFunc.x-document.getElementById('news_' + id).scrollTop;
+
+			    if( diffX<0 ) {
+			       	document.getElementById('news_' + id).style.top=-50;
+			    } else if( diffX>0 ) {
+			        document.getElementById('news_' + id).style.top=0;
+			    } else {
+			        // First scroll event
+			    }
+			    scrollFunc.x=document.getElementById('news_' + id).scrollTop;
+			}
+			document.getElementById('news_' + id).onscroll=scrollFunc
+			if(document.getElementById('news_'+id).getBoundingClientRect().top < 0)
+			{
+				document.getElementById('news_' + id).style.transform = 'translate3d(0,'+ (-document.getElementById('news_'+id).getBoundingClientRect().top + 50) + 'px,0)';
+			}
+			else
+			{
+				document.getElementById('news_' + id).style.transform = 'translate3d(0,-'+ (document.getElementById('news_'+id).getBoundingClientRect().top - 50) + 'px,0)';
+			}
+			document.getElementById('circle_news').style.transition = 'transform 0.5s';
+			document.getElementById('FAB_close').style.transition = '0.6s 0.5s';
+			document.getElementById('FAB_close').style.left = 45;
+			document.getElementById('FAB_close').onclick = function (){closeCircleNews(id);};
+			document.getElementById('circle_news').style.transform = 'scale(300)';
+			document.getElementById('news_content_' + (id)).style.height = 'auto';
+			document.getElementById('news_content_' + (id)).style.opacity = 1;
+			var left_m = b_wth > 600 ? '8%' : "1.8%";
+			document.getElementById('FAB_close').style.left = left_m;
+			var all_read = document.getElementsByClassName('read_more');
+			var read_lgt = all_read.length;
+			var j;
+			for(j=0;j<read_lgt;j++)
+			{
+				all_read[j].style.display = 'none';
+
+			}
+			
+		}
+
+		function closeCircleNews(id)
+		{
+			document.getElementById('news_' + id).style.transform = 'translate3d(0,0px,0)';
+			document.getElementById('circle_news').style.transition = 'transform 0.3s 0.3s';
+			document.body.style.overflowY = 'auto';
+			document.getElementById('header2').style.top = -150;
+			document.getElementById('news_content_' + (id)).style.height = 0;
+			document.getElementById('news_content_' + (id)).style.opacity = 0;
+			document.getElementById('news_' + id).style.zIndex = 1;
+			document.getElementById('news_' + id).style.overflow = 'hidden';
+			document.getElementById('FAB_close').style.transition = '0.5s';
+			document.getElementById('FAB_close').style.left = '-75px';
+			document.getElementById('circle_news').style.transform = 'scale(0.0033)';
+			var all_read = document.getElementsByClassName('read_more');
+			var read_lgt = all_read.length;
+			var j;
+			for(j=0;j<read_lgt;j++)
+			{
+				all_read[j].style.display = 'block';
+
+			}
+		}
 		for(var i=1;i<=4;i++)
 		{
 			document.getElementById("content_" + i).style.width = b_wth - 20;
