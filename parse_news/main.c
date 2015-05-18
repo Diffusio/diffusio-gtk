@@ -61,7 +61,7 @@ void addANews(News *news)
 	char ligne[1000];
 	while(fgets(ligne, 1000, in) != NULL)
 		if(STARTCOMMENTBOOL && ligne[4] == '#' && ligne[5] == '$' && ligne[6] == '#' && ligne[7] == 'N' && ligne[8] == 'E' && ligne[9] == 'W')
-			fprintf(out, "<!--#$#NEW-->\n\n<!--##%d-->\n\n<div class='card elevation-1 news' id='news_%d'><div class='news_datetime' id='news_datetime_%d'>%s</div><span class='news_title'   id='news_title_%d'><a class='pointer' onclick='openNews(%d);'>%s</a> </span><p class='news_summary'>%s</p><p class='news_content'  id='news_content_%d'>%s</p><div class='read_more'><a class='pointer' onclick='openCircleNews(%d)'>READ MORE</a></div></div>\n\n", id,id,id,news->datetime,id,id,news->title,news->summary,id,news->content,id);
+			fprintf(out, "<!--#$#NEW-->\n\n<!--##%d-->\n\n<div class='card elevation-1 news' id='news_%d'><div class='news_datetime' id='news_datetime_%d'>%s</div><span class='news_title'   id='news_title_%d'><a class='pointer' onclick='openNews(%d);'>%s</a> </span><p class='news_summary'>%s</p><p class='news_content'  id='news_content_%d'>%s</p><div class='read_more'><a class='pointer' onclick='openCircleNews(%d)'>READ MORE</a></div></div>\n\n", id,id,id,news->datetime,id,id,news->title,news->summary,id,news->content,id);
 		else
 			fputs(ligne, out);
 	fclose(in);
