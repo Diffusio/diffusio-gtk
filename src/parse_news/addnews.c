@@ -70,7 +70,7 @@ void addANews(News *news)
 
 gboolean closeDialog (GdkEventKey *event, NewContent *new_content, gpointer *window)
 {
-	gtk_widget_destroy(window);
+//	gtk_widget_destroy(window);
 	return TRUE;
 }
 
@@ -91,7 +91,7 @@ gboolean prepareNews (GdkEventKey *event, NewContent *new_content)
 	GtkBuilder *gtkBuilder;
     GtkWidget *window;
     gtkBuilder = gtk_builder_new();
-    gtk_builder_add_from_file(gtkBuilder, "ok_dialog.glade", NULL);
+    gtk_builder_add_from_file(gtkBuilder, "diffusio.glade", NULL);
     window = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "dialog1"));
     GtkButton *quit = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "exit"));
     gtk_widget_show(window);	
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
     gtk_init(&argc, &argv);
     
     gtkBuilder = gtk_builder_new();
-    gtk_builder_add_from_file(gtkBuilder, "addnews.glade", NULL);
+    gtk_builder_add_from_file(gtkBuilder, "diffusio.glade", NULL);
     window = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "applicationwindow1"));
     gtk_widget_set_size_request(window, 400, 300);
     
