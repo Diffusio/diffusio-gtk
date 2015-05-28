@@ -9,9 +9,7 @@ int main(int argc, char *argv [])
     
     gtk_init(&argc, &argv);
 
-
     data.builder = gtk_builder_new();
-
 
     filename =  g_build_filename ("/usr/share/diffusio/glade/diffusio.glade", NULL);
 

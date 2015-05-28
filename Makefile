@@ -13,6 +13,7 @@ LDFLAGS += `pkg-config gmodule-2.0 --libs`
 
 FILES = main.o session.o
 
+
 .c.o:
 	$(CC) -c $< $(CFLAGS)
 
@@ -25,10 +26,10 @@ clean:
 install:
 	rm -rf /usr/share/diffusio/
 	cp -fp diffusio /usr/bin
-	cp -fp diffusio.desktop /usr/share/applications
+	cp -fp src/diffusio.desktop /usr/share/applications
 	mkdir -p /usr/share/diffusio
 	mkdir -p /usr/share/diffusio/icon
 	mkdir -p /usr/share/diffusio/glade
-	cp -fp diffusio.glade /usr/share/diffusio/glade
-	cp -fp Images/diffusio-logo_128.png /usr/share/diffusio/icon
+	cp -fp src/diffusio.glade /usr/share/diffusio/glade
+	cp -fp res/diffusio-logo_128.png /usr/share/diffusio/icon
 	

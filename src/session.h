@@ -33,6 +33,7 @@ struct SessionData
 struct MainData
 {
     GtkWidget *MainWindow;
+    GtkButton *addnews_button;
 
     
 };
@@ -42,6 +43,7 @@ struct Data
     GtkBuilder *builder;
     gpointer user_data;
     struct SessionData sessiondata;
+    struct MainData maindata;
         
 };
 
