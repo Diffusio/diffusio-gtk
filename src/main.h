@@ -5,7 +5,7 @@
 #include "session.h"
 
 
-G_MODULE_EXPORT void openMainWindow(GtkMenuItem *menuitem, struct Data *data);
+G_MODULE_EXPORT void openMainWindow(GtkMenuItem *menuitem, gpointer user_data);
 
 
 #endif
