@@ -17,10 +17,10 @@ typedef struct News News;
 struct News
 {
 	char file_in[99];
-	char file_out[99]; 
+	char file_out[99];
 	int id;
-	char title[99]; 
-	char datetime[20]; 
+	char title[99];
+	char datetime[20];
 	char summary[200];
 	char content[999];
 };
@@ -75,7 +75,7 @@ gboolean closeDialog (GdkEventKey *event, NewContent *new_content, gpointer *win
 }
 
 gboolean prepareNews (GdkEventKey *event, NewContent *new_content)
-{  
+{
     News news;
     copyFile("index.html","index_temp.html");
 	news.id = getLastNewsId("index_temp.html");
@@ -94,7 +94,7 @@ gboolean prepareNews (GdkEventKey *event, NewContent *new_content)
     gtk_builder_add_from_file(gtkBuilder, "diffusio.glade", NULL);
     window = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "dialog1"));
     GtkButton *quit = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "exit"));
-    gtk_widget_show(window);	
+    gtk_widget_show(window);
     g_signal_connect(G_OBJECT(quit), "clicked", G_CALLBACK(closeDialog),window);
     return TRUE;
 }
@@ -104,24 +104,22 @@ int main(int argc, char *argv[])
     GtkBuilder *gtkBuilder;
     GtkWidget *window;
     gtk_init(&argc, &argv);
-    
+
     gtkBuilder = gtk_builder_new();
     gtk_builder_add_from_file(gtkBuilder, "diffusio.glade", NULL);
     window = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "applicationwindow1"));
-    gtk_widget_set_size_request(window, 400, 300);
-    
+
 
     GtkLabel *label  = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "label1"));
     GtkButton *button = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "add"));
-    gtk_label_set_label(label,"");
-    gtk_widget_show(window);
-    
+    gtk_widget_show_all(window);
+
     NewContent new_content;
     new_content.title = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "title"));
     new_content.content = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "content"));
     new_content.summary = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "summary"));
     g_signal_connect(G_OBJECT(button), "clicked", G_CALLBACK(prepareNews),&new_content);
     gtk_main();
-    
+
     return 0;
 }

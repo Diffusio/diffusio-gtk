@@ -48,6 +48,10 @@
 			<Add library="glib-2.0" />
 			<Add directory="$(#gtk.lib)" />
 		</Linker>
+		<Unit filename="src/addnews.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/addnews.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
