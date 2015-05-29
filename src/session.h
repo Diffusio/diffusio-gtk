@@ -8,7 +8,7 @@
 #include <string.h>
 
 #define OPEN 0
-#define CANCEL 1
+#define CANCEL 1
 
 
 struct SessionData
@@ -35,7 +35,7 @@ struct MainData
     GtkWidget *MainWindow;
     GtkButton *addnews_button;
 
-    
+
 };
 
 struct Data
@@ -44,7 +44,7 @@ struct Data
     gpointer user_data;
     struct SessionData sessiondata;
     struct MainData maindata;
-        
+
 };
 
 G_MODULE_EXPORT void openAboutWindow (GtkMenuItem *menuitem, gpointer user_data);
