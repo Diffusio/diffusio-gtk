@@ -2,16 +2,16 @@
 
 
 int main(int argc, char *argv [])
-{   
+{
     struct Data data;
     GError *error = NULL;
     gchar *filename = NULL;
-    
+
     gtk_init(&argc, &argv);
 
     data.builder = gtk_builder_new();
 
-    filename =  g_build_filename ("/usr/share/diffusio/glade/diffusio.glade", NULL);
+    filename =  g_build_filename ("src/diffusio.glade", NULL);
 
     if(!gtk_builder_add_from_file(data.builder, filename, &error))
     {
@@ -85,14 +85,14 @@ G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *widgets
     if(folder != NULL || text[0] != '\0')
         gtk_widget_set_sensitive(widgets->sessiondata.newtab_delete_button, 1);
 
-    else 
+    else
         gtk_widget_set_sensitive(widgets->sessiondata.newtab_delete_button, 0);
 
 
     if(folder != NULL && text[0] != '\0')
         gtk_widget_set_sensitive(widgets->sessiondata.new_button, 1);
 
-    else 
+    else
         gtk_widget_set_sensitive(widgets->sessiondata.new_button, 0);
 }
 
@@ -131,7 +131,7 @@ G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget
 
 
 
-
+/*
 //will go in main.c
 G_MODULE_EXPORT void open_file(GtkMenuItem *menuitem, struct Data *widget)
 {
@@ -150,7 +150,7 @@ G_MODULE_EXPORT void open_file(GtkMenuItem *menuitem, struct Data *widget)
 
     gtk_widget_hide (dialog_open);
 
-}
+}*/
 
 G_MODULE_EXPORT void session_open_delete_button_clicked_cb(GtkWidget *widget, struct Data *widgets)
 {
