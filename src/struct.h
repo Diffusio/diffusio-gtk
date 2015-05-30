@@ -41,14 +41,15 @@ struct SessionData
     GtkLabel *folder_label;
 
     GtkWidget *about;
+    GtkWidget *dialog_fexists;
 
 };
 
 struct MainData
 {
     GtkWidget *MainWindow;
-    GtkButton *quit;
-    GtkButton *addnew_button;
+    GtkWidget *quit;
+    GtkWidget *addnew_button;
 
 };
 
@@ -60,6 +61,7 @@ struct Data
     struct MainData maindata;
     struct NewContent new_content;
     struct News news;
+    FILE *save;
 
 };
 

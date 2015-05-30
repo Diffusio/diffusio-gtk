@@ -60,6 +60,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/session.h" />
+		<Unit filename="src/struct.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

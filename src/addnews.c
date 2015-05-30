@@ -58,10 +58,9 @@ G_MODULE_EXPORT gboolean prepareNews (GdkEventKey *event, struct Data *data)
 	strcpy(data->news.file_in,"index_temp.html");
 	strcpy(data->news.file_out,"index.html");
 	addANews(data);
-    gint response = gtk_dialog_run(GTK_DIALOG(data->new_content.dialog));
+    gtk_dialog_run(GTK_DIALOG(data->new_content.dialog));
     gtk_widget_hide(GTK_DIALOG(data->new_content.dialog));
 	return TRUE;
 }
-
 
 

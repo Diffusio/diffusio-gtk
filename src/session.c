@@ -56,6 +56,8 @@ void load_widgets(struct Data *data)
 
     data->sessiondata.about = GTK_WIDGET (gtk_builder_get_object (data->builder, "AboutWindow"));
 
+    data->sessiondata.dialog_fexists = GTK_WIDGET(gtk_builder_get_object(data->builder, "dialog_fexists"));
+
 
     gtk_widget_set_sensitive(data->sessiondata.newtab_delete_button, 0);
     gtk_widget_set_sensitive(data->sessiondata.new_button, 0);
@@ -86,87 +88,68 @@ G_MODULE_EXPORT void openAboutWindow(GtkMenuItem *menuitem, gpointer user_data)
 }
 
 
-G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *widgets)
+G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *data)
 {
 
-    const gchar *text = gtk_entry_get_text(widgets->sessiondata.name_entry);
-    const gchar *folder = gtk_file_chooser_get_uri(widgets->sessiondata.new_chooser);
+    const gchar *text = gtk_entry_get_text(data->sessiondata.name_entry);
+    const gchar *folder = gtk_file_chooser_get_uri(data->sessiondata.new_chooser);
 
 
     if(folder != NULL)
-        gtk_label_set_label(widgets->sessiondata.folder_label, &folder[7]);
+        gtk_label_set_label(data->sessiondata.folder_label, &folder[8]);
 
 
     if(folder != NULL || text[0] != '\0')
-        gtk_widget_set_sensitive(widgets->sessiondata.newtab_delete_button, 1);
+        gtk_widget_set_sensitive(data->sessiondata.newtab_delete_button, 1);
 
     else
-        gtk_widget_set_sensitive(widgets->sessiondata.newtab_delete_button, 0);
+        gtk_widget_set_sensitive(data->sessiondata.newtab_delete_button, 0);
 
 
     if(folder != NULL && text[0] != '\0')
-        gtk_widget_set_sensitive(widgets->sessiondata.new_button, 1);
+        gtk_widget_set_sensitive(data->sessiondata.new_button, 1);
 
     else
-        gtk_widget_set_sensitive(widgets->sessiondata.new_button, 0);
+        gtk_widget_set_sensitive(data->sessiondata.new_button, 0);
 }
 
 
 
 
-G_MODULE_EXPORT void session_new_delete(GtkWidget *widget, struct Data *widgets)
+G_MODULE_EXPORT void session_new_delete(GtkWidget *widget, struct Data *data)
 {
-    gtk_entry_set_text(widgets->sessiondata.name_entry, "");
-    if(gtk_file_chooser_get_uri(widgets->sessiondata.new_chooser) != NULL)
-        gtk_file_chooser_unselect_uri(widgets->sessiondata.new_chooser, gtk_file_chooser_get_uri(widgets->sessiondata.new_chooser));
+    gtk_entry_set_text(data->sessiondata.name_entry, "");
+    if(gtk_file_chooser_get_uri(data->sessiondata.new_chooser) != NULL)
+        gtk_file_chooser_unselect_uri(data->sessiondata.new_chooser, gtk_file_chooser_get_uri(data->sessiondata.new_chooser));
 
-    gtk_label_set_label(widgets->sessiondata.folder_label, "");
+    gtk_label_set_label(data->sessiondata.folder_label, "");
 }
 
 
 
 
 
-G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget, struct Data *widgets)
+G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget, struct Data *data)
 {
-    const gchar *folder = gtk_file_chooser_get_uri(widgets->sessiondata.open_chooser);
+    const gchar *folder = gtk_file_chooser_get_uri(data->sessiondata.open_chooser);
 
     if(folder != NULL)
     {
-        gtk_widget_set_sensitive(widgets->sessiondata.opentab_delete_button, 1);
-        gtk_widget_set_sensitive(widgets->sessiondata.opentab_open_button, 1);
+        gtk_widget_set_sensitive(data->sessiondata.opentab_delete_button, 1);
+        gtk_widget_set_sensitive(data->sessiondata.opentab_open_button, 1);
     }
     else
     {
-        gtk_widget_set_sensitive(widgets->sessiondata.opentab_delete_button, 0);
-        gtk_widget_set_sensitive(widgets->sessiondata.opentab_open_button, 0);
+        gtk_widget_set_sensitive(data->sessiondata.opentab_delete_button, 0);
+        gtk_widget_set_sensitive(data->sessiondata.opentab_open_button, 0);
     }
 
 }
 
 
 
-//will go in main.c
-G_MODULE_EXPORT void open_file(GtkMenuItem *menuitem, struct Data *data)
+
+G_MODULE_EXPORT void session_open_delete_button_clicked_cb(GtkWidget *widget, struct Data *data)
 {
-    GtkWidget *dialog_open = GTK_WIDGET(gtk_builder_get_object (data->builder, "FileChooserDialog"));
-
-    gint response = gtk_dialog_run (GTK_DIALOG (dialog_open));
-
-    if(response == OPEN)
-    {
-        char *folder;
-        folder = gtk_file_chooser_get_filename(data->sessiondata.new_chooser);
-        //open file
-        g_free(folder);
-    }
-    //todo else
-
-    gtk_widget_hide (dialog_open);
-
-}
-
-G_MODULE_EXPORT void session_open_delete_button_clicked_cb(GtkWidget *widget, struct Data *widgets)
-{
-    gtk_file_chooser_unselect_uri(widgets->sessiondata.open_chooser, gtk_file_chooser_get_uri(widgets->sessiondata.open_chooser));
+    gtk_file_chooser_unselect_uri(data->sessiondata.open_chooser, gtk_file_chooser_get_uri(data->sessiondata.open_chooser));
 }
