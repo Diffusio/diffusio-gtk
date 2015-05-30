@@ -8,6 +8,7 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
     strcpy(path, &path[8]);
     strcat(path, "/");
     strcat(path, gtk_entry_get_text(data->sessiondata.name_entry));
+    strcat(path, ".diffusio");
 
     errno = 0;
     if (!(stat(path, &buf) != 0 && errno == ENOENT)) //si le fichier spécifié existe

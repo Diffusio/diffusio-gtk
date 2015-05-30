@@ -4,6 +4,7 @@
 int main(int argc, char *argv [])
 {
     struct Data data;
+
     data.news.id = 0;
     GError *error = NULL;
     gchar *filename = NULL;
@@ -12,13 +13,14 @@ int main(int argc, char *argv [])
 
     data.builder = gtk_builder_new();
 
-    filename =  g_build_filename ("src/diffusio.glade", NULL);
+    filename =  g_build_filename ("../../src/diffusio.glade", NULL);
 
     if(!gtk_builder_add_from_file(data.builder, filename, &error))
     {
       gint code = error->code;
       g_printerr("%s\n", error->message);
       g_error_free (error);
+      getchar();
       return code;
     }
     g_free (filename);
@@ -37,6 +39,7 @@ int main(int argc, char *argv [])
 
 void load_widgets(struct Data *data)
 {
+    int i;
     data->sessiondata.SessionWindow = GTK_WIDGET(gtk_builder_get_object(data->builder, "SessionWindow"));
     gtk_widget_set_size_request(data->sessiondata.SessionWindow, 400, 300);
 
@@ -52,7 +55,6 @@ void load_widgets(struct Data *data)
     data->sessiondata.open_chooser = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "session_open_chooser"));
 
     data->sessiondata.folder_label = GTK_LABEL(gtk_builder_get_object(data->builder, "session_new_folder_label"));
-    gtk_label_set_label(data->sessiondata.folder_label, "");
 
     data->sessiondata.about = GTK_WIDGET (gtk_builder_get_object (data->builder, "AboutWindow"));
 
@@ -72,11 +74,37 @@ void load_widgets(struct Data *data)
 
     data->maindata.quit = GTK_WIDGET(gtk_builder_get_object(data->builder, "exit"));
     data->maindata.addnew_button = GTK_WIDGET(gtk_builder_get_object(data->builder, "add"));
+    data->maindata.current_template = GTK_LABEL(gtk_builder_get_object(data->builder, "current_template_label"));
+
+    data->maindata.template_button[MATERIAL] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button1"));
+    data->maindata.template_button[FLAT] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button2"));
+    data->maindata.template_button[SOBER] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button3"));
+    data->maindata.template_button[CLASSIC] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button4"));
+
 
 }
 
+G_MODULE_EXPORT void change_material(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_text(data->maindata.current_template, "Template currently selected : Material");
+}
 
-G_MODULE_EXPORT void openAboutWindow(GtkMenuItem *menuitem, gpointer user_data)
+G_MODULE_EXPORT void change_flat(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_label(data->maindata.current_template, "Template currently selected : Flat");
+}
+
+G_MODULE_EXPORT void change_sober(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_label(data->maindata.current_template, "Template currently selected : Sober");
+}
+
+G_MODULE_EXPORT void change_classic(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_label(data->maindata.current_template, "Template currently selected : Classic");
+}
+
+G_MODULE_EXPORT void openAboutWindow(GtkWidget *menuitem, gpointer user_data)
 {
 
     struct Data *data = (struct Data*) user_data;

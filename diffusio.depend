@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1432945876 source:c:\users\kk\documents\mega\diffusio-gtk\src\main.c
+1432986616 source:c:\users\kk\documents\mega\diffusio-gtk\src\main.c
 	"main.h"
 
-1432941467 c:\users\kk\documents\mega\diffusio-gtk\src\main.h
+1432993775 c:\users\kk\documents\mega\diffusio-gtk\src\main.h
 	<gtk/gtk.h>
 	"session.h"
 	"addnews.h"
@@ -2179,7 +2179,7 @@
 1284281776 c:\program files (x86)\codeblocks\mingw\include\gtk-2.0\gtk\gtktipsquery.h
 	<gtk/gtk.h>
 
-1432909888 c:\users\kk\documents\mega\diffusio-gtk\src\session.h
+1432999080 c:\users\kk\documents\mega\diffusio-gtk\src\session.h
 	<gtk/gtk.h>
 	"main.h"
 	<stdlib.h>
@@ -2192,7 +2192,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1432945825 source:c:\users\kk\documents\mega\diffusio-gtk\src\session.c
+1432997994 source:c:\users\kk\documents\mega\diffusio-gtk\src\session.c
 	"session.h"
 
 1379763816 c:\program files (x86)\codeblocks\mingw\include\glib-2.0\gobject\gbinding.h
@@ -3694,9 +3694,9 @@
 	"main.h"
 	"struct.h"
 
-1432945825 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
+1433000201 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
 
-1432937307 source:c:\users\kk\documents\mega\diffusio-gtk\src\addnews.c
+1432994278 source:c:\users\kk\documents\mega\diffusio-gtk\src\addnews.c
 	"addnews.h"
 
 1341010378 c:\program files (x86)\codeblocks\mingw\include\sys\stat.h

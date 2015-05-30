@@ -16,7 +16,12 @@
 
 void load_widgets(struct Data *data);
 
-G_MODULE_EXPORT void openAboutWindow (GtkMenuItem *menuitem, gpointer user_data);
+G_MODULE_EXPORT void change_material(GtkWidget *widget, struct Data *data);
+G_MODULE_EXPORT void change_flat(GtkWidget *widget, struct Data *data);
+G_MODULE_EXPORT void change_sober(GtkWidget *widget, struct Data *data);
+G_MODULE_EXPORT void change_classic(GtkWidget *widget, struct Data *data);
+
+G_MODULE_EXPORT void openAboutWindow (GtkWidget *menuitem, gpointer user_data);
 
 G_MODULE_EXPORT void cb_changed(GtkButton *button, struct Data *widget);
 

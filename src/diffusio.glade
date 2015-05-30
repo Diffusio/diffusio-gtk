@@ -4,6 +4,7 @@
   <object class="GtkWindow" id="MainWindow">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Diffusio</property>
+    <property name="resizable">False</property>
     <property name="icon">..\res\diffusio-logo_128.png</property>
     <signal name="destroy" handler="quit" swapped="no"/>
     <child>
@@ -371,21 +372,6 @@
                     <child>
                       <placeholder/>
                     </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -394,7 +380,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="label24">
+                  <object class="GtkLabel" id="current_template_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="margin_top">25</property>
@@ -416,28 +402,64 @@
                     <property name="row_spacing">4</property>
                     <property name="column_spacing">20</property>
                     <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <object class="GtkImage" id="image1">
+                      <object class="GtkLabel" id="label25">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="pixbuf">material.jpg</property>
+                        <property name="label" translatable="yes">Material</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label26">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Flat</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label27">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Sober</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label28">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Classic</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="template_button1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image1</property>
+                        <signal name="clicked" handler="change_material" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -447,14 +469,46 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="label25">
+                      <object class="GtkButton" id="template_button2">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Material</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image2</property>
+                        <signal name="clicked" handler="change_flat" swapped="no"/>
                       </object>
                       <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">1</property>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="template_button3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image3</property>
+                        <signal name="clicked" handler="change_sober" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="template_button4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">image4</property>
+                        <signal name="clicked" handler="change_classic" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="top_attach">0</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
@@ -820,17 +874,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkStatusbar" id="StatusBar">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
-            <property name="spacing">2</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">2</property>
-          </packing>
+          <placeholder/>
         </child>
       </object>
     </child>
@@ -969,7 +1013,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
-                    <property name="label" translatable="yes">Nom : </property>
+                    <property name="label" translatable="yes">Name : </property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -998,7 +1042,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
-                    <property name="label" translatable="yes">Créer dans : </property>
+                    <property name="label" translatable="yes">Create in : </property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -1012,6 +1056,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="action">select-folder</property>
+                    <property name="title" translatable="yes">Select a folder</property>
                     <signal name="selection-changed" handler="session_new_changed" swapped="no"/>
                   </object>
                   <packing>
@@ -1025,7 +1070,6 @@
                   <object class="GtkLabel" id="session_new_folder_label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">label</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
@@ -1051,7 +1095,7 @@
           <object class="GtkLabel" id="session_new_tab">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Nouvelle session</property>
+            <property name="label" translatable="yes">New session</property>
           </object>
           <packing>
             <property name="tab_fill">False</property>
@@ -1134,7 +1178,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="margin_right">13</property>
-                    <property name="label" translatable="yes">Parcourir : </property>
+                    <property name="label" translatable="yes">Open : </property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -1176,7 +1220,7 @@
           <object class="GtkLabel" id="session_open_tab">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Ouvrir une session</property>
+            <property name="label" translatable="yes">Open session</property>
           </object>
           <packing>
             <property name="position">1</property>
@@ -1194,6 +1238,7 @@
   </object>
   <object class="GtkFileChooserDialog" id="FileChooserDialog">
     <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Choose a folder</property>
     <property name="icon_name">open</property>
     <property name="type_hint">dialog</property>
     <property name="transient_for">SessionWindow</property>
@@ -1270,7 +1315,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="exit">
-                <property name="label" translatable="yes">Exit</property>
+                <property name="label" translatable="yes">Ok</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -1293,6 +1338,10 @@
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_left">20</property>
+            <property name="margin_right">20</property>
+            <property name="margin_top">30</property>
+            <property name="margin_bottom">30</property>
             <property name="label" translatable="yes">The article has been added to index.html</property>
           </object>
           <packing>
@@ -1376,6 +1425,26 @@ Do you want to overwrite or open it?</property>
       <action-widget response="1">button_overwrite</action-widget>
       <action-widget response="0">button4</action-widget>
     </action-widgets>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">..\res\thumbnails\material.jpg</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">..\res\thumbnails\flat.jpg</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">..\res\thumbnails\sober.jpg</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkFileFilter" id="open_file_filter">
     <mime-types>

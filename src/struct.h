@@ -50,6 +50,9 @@ struct MainData
     GtkWidget *MainWindow;
     GtkWidget *quit;
     GtkWidget *addnew_button;
+    GtkLabel *current_template;
+
+    GtkWidget *template_button[4];
 
 };
 

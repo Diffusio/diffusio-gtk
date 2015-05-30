@@ -47,15 +47,15 @@ void addANews(struct Data *data)
 
 G_MODULE_EXPORT gboolean prepareNews (GdkEventKey *event, struct Data *data)
 {
-    copyFile("index.html","index_temp.html");
-	data->news.id = getLastNewsId("index_temp.html");
+    copyFile("../../src/index.html","../../src/index_temp.html");
+	data->news.id = getLastNewsId("../../src/index_temp.html");
     strcpy(data->news.title,gtk_entry_get_text(GTK_ENTRY(data->new_content.title)));
     strcpy(data->news.summary,gtk_entry_get_text(GTK_ENTRY(data->new_content.summary)));
     strcpy(data->news.content,gtk_entry_get_text(GTK_ENTRY(data->new_content.content)));
     time_t t = time(NULL);
 	struct tm tm = *localtime(&t);
 	sprintf(data->news.datetime,"%d/%d/%d %d:%d:%d\n",  tm.tm_mon + 1,tm.tm_mday,  tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
-	strcpy(data->news.file_in,"index_temp.html");
+	strcpy(data->news.file_in,"../../src/index_temp.html");
 	strcpy(data->news.file_out,"index.html");
 	addANews(data);
     gtk_dialog_run(GTK_DIALOG(data->new_content.dialog));
