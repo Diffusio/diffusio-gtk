@@ -67,7 +67,7 @@ struct Data
     FILE *save;
 
     gchar template_selected[8];
-    gchar *template_path;
+    gchar template_path[28];
     gchar *savefile_path;
 
 };

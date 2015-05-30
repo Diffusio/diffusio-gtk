@@ -10,7 +10,7 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
     strcat(data->savefile_path, gtk_entry_get_text(data->sessiondata.name_entry));
     strcat(data->savefile_path, ".diffusio");
 
-    strcpy(data->template_path, "../");
+    strcpy(data->template_path, "../../res/templates/");
 
     errno = 0;
     if (!(stat(data->savefile_path, &buf) != 0 && errno == ENOENT)) //si le fichier spécifié existe
@@ -31,6 +31,36 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
     gtk_widget_hide(data->sessiondata.dialog_fexists);
     data->save = fopen(data->savefile_path, "ab+");
     openMainWindow(data);
+}
+
+
+G_MODULE_EXPORT void change_material(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_text(data->maindata.current_template, "Template currently selected : Material");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "material");
+
+}
+
+G_MODULE_EXPORT void change_flat(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_label(data->maindata.current_template, "Template currently selected : Flat");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "flat");
+}
+
+G_MODULE_EXPORT void change_sober(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_label(data->maindata.current_template, "Template currently selected : Sober");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "sober");
+}
+
+G_MODULE_EXPORT void change_classic(GtkWidget *widget, struct Data *data)
+{
+    gtk_label_set_label(data->maindata.current_template, "Template currently selected : Classic");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "classic");
 }
 
 
