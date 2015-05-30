@@ -1,0 +1,439 @@
+/*
+ * Diffusio - Build presentation websites easily
+ * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+html
+{
+    height: 100%;
+}
+
+body
+{
+	margin:0;
+  height: 100%;
+	padding:0;
+	/*background:rgb(30,30,30);	*/
+
+ 	box-sizing: border-box; 
+ 	color:white;   
+  font-family: 'Raleway', sans-serif;
+}
+
+.wth70pe
+{
+    width:70%;
+}
+
+#title
+{
+    font-size:2em;
+    list-style-type: none;
+    font-weight: 300; 
+    padding-top: 12px;
+    padding-left: 40px;
+    position: absolute;
+    left: 20;
+    top:0;
+}
+
+#title_logo
+{
+  position: absolute;
+  font-size:2em;
+   font-weight: 300; 
+  top: 5;
+  left: 5;
+  width: 50px;
+}
+
+#title_tiny
+{
+  font-size:2em;
+   font-weight: 300; 
+}
+
+.thin
+{
+	font-weight:300;
+}
+
+.colorWhite
+{
+	color: #fff;
+}
+.italic
+{
+	font-style: italic;
+}
+.floatLeft
+{
+	float:left;
+}
+
+.wth100p
+{
+	width:100px;
+}
+
+
+.hgt100p
+{
+	height:100px;
+}
+
+
+.clear
+{
+	clear:both;
+}
+
+
+.wth800
+{
+    margin-right: 800px;
+}
+
+.topPadding20
+{
+    padding-top:20px;
+}
+
+.topPadding10
+{
+    padding-top:10px;
+}
+
+header
+{
+}
+.buttonUnSelected
+{
+    padding: 10;
+    margin:10;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: all 0.5s;
+}
+
+
+.button
+{
+    padding: 10;
+    margin:10;
+    cursor: pointer;
+    color:rgb(30,30,30);
+    border: 1px solid white;
+    background: white;
+    transition: all 0.5s;
+}
+
+.button:hover
+{
+    background: white;
+    color: rgb(30,30,30);
+}
+
+.sideBar
+{
+	position:fixed;
+	top:-20px;
+	left:0;
+	height:102vh;
+	width:300px;
+	background:white;
+  list-style-type: none;
+	padding: 20px;
+	z-index: 1000;
+	box-shadow: 0px 10px 5px #888888;
+}
+
+.sideBar ul
+{
+  list-style-type: none;
+}
+
+
+.sideHeader
+{
+  font-size: 2em;
+	cursor:pointer;
+	margin-bottom: 30px;
+	transition: all 0.2s;
+}
+
+ #navTiny
+  {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    float:left;
+    list-style-type:none;
+  }
+
+.subPage
+{
+  padding-bottom: 20px;
+  font-size: 1.15em;
+  color: rgb(30,30,30);
+}
+
+a 
+{
+  text-decoration: none;
+}
+  #navLarge
+  {
+    display: block;
+  }
+
+#sideOpen
+{
+    font-size: 2em;
+    padding-top: 10px;
+    margin-right:10px;
+}
+
+
+	
+.content
+{
+    margin-top:160px;
+    background: rgba(30,30,30,0.4);
+    font-weight: 300;
+    font-size:2.5em;
+    text-align: center;
+}
+
+#content_1
+{
+  margin-top: 0;
+}
+
+
+
+#rightNav
+{
+  position: absolute;
+  top:0;
+  right: 0;
+
+}
+
+.menu-icon {
+    position:relative;
+    display:inline-block;
+    width:30px;
+    text-indent:-999px;
+}
+ 
+.border-icon {
+    height:13px;
+    border-top:3px solid #fff;
+    border-bottom:3px solid #fff;
+}
+ 
+.border-icon:before {
+    content:"";
+    position:absolute; 
+    top:5px;
+    left:0;
+    width:100%;
+    border-top:3px solid #fff;
+}
+
+@media screen and (max-width:600px)
+{
+  #navTiny
+  {
+    display: block;
+  }
+  #navLarge
+  {
+    display: none;
+  }
+.content
+{
+    margin-top:110px;
+    font-weight: 300;
+    font-size:2.5em;
+    text-align: center;
+
+}
+ }
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  margin-left: -30px;
+  margin-right: 20px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid black; 
+  display: inline-block;
+}
+
+.name
+{
+  font-size: 0.7em;
+}
+
+.notVisible
+{
+  display: none;
+}
+
+#please_scroll
+{
+  position: absolute;
+  bottom: 10;
+  width: 100%;
+  text-align: center;
+}
+
+#please_scroll img
+{
+  width: 50px;
+}
+header
+{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+ul
+{
+  list-style-type: none;
+}
+
+section
+{
+
+
+}
+ .white
+    {
+        color: white;
+    }
+
+    .grey
+    {
+        color: grey;
+    }
+
+    .wide_div
+    {
+        text-align: left;
+        position: relative;
+        display:table;
+        width:100%;
+        height: 100vh;
+    }   
+
+    #w_d_1
+    {
+     background: url(../images/wall1.jpg) no-repeat center fixed;
+
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */  
+    }
+
+    #w_d_2
+    {
+      background: lightgray;
+    }
+
+    #w_d_3
+    {
+     background: url(../images/wall3.jpg) no-repeat center fixed;
+
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisée */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */  
+    }
+
+    .v_align
+    {
+        display:table-cell;
+        vertical-align:middle;
+    }
+
+    .slog
+    {
+        font-size: 35px;
+        font-weight: 300;
+    }
+
+    .slog_right
+    {
+        margin-left: 50%;
+        width: 50%;
+    }
+
+    .slog_left
+    {
+        margin-left: 5%;
+        width: 50%;
+    }
+
+    .under_slog
+    {
+        font-size: 18px;
+        font-weight: 400;
+        text-align: justify;
+    }
+
+    .under_slog_right
+    {
+        margin-left: 50%;
+        width: 45%;
+    }
+
+    .under_slog_left
+    {
+        margin-left: 5%;
+        width: 45%;
+    }
+    .logo
+    {
+        position:absolute;
+        height:40%;
+    }
+
+    .logo_left
+    {
+        left:10%;
+        top:30%;
+    }
+
+    .logo_right
+    {
+        right:10%;
+        top:30%;
+    }
+
+    .content
+    {
+      margin: 0;
+    }

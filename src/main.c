@@ -4,21 +4,23 @@
 G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
 {
     struct stat buf;
-    gchar *path = gtk_file_chooser_get_uri(data->sessiondata.new_chooser);
-    strcpy(path, &path[8]);
-    strcat(path, "/");
-    strcat(path, gtk_entry_get_text(data->sessiondata.name_entry));
-    strcat(path, ".diffusio");
+    strcpy(data->savefile_path, gtk_file_chooser_get_uri(data->sessiondata.new_chooser));
+    strcpy(data->savefile_path, &data->savefile_path[8]);
+    strcat(data->savefile_path, "/");
+    strcat(data->savefile_path, gtk_entry_get_text(data->sessiondata.name_entry));
+    strcat(data->savefile_path, ".diffusio");
+
+    strcpy(data->template_path, "../");
 
     errno = 0;
-    if (!(stat(path, &buf) != 0 && errno == ENOENT)) //si le fichier spécifié existe
+    if (!(stat(data->savefile_path, &buf) != 0 && errno == ENOENT)) //si le fichier spécifié existe
     {
         if(gtk_dialog_run(GTK_DIALOG(data->sessiondata.dialog_fexists)))
         {
-            gint status = remove(path);
+            gint status = remove(data->savefile_path);
 
             if( status == 0 )
-                printf("%s file deleted successfully.\n",path);
+                printf("%s file deleted successfully.\n",data->savefile_path);
             else
             {
                 printf("Unable to delete the file\n");
@@ -27,7 +29,7 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
         }
     }
     gtk_widget_hide(data->sessiondata.dialog_fexists);
-    data->save = fopen(path, "ab+");
+    data->save = fopen(data->savefile_path, "ab+");
     openMainWindow(data);
 }
 

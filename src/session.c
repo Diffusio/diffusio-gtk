@@ -39,7 +39,6 @@ int main(int argc, char *argv [])
 
 void load_widgets(struct Data *data)
 {
-    int i;
     data->sessiondata.SessionWindow = GTK_WIDGET(gtk_builder_get_object(data->builder, "SessionWindow"));
     gtk_widget_set_size_request(data->sessiondata.SessionWindow, 400, 300);
 
@@ -87,21 +86,29 @@ void load_widgets(struct Data *data)
 G_MODULE_EXPORT void change_material(GtkWidget *widget, struct Data *data)
 {
     gtk_label_set_text(data->maindata.current_template, "Template currently selected : Material");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "material");
 }
 
 G_MODULE_EXPORT void change_flat(GtkWidget *widget, struct Data *data)
 {
     gtk_label_set_label(data->maindata.current_template, "Template currently selected : Flat");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "flat");
 }
 
 G_MODULE_EXPORT void change_sober(GtkWidget *widget, struct Data *data)
 {
     gtk_label_set_label(data->maindata.current_template, "Template currently selected : Sober");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "sober");
 }
 
 G_MODULE_EXPORT void change_classic(GtkWidget *widget, struct Data *data)
 {
     gtk_label_set_label(data->maindata.current_template, "Template currently selected : Classic");
+    memset(data->template_selected, 0, 8);
+    strcpy(data->template_selected, "classic");
 }
 
 G_MODULE_EXPORT void openAboutWindow(GtkWidget *menuitem, gpointer user_data)

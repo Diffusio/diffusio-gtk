@@ -66,6 +66,10 @@ struct Data
     struct News news;
     FILE *save;
 
+    gchar template_selected[8];
+    gchar *template_path;
+    gchar *savefile_path;
+
 };
 
 #endif

@@ -1,0 +1,180 @@
+/*
+ * Diffusio - Build presentation websites easily
+ * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+body
+{
+  background: white;
+  font-family: Arial;
+  padding: 0;
+  margin: 0;
+  background: white;
+}
+
+#page
+{
+  width: 85%;
+  background: white;
+  margin: auto;
+  min-height: 100%;
+}
+
+#logo
+{
+  width: 85;
+   display: inline;
+  padding-top: 10;
+  margin-left: 10;
+}
+
+#title
+{
+  list-style-type: none;
+  padding: 10;
+  padding-bottom: 0;
+}
+
+#title li
+{
+  display: inline;
+  font-size: 3em; 
+  margin-left: 30;
+
+}
+
+#nav
+{
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+box-shadow: 1px 1px 3px #555;
+margin-left: 0;
+padding-top: 5;
+padding-bottom: 4;
+  width: 95%;
+  border-radius: 5px; 
+  margin:auto;
+  list-style-type: none;
+}
+
+#nav li
+{
+  display: inline;
+  cursor: pointer;
+  padding: 5;
+  padding-left: 10;
+  padding-right: 10;
+}
+
+#site_title
+{
+
+}
+
+
+
+.visible
+{
+	display: inline-block;
+}
+
+.notVisible
+{
+	display: none;
+}
+
+.content
+{
+  width: 100%;
+  padding: 20;
+  margin:auto;
+}
+
+#article
+{
+  padding: 20;
+  width: 100%;
+  margin: auto;
+}
+
+*
+{
+  box-sizing:border-box;
+}
+
+#social_div
+{
+  position: absolute;
+  top: 0;
+  right: 10%;
+}
+
+#social_div ul
+{
+  list-style-type: none;
+}
+
+#social_div ul li
+{
+  display: inline;
+}
+
+#social_div img
+{
+  width: 40;
+}
+
+#follow
+{
+  position: absolute;
+  top: 29;
+  left:-50;
+  font-family: Impact;
+}
+
+@media screen and (max-width: 800px)
+{
+  #page
+  {
+    width: 100%;
+  }
+  #title
+  {
+    font-size: 0.8em;
+  }
+  #social_div
+  {
+    right: 2%;
+  }
+}
+
+.card_header
+{
+  font-size: 2em;
+}
+
+.card
+{
+  margin-bottom: 20;
+}
+

@@ -1,0 +1,280 @@
+<!--
+ * Diffusio - Build presentation websites easily
+ * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Sober</title>
+		<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='style/style.css'>
+		<script src="js/jquery.js"></script>
+		<script src="js/side.js"></script>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	</head>
+	<body>	  
+	  <header>
+		<ul id="navLarge">
+			<img src="images/diffusio-logo.png" id="title_logo">
+			<li id="title">Sober</li>
+			<ul id="rightNav">
+				<a onclick="setVisibleNotVisibleNotVisible(1,2,3);"><li class="floatLeft button" id='tab_1'>Presentation</li></a>
+				<a onclick="setVisibleNotVisibleNotVisible(2,1,3);"><li class="floatLeft buttonUnSelected" id='tab_2'>News</li></a>
+				<a onclick="setVisibleNotVisibleNotVisible(3,2,1);"><li class="floatLeft buttonUnSelected" id='tab_3'>About</li></a>
+			</ul>
+		</ul>
+		<ul id="navTiny">
+			<li id="sideOpen" class="floatLeft"><a href="#" class="menu-icon border-icon">menu icon</a></li>
+			<li id="title_tiny" class="floatLeft">Diffusio</li>
+		</ul>
+	 </header>
+		<ul class='sideBar'>
+			<li>
+				<ul class=''>
+					 <li class="sideHeader"><div class='icon-left-open size2em' id='sideClose' style='color: #000;'><div class="arrow-left"></div><span href="leftPadding50">Navigation</span></div></li>
+					 <a   onclick="setVisibleNotVisibleNotVisible(1,2,3)"><li class="subPage">Presentation</li></a>
+					 <a   onclick="setVisibleNotVisibleNotVisible(2,3,1)"><li class="subPage">News</li></a>
+					 <a   onclick="setVisibleNotVisibleNotVisible(3,1,2)"><li class="subPage">More</li></a>
+				</ul>
+			</li>
+		</ul>
+		<div id="content_1" class="content">
+			<div class="wide_div white" id="w_d_1">
+			 		<div class='v_align'>
+				 		<img src="images/logo1.svg" class="logo_left logo">
+				 		<div class='w_text'>
+				 			<p class="slog slog_right">
+Introduction
+                            </p>
+				 			<p class="under_slog under_slog_right">
+We challenged ourselves to create a visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design. This spec is a living document that will be updated as we continue to develop the tenets and specifics of material design.
+
+                            </p>
+				 		</div>
+		 			</div>
+		 		</div>
+		 		<div class="wide_div grey" id="w_d_2">
+			 		<div class='v_align'>
+				 		<img src="images/logo2.svg" class="logo_right logo">
+				 		<p class="slog slog_left">
+Material is the metaphor
+                        </p>
+				 		<p class="under_slog under_slog_left">
+A material metaphor is the unifying theory of a rationalized space and a system of motion. The material is grounded in tactile reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic.
+<br>
+Surfaces and edges of the material provide visual cues that are grounded in reality. The use of familiar tactile attributes helps users quickly understand affordances. Yet the flexibility of the material creates new affordances that supercede those in the physical world, without breaking the rules of physics.
+			 		</div>
+		 		</div>
+		 		<div class="wide_div white" id="w_d_3">
+			 		<div class='v_align'>
+				 		<img src="images/logo3.svg" class="logo_left logo">
+				 		<div class='w_text'>
+				 			<p class="slog slog_right">
+Motion provides meaning
+                            </p>
+				 			<p class="under_slog under_slog_right">
+Motion respects and reinforces the user as the prime mover. Primary user actions are inflection points that initiate motion, transforming the whole design.
+<br>
+All action takes place in a single environment. Objects are presented to the user without breaking the continuity of experience even as they transform and reorganize.
+<br>
+Motion is meaningful and appropriate, serving to focus attention and maintain continuity. Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.
+                            </p>
+				 		</div>
+			 		</div>
+		 		</div>
+		</div>
+		<div id="content_2" class="content notVisible">
+			<!--#$#NEW-->
+
+<!--##10-->
+
+<div class='card elevation-1 news' id='news_10'><div class='news_datetime' id='news_datetime_10'>5/18/2015 13:26:6
+</div><span class='news_title'   id='news_title_10'><a class='pointer' onclick='openNews(10);'>Title Hey</a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_10'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(10)'>READ MORE</a></div></div>
+
+
+<!--##9-->
+
+<div class='card elevation-1 news' id='news_9'><div class='news_datetime' id='news_datetime_9'>5/18/2015 10:19:46
+</div><span class='news_title'   id='news_title_9'><a class='pointer' onclick='openNews(9);'>Title </a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_9'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(9)'>READ MORE</a></div></div>
+
+
+<!--##8-->
+
+<div class='card elevation-1 news' id='news_8'><div class='news_datetime' id='news_datetime_8'>5/17/2015 18:3:24
+</div><span class='news_title'   id='news_title_8'><a class='pointer' onclick='openNews(8);'>Added for demo</a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_8'>Video demo</p><div class='read_more'><a class='pointer' onclick='openCircleNews(8)'>READ MORE</a></div></div>
+
+
+<!--##7-->
+
+<div class='card elevation-1 news' id='news_7'><div class='news_datetime' id='news_datetime_7'>5/17/2015 17:59:44
+</div><span class='news_title'   id='news_title_7'><a class='pointer' onclick='openNews(7);'>Title</a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_7'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(7)'>READ MORE</a></div></div>
+
+
+<!--##6-->
+
+<div class='card elevation-1 news' id='news_6'><div class='news_datetime' id='news_datetime_6'>5/17/2015 17:59:24
+</div><span class='news_title'   id='news_title_6'><a class='pointer' onclick='openNews(6);'>Added via GTK</a> </span><p class='news_summary'>Diffusio rocks !</p><p class='news_content'  id='news_content_6'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(6)'>READ MORE</a></div></div>
+
+
+<!--##5-->
+
+<div class='card elevation-1 news' id='news_5'><div class='news_datetime' id='news_datetime_5'>5/16/2015 23:8:25
+</div><span class='news_title'   id='news_title_5'><a class='pointer' onclick='openNews(5);'>This</a> </span><p class='news_summary'>is</p><p class='news_content'  id='news_content_5'>one</p><div class='read_more'><a class='pointer' onclick='openCircleNews(5)'>READ MORE</a></div></div>
+
+<!--##4-->
+		<div class="card elevation-1 news" id="news_4">
+	 		<div class="news_datetime" id="news_datetime_4">
+	 			04/21/2045 - 14:54
+	 		</div>
+	 		<span class="news_title"   id="news_title_4"><a class="pointer" onclick="openNews(3)">Another news title</a></span>
+	 		<p class="news_summary">First news ahah</p>
+	 		<p class="news_content"  id="news_content_4">
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+			</p>
+			<div class="read_more"><a class="pointer" onclick="openCircleNews(4)">READ MORE</a></div>
+		</div>
+<!--##3-->
+		<div class="card elevation-1 news" id="news_3">
+	 		<div class="news_datetime" id="news_datetime_3">04/21/2045 - 14:54</div>
+	 		<span class="news_title"   id="news_title_3">
+	 		<a class="pointer" onclick="openNews(3);">Another news title</a> 
+	 		</span>
+	 		<p class="news_summary">First news ahah</p>
+	 		<p class="news_content"  id="news_content_3">
+A 3 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+					</p>
+					<div class="read_more"><a class="pointer" onclick="openCircleNews(3)">READ MORE</a></div>
+		</div>
+<!--##2-->
+ 		<div class="card elevation-1 news" id="news_2">
+	 		<div class="news_datetime" id="news_datetime_2">04/21/2045 - 14:54</div>
+	 		<span class="news_title"   id="news_title_2">
+	 		<a class="pointer" onclick="openNews(2)">Another news title</a> 
+	 		</span>
+	 		
+	 		<p class="news_summary">First news ahah</p>
+	 		<p class="news_content"  id="news_content_2">
+A 2 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+			</p>
+			<div class="read_more"><a class="pointer" onclick="openCircleNews(2)">READ MORE</a></div>
+		</div>
+<!--##1-->
+		<div class="card elevation-1 news" id="news_1">
+ 			<div class="news_datetime" id="news_datetime_1">04/21/2045 - 14:54</div>
+	 		<span class="news_title" id="news_title_1">
+	 		<a class="pointer" onclick="openNews(1)">A news title</a> 
+	 		</span>
+	 		<p class="news_summary" onclick="closeCircleNews(1)">First news ahah</p>
+	 		<p class="news_content" id="news_content_1">
+A 1 subdomain is configured with a CNAME record through your DNS provider.
+We strongly recommend that you use a custom subdomain for these reasons:
+It gives your GitHub Pages site the benefit of our Content Delivery Network.
+It will not be affected by changes in the underlying IP addresses of GitHub's servers.
+Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
+			</p>
+			<div class="read_more"><a class="pointer" onclick="openCircleNews(1)">READ MORE</a></div>
+			</div>
+		</div>
+		<div id="content_3" class="content notVisible">
+			<p>Code hosted on GitHub</p><a href='https://github.com/diffusio'><img src='images/github.png' width='100'></a>
+		</div>
+		<div id="content_4" class="content notVisible">
+			<p>Authors : </p><p class='name'>Pierre JACQUIER</p><p class='name'>Grégoire DUVAUCHELLE</p>
+		</div>
+		<div id="please_scroll">
+			<img src="images/scroll.png">
+		</div>
+		<script type="text/javascript">
+		function setUnselected(tabid)
+		{
+			document.getElementById(tabid).style.backgroundColor = 'rgb(30,30,30)';
+			document.getElementById(tabid).style.color = 'white';
+		}
+		function setSelected(tabid)
+		{
+			document.getElementById(tabid).style.backgroundColor = 'white';
+			document.getElementById(tabid).style.color = 'rgb(30,30,30)';
+		}
+		function setVisibleNotVisibleNotVisible(visible, not_visible1, not_visible2, not_visible3)
+		{
+			document.getElementById('content_' + visible).className = "content";
+			document.getElementById('content_' + not_visible1).className = "content notVisible";
+			document.getElementById('content_' + not_visible2).className = "content notVisible";
+			document.getElementById('tab_' + visible).className = "floatLeft button";
+			document.getElementById('tab_' + not_visible1).className = "floatLeft buttonUnSelected";
+			document.getElementById('tab_' + not_visible2).className = "floatLeft buttonUnSelected";		
+		}
+		</script>
+	</body>
+</html>
