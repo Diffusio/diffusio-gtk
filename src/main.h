@@ -15,19 +15,20 @@
 #define SOBER 2
 #define CLASSIC 3
 
-void openMainWindow(struct Data *data);
+void openMainWindow(struct Data*);
 
-G_MODULE_EXPORT void quit(gpointer *osef, struct Data *data);
+void update_html(struct Data*);
 
-G_MODULE_EXPORT void change_material(GtkWidget *widget, struct Data *data);
-G_MODULE_EXPORT void change_flat(GtkWidget *widget, struct Data *data);
-G_MODULE_EXPORT void change_sober(GtkWidget *widget, struct Data *data);
-G_MODULE_EXPORT void change_classic(GtkWidget *widget, struct Data *data);
+G_MODULE_EXPORT void quit(gpointer*, struct Data*);
 
-G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data);
-G_MODULE_EXPORT void open_session(GtkButton *button, struct Data *data);
+G_MODULE_EXPORT void change_template(GtkWidget*, struct Data*);
+void update_template_path(struct Data*);
+G_MODULE_EXPORT int update_infos(GtkWidget*, gpointer);
 
-G_MODULE_EXPORT void open_file(GtkMenuItem *menuitem, struct Data *data);
+G_MODULE_EXPORT void new_session(GtkButton*, struct Data*);
+G_MODULE_EXPORT void open_session(GtkButton*, struct Data*);
+
+G_MODULE_EXPORT void open_file(GtkMenuItem*, struct Data*);
 
 
 #endif

@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1433014298 source:c:\users\kk\documents\mega\diffusio-gtk\src\main.c
+1433113665 source:c:\users\kk\documents\mega\diffusio-gtk\src\main.c
 	"main.h"
 
-1433013626 c:\users\kk\documents\mega\diffusio-gtk\src\main.h
+1433110342 c:\users\kk\documents\mega\diffusio-gtk\src\main.h
 	<gtk/gtk.h>
 	"session.h"
 	"addnews.h"
@@ -2192,7 +2192,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1433022332 source:c:\users\kk\documents\mega\diffusio-gtk\src\session.c
+1433113603 source:c:\users\kk\documents\mega\diffusio-gtk\src\session.c
 	"session.h"
 
 1379763816 c:\program files (x86)\codeblocks\mingw\include\glib-2.0\gobject\gbinding.h
@@ -3688,16 +3688,16 @@
 1379764112 c:\program files (x86)\codeblocks\mingw\include\gdk-pixbuf-2.0\gdk-pixbuf\gdk-pixbuf-enum-types.h
 	<glib-object.h>
 
-1432932819 c:\users\kk\documents\mega\diffusio-gtk\src\addnews.h
+1433075494 c:\users\kk\documents\mega\diffusio-gtk\src\addnews.h
 	<time.h>
 	"session.h"
 	"main.h"
 	"struct.h"
 
-1433032298 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
+1433113603 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
 	"jsmn.h"
 
-1432994278 source:c:\users\kk\documents\mega\diffusio-gtk\src\addnews.c
+1433076032 source:c:\users\kk\documents\mega\diffusio-gtk\src\addnews.c
 	"addnews.h"
 
 1341010378 c:\program files (x86)\codeblocks\mingw\include\sys\stat.h

@@ -36,7 +36,7 @@ void addANews(struct Data *data)
 	char ligne[1000];
 
 	while(fgets(ligne, 1000, in) != NULL)
-		if(STARTCOMMENTBOOL && ligne[4] == '#' && ligne[5] == '$' && ligne[6] == '#' && ligne[7] == 'N' && ligne[8] == 'E' && ligne[9] == 'W')
+		if(!(strncmp(ligne, "<!--#$#NEW--", 11)))
 			fprintf(out, "<!--#$#NEW-->\n\n<!--##%d-->\n\n<div class='card elevation-1 news' id='news_%d'><div class='news_datetime' id='news_datetime_%d'>%s</div><span class='news_title'   id='news_title_%d'><a class='pointer' onclick='openNews(%d);'>%s</a> </span><p class='news_summary'>%s</p><p class='news_content'  id='news_content_%d'>%s</p><div class='read_more'><a class='pointer' onclick='openCircleNews(%d)'>READ MORE</a></div></div>\n\n", id,id,id,data->news.datetime,id,id,data->news.title,data->news.summary,id,data->news.content,id);
 		else
 			fputs(ligne, out);
@@ -56,10 +56,10 @@ G_MODULE_EXPORT gboolean prepareNews (GdkEventKey *event, struct Data *data)
 	struct tm tm = *localtime(&t);
 	sprintf(data->news.datetime,"%d/%d/%d %d:%d:%d\n",  tm.tm_mon + 1,tm.tm_mday,  tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
 	strcpy(data->news.file_in,"../../src/index_temp.html");
-	strcpy(data->news.file_out,"index.html");
+	strcpy(data->news.file_out,"../../src/index.html");
 	addANews(data);
     gtk_dialog_run(GTK_DIALOG(data->new_content.dialog));
-    gtk_widget_hide(GTK_DIALOG(data->new_content.dialog));
+    gtk_widget_hide(GTK_WIDGET(data->new_content.dialog));
 	return TRUE;
 }
 

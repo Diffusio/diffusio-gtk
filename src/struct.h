@@ -28,7 +28,6 @@ struct SessionData
 {
     GtkWidget *SessionWindow;
 
-
     GtkEntry *name_entry;
 
     GtkWidget *new_button;
@@ -55,6 +54,48 @@ struct MainData
 
     GtkWidget *template_button[4];
 
+    /*GtkEntry *title[3];
+    GtkFileChooser *logo[3];        Ne fonctionne pas
+    GtkTextView *content[3];*/
+    GtkEntry *title1;
+    GtkEntry *title2;
+    GtkEntry *title3;
+    GtkFileChooser *logo1;
+    GtkFileChooser *logo2;
+    GtkFileChooser *logo3;
+    GtkTextView *content1;
+    GtkTextView *content2;
+    GtkTextView *content3;
+
+    FILE* index;
+    FILE *res;
+
+};
+
+struct Infos
+{
+    char site_title[20];
+    /*char *title[3];
+    char *logo[3];                     Idem
+    char *content[3];*/
+    char *title1;
+    char *title2;
+    char *title3;
+    char *logo1;
+    char *logo2;
+    char *logo3;
+    char *content1;
+    char *content2;
+    char *content3;
+    char *address;
+    char *mail;
+    char *fbid;
+    char *fblink;
+    char *twid;
+    char *twlink;
+    char *gpid;
+    char *gplink;
+
 };
 
 struct Data
@@ -65,14 +106,16 @@ struct Data
     struct MainData maindata;
     struct NewContent new_content;
     struct News news;
+    struct Infos infos;
     FILE *save;
 
     gchar template_selected[8];
-    gchar template_path[28];
+    gchar template_path[29];
     gchar *savefile_path;
 
     jsmn_parser p;
 
 };
+
 
 #endif

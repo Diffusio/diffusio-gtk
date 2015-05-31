@@ -2,7 +2,9 @@
 <html>
 	<head>
 		<title>
-$SITE_TITLE$
+<!--$SITE_TITLE$-->
+Site Title
+<!--$/SITE_TITLE$-->
 		</title>
 	    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
 		<link rel='stylesheet' href='style/style.css'>
@@ -15,7 +17,9 @@ $SITE_TITLE$
 		<header id='header' class="">
 	 		<div id="site_title">
 	 			<span>
-$SITE_TITLE$
+<!--$SITE_TITLE$-->
+Site Title
+<!--$/SITE_TITLE$-->
 				</span>
 			</div>
 	 		<div id="nav_div" class="">
@@ -49,15 +53,17 @@ MORE
 		<section id="content_1" class='content'>
 		 		<div class="wide_div white" id="w_d_1">
 			 		<div class='v_align'>
-				 		<img src="
-$PRESENTATION_PART1_LOGO$
-				 		" class="logo_left logo">
+				 		<img src="images/logo.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
-$PRESENTATION_PART1_TITLE$
+<!--$PRESENTATION_PART1_TITLE$-->
+Presentation Title 1
+<!--$/PRESENTATION_PART1_TITLE$-->
                             </p>
 				 			<p class="under_slog under_slog_right">
-$PRESENTATION_PART1_CONTENT$
+<!--$PRESENTATION_PART1_CONTENT$-->
+Presentation Content 1
+<!--$/PRESENTATION_PART1_CONTENT$-->
                             </p>
 				 		</div>
 				 		<div id="FAB_pres"  class="FAB elevation-2" onclick="movePresentation(1)">
@@ -67,27 +73,31 @@ $PRESENTATION_PART1_CONTENT$
 		 		</div>
 		 		<div class="wide_div grey" id="w_d_2">
 			 		<div class='v_align'>
-				 		<img src="
-$PRESENTATION_PART2_LOGO$
-				 		" class="logo_right logo">
+				 		<img src="images/logo2.svg" class="logo_right logo">
 				 		<p class="slog slog_left">
-$PRESENTATION_PART2_CONTENT$
+<!--$PRESENTATION_PART2_TITLE$-->
+Presentation Title 2
+<!--$/PRESENTATION_PART2_TITLE$-->
                         </p>
 				 		<p class="under_slog under_slog_left">
-$PRESENTATION_PART2_CONTENT$
+<!--$PRESENTATION_PART2_CONTENT$-->
+Presentation Content 2
+<!--$/PRESENTATION_PART2_CONTENT$-->
 			 		</div>
 		 		</div>
 		 		<div class="wide_div white" id="w_d_3">
 			 		<div class='v_align'>
-				 		<img src="
-$PRESENTATION_PART3_LOGO$
-				 		" class="logo_left logo">
+				 		<img src="images/logo3.svg" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
-$PRESENTATION_PART3_TITLE$
+<!--$PRESENTATION_PART3_TITLE$-->
+Presentation Title 3
+<!--$/PRESENTATION_PART3_TITLE$-->
                             </p>
 				 			<p class="under_slog under_slog_right">
-$PRESENTATION_PART3_CONTENT$
+<!--$PRESENTATION_PART3_CONTENT$-->
+Presentation Content 3
+<!--$/PRESENTATION_PART3_CONTENT$-->
                             </p>
 				 		</div>
 			 		</div>
@@ -105,7 +115,9 @@ $PRESENTATION_PART3_CONTENT$
 Localisation
 					</span>
                     <p id="map_legend_address">
-$ADDRESS$
+<!--$ADDRESS$-->
+Address
+<!--$/ADDRESS$-->
 					</p>
                     <img  id="leg_more" src="images/more_w.png" onclick="openMapDropdown()">
                     <a id="open_link" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
@@ -131,46 +143,50 @@ $ADDRESS$
 Contact us
 		 		</div>
 		 		<ul id="social_list">
-			 		<a href="
-$FACEBOOK_LINK$
-			 		">
+<!--$FACEBOOK-->
+
+                    <a href="FB_LINK_TO_PARSE">
 			 		<li>
 			 			<div class="icon_rounder" id="ic_fb"><img id="fb_img" src="images/facebook.png"></div>
 			 			<span id="fb_id">
-$FACEBOOK_ID$
+FB_ID_TO_PARSE
 						</span>
 			 		</li>
 			 		</a>
-			 		<a href="
-$TWITTER_LINK$
-			 		">
+<!--$/FACEBOOK$-->
+                    
+<!--$TWITTER-->
+			 		<a href="TW_LINK_TO_PARSE">
 			 		<li>
                         <div class="icon_rounder" id="ic_tw"><img id="tw_img" src="images/twitter.png"></div>
 			 			<span id="tw_id">
-$TWITTER_ID$
+TW_ID_TO_PARSE
 						</span>
 			 		</li>
 			 		</a>
-			 		<a href="
-$GOOGLEPLUS_LINK$
-			 		">
+<!--$/TWITTER-->                    
+
+<!--$GOOGLEPLUS-->
+			 		<a href="GP_LINK_TO_PARSE">
 			 		<li>
                         <div class="icon_rounder" id="ic_gp"><img id="gp_img" src="images/googleplus.png"></div>
 			 			<span id="gp_id">
-$GOOGLEPLUS_ID$
+GP_ID_TO_PARSE
 			 			</span>
 			 		</li>
 			 		</a>
-			 		<a href="mailto:
-$MAIL$
-			 		">
+<!--$/GOOGLEPLUS-->
+                    
+<!--$MAIL-->
+			 		<a href="mailto:MAIL_TO_PARSE">
 			 		<li>
                         <div class="icon_rounder" id="ic_m"><img id="m_img" src="images/mail.png"></div>
 			 			<span id="m_id">
-$MAIL$
+MAIL_TO_PARSE
 			 			</span>
 			 		</li>
 			 		</a>
+<!--$/MAIL-->
 		 		</ul>
 			</div>
 		</section>
@@ -180,21 +196,27 @@ $MAIL$
             <li id="pres_progress_0">
                 <div id="indic_1" onclick="movePresentation(0)">
                 <span class="indic_title">
-$PRESENTATION_PART1_TITLE$
+<!--$PRESENTATION_PART1_TITLE$-->
+Presentation Title 1
+<!--$/PRESENTATION_PART1_TITLE$-->
                 </span>
                 </div>
             </li>
             <li id="pres_progress_1">
                 <div  id="indic_2"  onclick="movePresentation(1)">
                     <span class="indic_title">
-$PRESENTATION_PART2_TITLE$
+<!--$PRESENTATION_PART2_TITLE$-->
+Presentation Title 2
+<!--$/PRESENTATION_PART2_TITLE$-->
                     </span>
                 </div>
             </li>
             <li  id="pres_progress_2">
                 <div  id="indic_3"  onclick="movePresentation(2)">
                     <span class="indic_title">
-$PRESENTATION_PART3_TITLE$
+<!--$PRESENTATION_PART3_TITLE$-->
+Presentation Title 3
+<!--$/PRESENTATION_PART3_TITLE$-->
                     </span>
                 </div>
             </li>

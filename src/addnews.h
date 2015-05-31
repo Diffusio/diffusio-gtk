@@ -4,7 +4,6 @@
 #include "session.h"
 #include "main.h"
 #include "struct.h"
-#define STARTCOMMENTBOOL ligne[0] == '<' && ligne[1] == '!' && ligne[2] == '-' && ligne[3] == '-'
 
 
 

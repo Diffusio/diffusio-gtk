@@ -82,6 +82,37 @@ void load_widgets(struct Data *data)
     data->maindata.template_button[SOBER] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button3"));
     data->maindata.template_button[CLASSIC] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button4"));
 
+    data->maindata.title1 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title1"));
+    data->maindata.title2 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title1"));
+    data->maindata.title3 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title1"));
+    data->maindata.logo1 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo1"));
+    data->maindata.logo2 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo1"));
+    data->maindata.logo3 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo1"));
+    data->maindata.content1 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content1"));
+    data->maindata.content2 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content1"));
+    data->maindata.content3 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content1"));
+
+    data->infos.logo1 = NULL;
+    data->infos.logo2 = NULL;
+    data->infos.logo3 = NULL;
+    data->infos.content1= NULL;
+    data->infos.content2 = NULL;
+    data->infos.content3 = NULL;
+
+    data->infos.address = "";
+    data->infos.mail = "";
+    data->infos.fbid = "";
+    data->infos.fblink = "";
+    data->infos.twid = "";
+    data->infos.twlink = "";
+    data->infos.gpid = "";
+    data->infos.gplink = "";
+
+    data->maindata.index = fopen("../../res/templates/material/index_var.html", "r");
+
+    data->maindata.res = fopen("../../res/templates/material/index.html", "ab+");
+
+    strcpy(data->infos.site_title, "auietcttttauie");
 
 }
 
@@ -120,6 +151,8 @@ G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *data)
 
     else
         gtk_widget_set_sensitive(data->sessiondata.new_button, 0);
+
+    g_free(folder);
 }
 
 
