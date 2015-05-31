@@ -52,6 +52,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/addnews.h" />
+		<Unit filename="src/jsmn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/jsmn.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>

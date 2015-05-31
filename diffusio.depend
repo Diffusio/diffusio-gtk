@@ -2179,7 +2179,7 @@
 1284281776 c:\program files (x86)\codeblocks\mingw\include\gtk-2.0\gtk\gtktipsquery.h
 	<gtk/gtk.h>
 
-1433013626 c:\users\kk\documents\mega\diffusio-gtk\src\session.h
+1433032298 c:\users\kk\documents\mega\diffusio-gtk\src\session.h
 	<gtk/gtk.h>
 	"main.h"
 	<stdlib.h>
@@ -3694,7 +3694,8 @@
 	"main.h"
 	"struct.h"
 
-1433022400 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
+1433032298 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
+	"jsmn.h"
 
 1432994278 source:c:\users\kk\documents\mega\diffusio-gtk\src\addnews.c
 	"addnews.h"
@@ -3710,4 +3711,11 @@
 
 1341010372 c:\program files (x86)\codeblocks\mingw\include\errno.h
 	<_mingw.h>
+
+1433026728 c:\users\kk\documents\mega\diffusio-gtk\src\jsmn.h
+	<stddef.h>
+
+1433026728 source:c:\users\kk\documents\mega\diffusio-gtk\src\jsmn.c
+	<stdlib.h>
+	"jsmn.h"
 

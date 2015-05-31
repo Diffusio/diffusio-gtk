@@ -30,6 +30,7 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
     }
     gtk_widget_hide(data->sessiondata.dialog_fexists);
     data->save = fopen(data->savefile_path, "ab+");
+    fprintf(data->save, "{\n\t\"site_title\": \"\",\n\t\"presentation_part1_logo\": \"\",\n\t\"presentation_part1_title\": \"\",\n\t\"presentation_part1_content\": \"\",\n\t\"presentation_part2_logo\": \"\",\n\t\"presentation_part2_title\": \"\",\n\t\"presentation_part2_content\": \"\",\n\t\"presentation_part3_logo\": \"\",\n\t\"presentation_part3_title\": \"\",\n\t\"presentation_part3_content\": \"\",\n\t\"address\": \"\",\n\t\"facebook_link\": \"\",\n\t\"facebook_id\": \"\",\n\t\"twitter_link\": \"\",\n\t\"twitter_id\": \"\",\n\t\"googleplus_link\": \"\",\n\t\"googleplus_id\": \"\",\n\t\"mail\": \"\"\n}");
     openMainWindow(data);
 }
 

@@ -5,6 +5,8 @@ int main(int argc, char *argv [])
 {
     struct Data data;
 
+    jsmn_init(&(data.p));
+
     data.news.id = 0;
     GError *error = NULL;
     gchar *filename = NULL;

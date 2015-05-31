@@ -1,5 +1,6 @@
 #ifndef STRUCT
 #define STRUCT
+#include "jsmn.h"
 
 struct NewContent
 {
@@ -69,6 +70,8 @@ struct Data
     gchar template_selected[8];
     gchar template_path[28];
     gchar *savefile_path;
+
+    jsmn_parser p;
 
 };
 
