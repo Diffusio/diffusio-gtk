@@ -94,7 +94,6 @@ G_MODULE_EXPORT int update_infos(GtkWidget *widget, gpointer user_data)
 void update_html(struct Data *data)
 {
     int i;
-    remove("../../res/templates/material/index.html");
     char ligne[500];
     while(fgets(ligne, 500, data->maindata.index) != NULL)
         if(!(strncmp(ligne, "<!--$SITE_TITLE$-->", 18)))

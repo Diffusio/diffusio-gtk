@@ -1672,4 +1672,18 @@ Do you want to overwrite or open it?</property>
       <pattern>*.diffusio</pattern>
     </patterns>
   </object>
+  <object class="GtkWindow" id="splash_screen">
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="icon">..\res\diffusio-logo_128.png</property>
+    <property name="decorated">False</property>
+    <child>
+      <object class="GtkImage" id="splash">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="pixbuf">..\res\splash_screen.jpg</property>
+      </object>
+    </child>
+  </object>
 </interface>

@@ -5,9 +5,6 @@ int main(int argc, char *argv [])
 {
     struct Data data;
 
-    jsmn_init(&(data.p));
-
-    data.news.id = 0;
     GError *error = NULL;
     gchar *filename = NULL;
 
@@ -25,17 +22,30 @@ int main(int argc, char *argv [])
       getchar();
       return code;
     }
+
+    data.sessiondata.splash_window = GTK_WIDGET(gtk_builder_get_object(data.builder, "splash_screen"));
+
+    gtk_builder_connect_signals(data.builder, &data);
+    gtk_widget_show_all(data.sessiondata.splash_window);
+    jsmn_init(&(data.p));
+
+    data.news.id = 0;
     g_free (filename);
 
     load_widgets(&data);
 
-
-    gtk_builder_connect_signals(data.builder, &data);
-    gtk_widget_show_all(data.sessiondata.SessionWindow);
-
+    g_timeout_add(2500, close_splash, &data);
     gtk_main();
 
+
     return 0;
+}
+
+gboolean close_splash(struct Data *data)
+{
+    gtk_widget_hide(data->sessiondata.splash_window);
+    gtk_widget_show_all(data->sessiondata.SessionWindow);
+    return(FALSE);
 }
 
 
@@ -110,9 +120,10 @@ void load_widgets(struct Data *data)
 
     data->maindata.index = fopen("../../res/templates/material/index_var.html", "r");
 
-    data->maindata.res = fopen("../../res/templates/material/index.html", "ab+");
+    data->maindata.res = fopen("../../res/templates/material/index.html", "w+");
 
     strcpy(data->infos.site_title, "auietcttttauie");
+
 
 }
 

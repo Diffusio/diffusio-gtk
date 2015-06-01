@@ -43,6 +43,8 @@ struct SessionData
     GtkWidget *about;
     GtkWidget *dialog_fexists;
 
+    GtkWidget *splash_window;
+
 };
 
 struct MainData
@@ -108,6 +110,7 @@ struct Data
     struct News news;
     struct Infos infos;
     FILE *save;
+
 
     gchar template_selected[8];
     gchar template_path[29];
