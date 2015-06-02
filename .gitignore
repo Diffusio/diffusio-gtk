@@ -31,3 +31,4 @@ diffusio
 
 # Glade save files
 *.glade~
+res/templates/material/index.html
