@@ -50,6 +50,7 @@ struct SessionData
 struct MainData
 {
     GtkWidget *MainWindow;
+    GtkWidget *errdial;
     GtkWidget *quit;
     GtkWidget *addnew_button;
     GtkLabel *current_template;
@@ -59,6 +60,7 @@ struct MainData
     /*GtkEntry *title[3];
     GtkFileChooser *logo[3];        Ne fonctionne pas
     GtkTextView *content[3];*/
+    GtkEntry *site_title;
     GtkEntry *title1;
     GtkEntry *title2;
     GtkEntry *title3;
@@ -69,14 +71,28 @@ struct MainData
     GtkTextView *content2;
     GtkTextView *content3;
 
+    GtkEntry *address;
+    GtkEntry *mail;
+    GtkEntry *fbname;
+    GtkEntry *fblink;
+    GtkEntry *twname;
+    GtkEntry *twlink;
+    GtkEntry *gpname;
+    GtkEntry *gplink;
+
+    char index_path[50];
+    char res_path[50];
+
     FILE* index;
     FILE *res;
+
+    GtkButton *render;
 
 };
 
 struct Infos
 {
-    char site_title[20];
+    gchar *site_title;
     /*char *title[3];
     char *logo[3];                     Idem
     char *content[3];*/
@@ -91,11 +107,11 @@ struct Infos
     char *content3;
     char *address;
     char *mail;
-    char *fbid;
+    char *fbname;
     char *fblink;
-    char *twid;
+    char *twname;
     char *twlink;
-    char *gpid;
+    char *gpname;
     char *gplink;
 
 };
@@ -103,7 +119,7 @@ struct Infos
 struct Data
 {
     GtkBuilder *builder;
-    gpointer user_data;
+    GtkTextBuffer *buffer;
     struct SessionData sessiondata;
     struct MainData maindata;
     struct NewContent new_content;
@@ -112,7 +128,7 @@ struct Data
     FILE *save;
 
 
-    gchar template_selected[8];
+    gchar template_selected[10];
     gchar template_path[29];
     gchar *savefile_path;
 

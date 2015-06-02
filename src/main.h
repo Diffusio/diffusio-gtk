@@ -17,13 +17,14 @@
 
 void openMainWindow(struct Data*);
 
-void update_html(struct Data*);
+void update_html(struct Data *);
+void open_error_dialog(struct Data*);
 
 G_MODULE_EXPORT void quit(gpointer*, struct Data*);
 
 G_MODULE_EXPORT void change_template(GtkWidget*, struct Data*);
 void update_template_path(struct Data*);
-G_MODULE_EXPORT int update_infos(GtkWidget*, gpointer);
+G_MODULE_EXPORT int update_infos(GtkWidget*, struct Data *);
 
 G_MODULE_EXPORT void new_session(GtkButton*, struct Data*);
 G_MODULE_EXPORT void open_session(GtkButton*, struct Data*);

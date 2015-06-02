@@ -18,7 +18,7 @@
 void load_widgets(struct Data*);
 gboolean close_splash(struct Data*);
 
-G_MODULE_EXPORT void openAboutWindow (GtkWidget*, gpointer);
+G_MODULE_EXPORT void openAboutWindow (GtkWidget*, struct Data*);
 
 G_MODULE_EXPORT void cb_changed(GtkButton*, struct Data *);
 

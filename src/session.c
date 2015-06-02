@@ -34,7 +34,7 @@ int main(int argc, char *argv [])
 
     load_widgets(&data);
 
-    g_timeout_add(2500, close_splash, &data);
+    g_timeout_add(2000, close_splash, &data);
     gtk_main();
 
 
@@ -93,14 +93,23 @@ void load_widgets(struct Data *data)
     data->maindata.template_button[CLASSIC] = GTK_WIDGET(gtk_builder_get_object(data->builder, "template_button4"));
 
     data->maindata.title1 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title1"));
-    data->maindata.title2 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title1"));
-    data->maindata.title3 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title1"));
+    data->maindata.title2 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title2"));
+    data->maindata.title3 = GTK_ENTRY(gtk_builder_get_object(data->builder, "title3"));
     data->maindata.logo1 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo1"));
-    data->maindata.logo2 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo1"));
-    data->maindata.logo3 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo1"));
+    data->maindata.logo2 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo2"));
+    data->maindata.logo3 = GTK_FILE_CHOOSER(gtk_builder_get_object(data->builder, "logo3"));
     data->maindata.content1 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content1"));
-    data->maindata.content2 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content1"));
-    data->maindata.content3 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content1"));
+    data->maindata.content2 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content2"));
+    data->maindata.content3 = GTK_TEXT_VIEW(gtk_builder_get_object(data->builder, "content3"));
+
+    data->maindata.address = GTK_ENTRY(gtk_builder_get_object(data->builder, "address"));
+    data->maindata.mail = GTK_ENTRY(gtk_builder_get_object(data->builder, "mail"));
+    data->maindata.fbname = GTK_ENTRY(gtk_builder_get_object(data->builder, "fbname"));
+    data->maindata.fblink = GTK_ENTRY(gtk_builder_get_object(data->builder, "fblink"));
+    data->maindata.twname = GTK_ENTRY(gtk_builder_get_object(data->builder, "twname"));
+    data->maindata.twlink = GTK_ENTRY(gtk_builder_get_object(data->builder, "twlink"));
+    data->maindata.gpname = GTK_ENTRY(gtk_builder_get_object(data->builder, "gpname"));
+    data->maindata.gplink = GTK_ENTRY(gtk_builder_get_object(data->builder, "gplink"));
 
     data->infos.logo1 = NULL;
     data->infos.logo2 = NULL;
@@ -109,32 +118,30 @@ void load_widgets(struct Data *data)
     data->infos.content2 = NULL;
     data->infos.content3 = NULL;
 
+    data->maindata.site_title = GTK_ENTRY(gtk_builder_get_object(data->builder, "site_title"));
+
     data->infos.address = "";
     data->infos.mail = "";
-    data->infos.fbid = "";
+    data->infos.fbname = "";
     data->infos.fblink = "";
-    data->infos.twid = "";
+    data->infos.twname = "";
     data->infos.twlink = "";
-    data->infos.gpid = "";
+    data->infos.gpname  = "";
     data->infos.gplink = "";
 
-    data->maindata.index = fopen("../../res/templates/material/index_var.html", "r");
+    strcpy(data->maindata.index_path,"../../res/templates/");
+    strcpy(data->maindata.res_path, "../../res/templates/");
 
-    data->maindata.res = fopen("../../res/templates/material/index.html", "w+");
+    data->template_selected[0] = NULL;
 
-    strcpy(data->infos.site_title, "auietcttttauie");
+    data->maindata.errdial = GTK_WIDGET(gtk_builder_get_object(data->builder, "no_template_dialog"));
 
-
+    data->maindata.render = GTK_BUTTON(gtk_builder_get_object(data->builder, "render"));
 }
 
-G_MODULE_EXPORT void openAboutWindow(GtkWidget *menuitem, gpointer user_data)
+G_MODULE_EXPORT void openAboutWindow(GtkWidget *menuitem, struct Data *data)
 {
-
-    struct Data *data = (struct Data*) user_data;
-
     gtk_dialog_run (GTK_DIALOG (data->sessiondata.about));
-
-
     gtk_widget_hide (data->sessiondata.about);
 }
 
