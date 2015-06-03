@@ -18,7 +18,7 @@
 void openMainWindow(struct Data*);
 
 void update_html(struct Data *);
-void open_error_dialog(struct Data*);
+void open_error_dialog(struct Data*, const gchar *error);
 
 G_MODULE_EXPORT void quit(gpointer*, struct Data*);
 

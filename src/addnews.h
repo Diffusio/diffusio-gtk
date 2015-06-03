@@ -16,7 +16,7 @@ void addANews(struct Data *data);
 
 int getLastNewsId(char []);
 
-void copyFile(char [], char []);
+int copyFile(char [], char []);
 
 
 

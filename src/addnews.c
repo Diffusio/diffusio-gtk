@@ -1,15 +1,19 @@
 #include "addnews.h"
 
-void copyFile(char file1[99], char file2[99])
+int copyFile(char file1[99], char file2[99])
 {
 	FILE *f1, *f2;
 	f1 = fopen(file1,"r");
 	f2 = fopen(file2,"w+");
+	if(f1 == NULL)
+        return 1;
+
 	char line[999];
 	while(fgets(line, 999, f1) != NULL)
 		fputs(line,f2);
 	fclose(f1);
 	fclose(f2);
+	return 0;
 }
 
 int getLastNewsId(char file[99])
@@ -47,16 +51,31 @@ void addANews(struct Data *data)
 
 G_MODULE_EXPORT gboolean prepareNews (GdkEventKey *event, struct Data *data)
 {
-    copyFile("../../src/index.html","../../src/index_temp.html");
-	data->news.id = getLastNewsId("../../src/index_temp.html");
+    if(data->template_selected[0] == NULL)
+    {
+        open_error_dialog(data, "Select a template first!");
+        return FALSE;
+    }
+
+    char temp[50];
+    strcpy(temp, data->template_path);
+    strcat(temp, "/index_temp.html");
+
+    if(copyFile(data->maindata.res_path, temp))
+    {
+        open_error_dialog(data, "Render the website at least once");
+        return FALSE;
+    }
+
+	data->news.id = getLastNewsId(temp);
     strcpy(data->news.title,gtk_entry_get_text(GTK_ENTRY(data->new_content.title)));
     strcpy(data->news.summary,gtk_entry_get_text(GTK_ENTRY(data->new_content.summary)));
     strcpy(data->news.content,gtk_entry_get_text(GTK_ENTRY(data->new_content.content)));
     time_t t = time(NULL);
 	struct tm tm = *localtime(&t);
 	sprintf(data->news.datetime,"%d/%d/%d %d:%d:%d\n",  tm.tm_mon + 1,tm.tm_mday,  tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
-	strcpy(data->news.file_in,"../../src/index_temp.html");
-	strcpy(data->news.file_out,"../../src/index.html");
+	strcpy(data->news.file_in, temp);
+	strcpy(data->news.file_out, data->maindata.res_path);
 	addANews(data);
     gtk_dialog_run(GTK_DIALOG(data->new_content.dialog));
     gtk_widget_hide(GTK_WIDGET(data->new_content.dialog));

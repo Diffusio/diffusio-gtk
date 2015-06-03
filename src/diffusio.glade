@@ -325,22 +325,23 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkFrame" id="frame2">
+                              <object class="GtkScrolledWindow" id="scrolledwindow1">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_right">5</property>
-                                <property name="margin_bottom">5</property>
-                                <property name="label_xalign">0</property>
+                                <property name="can_focus">True</property>
+                                <property name="margin_right">6</property>
+                                <property name="margin_bottom">6</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
+                                <property name="hscrollbar_policy">never</property>
+                                <property name="vscrollbar_policy">always</property>
                                 <property name="shadow_type">in</property>
                                 <child>
                                   <object class="GtkTextView" id="content1">
                                     <property name="height_request">109</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
+                                    <property name="wrap_mode">word</property>
                                   </object>
-                                </child>
-                                <child type="label_item">
-                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -439,22 +440,21 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkFrame" id="frame1">
+                              <object class="GtkScrolledWindow" id="scrolledwindow2">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_right">5</property>
-                                <property name="margin_bottom">5</property>
-                                <property name="label_xalign">0</property>
+                                <property name="can_focus">True</property>
+                                <property name="margin_right">6</property>
+                                <property name="margin_bottom">6</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
                                 <property name="shadow_type">in</property>
                                 <child>
                                   <object class="GtkTextView" id="content2">
                                     <property name="height_request">109</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
+                                    <property name="wrap_mode">word</property>
                                   </object>
-                                </child>
-                                <child type="label_item">
-                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -557,22 +557,21 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkFrame" id="frame3">
+                              <object class="GtkScrolledWindow" id="scrolledwindow3">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="margin_right">5</property>
-                                <property name="margin_bottom">5</property>
-                                <property name="label_xalign">0</property>
+                                <property name="can_focus">True</property>
+                                <property name="margin_right">6</property>
+                                <property name="margin_bottom">6</property>
+                                <property name="hexpand">True</property>
+                                <property name="vexpand">True</property>
                                 <property name="shadow_type">in</property>
                                 <child>
                                   <object class="GtkTextView" id="content3">
                                     <property name="height_request">109</property>
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
+                                    <property name="wrap_mode">word</property>
                                   </object>
-                                </child>
-                                <child type="label_item">
-                                  <placeholder/>
                                 </child>
                               </object>
                               <packing>
@@ -1496,6 +1495,7 @@
   <object class="GtkFileChooserDialog" id="FileChooserDialog">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Choose a folder</property>
+    <property name="icon">..\res\diffusio-logo_128.png</property>
     <property name="icon_name">open</property>
     <property name="type_hint">dialog</property>
     <property name="transient_for">SessionWindow</property>
@@ -1557,6 +1557,7 @@
     <property name="title" translatable="yes">Article added</property>
     <property name="window_position">center-on-parent</property>
     <property name="destroy_with_parent">True</property>
+    <property name="icon">..\res\diffusio-logo_128.png</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox3">
@@ -1613,6 +1614,7 @@
   <object class="GtkDialog" id="dialog_fexists">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
+    <property name="icon">..\res\diffusio-logo_128.png</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox2">
@@ -1700,40 +1702,6 @@ Do you want to overwrite or open it?</property>
     <property name="can_focus">False</property>
     <property name="pixbuf">..\res\thumbnails\classic.jpg</property>
   </object>
-  <object class="GtkMessageDialog" id="no_template_dialog">
-    <property name="can_focus">False</property>
-    <property name="border_width">5</property>
-    <property name="resizable">False</property>
-    <property name="type_hint">dialog</property>
-    <property name="skip_taskbar_hint">True</property>
-    <property name="buttons">ok</property>
-    <property name="text" translatable="yes">Select a template first!</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="messagedialog-vbox">
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="messagedialog-action_area">
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-  </object>
   <object class="GtkFileFilter" id="open_file_filter">
     <mime-types>
       <mime-type>text/plain</mime-type>
@@ -1741,5 +1709,19 @@ Do you want to overwrite or open it?</property>
     <patterns>
       <pattern>*.diffusio</pattern>
     </patterns>
+  </object>
+  <object class="GtkWindow" id="splash_screen">
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="icon">..\res\diffusio-logo_128.png</property>
+    <property name="decorated">False</property>
+    <child>
+      <object class="GtkImage" id="image5">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="pixbuf">..\res\splash_screen.jpg</property>
+      </object>
+    </child>
   </object>
 </interface>

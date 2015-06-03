@@ -25,7 +25,6 @@ int main(int argc, char *argv [])
 
     data.sessiondata.splash_window = GTK_WIDGET(gtk_builder_get_object(data.builder, "splash_screen"));
 
-    gtk_builder_connect_signals(data.builder, &data);
     gtk_widget_show_all(data.sessiondata.splash_window);
     jsmn_init(&(data.p));
 
@@ -33,6 +32,7 @@ int main(int argc, char *argv [])
     g_free (filename);
 
     load_widgets(&data);
+    gtk_builder_connect_signals(data.builder, &data);
 
     g_timeout_add(2000, close_splash, &data);
     gtk_main();
@@ -132,9 +132,7 @@ void load_widgets(struct Data *data)
     strcpy(data->maindata.index_path,"../../res/templates/");
     strcpy(data->maindata.res_path, "../../res/templates/");
 
-    data->template_selected[0] = NULL;
-
-    data->maindata.errdial = GTK_WIDGET(gtk_builder_get_object(data->builder, "no_template_dialog"));
+    data->template_selected[0] = 0;
 
     data->maindata.render = GTK_BUTTON(gtk_builder_get_object(data->builder, "render"));
 }

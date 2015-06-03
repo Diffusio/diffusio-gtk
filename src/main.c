@@ -35,17 +35,27 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
     openMainWindow(data);
 }
 
-void open_error_dialog(struct Data *data)
+void open_error_dialog(struct Data *data, const gchar *message)
 {
-    gtk_dialog_run(GTK_DIALOG(data->maindata.errdial));
-    gtk_widget_hide(data->maindata.errdial);
+    GtkWidget *dialog;
+    GtkDialogFlags flags;
+
+    flags = GTK_DIALOG_DESTROY_WITH_PARENT;
+    dialog = gtk_message_dialog_new(GTK_WINDOW(data->maindata.MainWindow),
+                                    flags,
+                                    GTK_MESSAGE_ERROR,
+                                    GTK_BUTTONS_OK,
+                                    message);
+    gtk_window_set_resizable(GTK_WINDOW(dialog), FALSE);
+    gtk_dialog_run (GTK_DIALOG(dialog));
+    gtk_widget_destroy (dialog);
 }
 
 G_MODULE_EXPORT int update_infos(GtkWidget *widget, struct Data *data)
 {
 
-    if(data->template_selected[0] == NULL){
-        open_error_dialog(data);
+    if(data->template_selected[0] == 0){
+        open_error_dialog(data, "Select a template first!");
         return TRUE;
     }
     data->infos.site_title = gtk_entry_get_text(GTK_ENTRY(data->maindata.site_title));
@@ -101,82 +111,75 @@ void update_html(struct Data *data)
 {
 
 
-    data->maindata.index = fopen("../../res/templates/material/index_var.html", "r");
-    data->maindata.res = fopen("../../res/templates/material/index.html", "w+");
+    data->maindata.index = fopen(data->maindata.index_path, "r");
+    data->maindata.res = fopen(data->maindata.res_path, "w+");
 
     int i;
     char ligne[500];
     while(fgets(ligne, 500, data->maindata.index) != NULL)
         if(strncmp(ligne, "<!--$SITE_TITLE$-->", 18) == 0)
         {
-            fprintf(data->maindata.res, "<!--$SITE_TITLE$-->\n%s\n<!--$/SITE_TITLE$-->\n", data->infos.site_title);
-            fgets(ligne, 500, data->maindata.index);
+            fprintf(data->maindata.res, "<!--$SITE_TITLE$-->\n%s\n", data->infos.site_title);
             fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$PRESENTATION_PART1_TITLE$-->", 28)))
         {
-            fprintf(data->maindata.res, "<!--$PRESENTATION_PART1_TITLE$-->\n%s\n<!--$/PRESENTATION_PART1_TITLE$-->\n", data->infos.title1);
-            fgets(ligne, 500, data->maindata.index);
+            fprintf(data->maindata.res, "<!--$PRESENTATION_PART1_TITLE$-->\n%s\n", data->infos.title1);
             fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$PRESENTATION_PART2_TITLE$-->", 28)))
         {
-            fprintf(data->maindata.res, "<!--$PRESENTATION_PART2_TITLE$-->\n%s\n<!--$/PRESENTATION_PART2_TITLE$-->\n", data->infos.title2);
-            fgets(ligne, 500, data->maindata.index);
+            fprintf(data->maindata.res, "<!--$PRESENTATION_PART2_TITLE$-->\n%s\n", data->infos.title2);
             fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$PRESENTATION_PART3_TITLE$-->", 28)))
         {
-            fprintf(data->maindata.res, "<!--$PRESENTATION_PART3_TITLE$-->\n%s\n<!--$/PRESENTATION_PART3_TITLE$-->\n", data->infos.title3);
-            fgets(ligne, 500, data->maindata.index);
+            fprintf(data->maindata.res, "<!--$PRESENTATION_PART3_TITLE$-->\n%s\n", data->infos.title3);
             fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$PRESENTATION_PART1_CONTENT$-->", 28)))
         {
-            fprintf(data->maindata.res, "<!--$PRESENTATION_PART1_CONTENT$-->\n%s\n<!--$/PRESENTATION_PART1_CONTENT$-->\n", data->infos.content1);
-            fgets(ligne, 500, data->maindata.index);
+            fprintf(data->maindata.res, "<!--$PRESENTATION_PART1_CONTENT$-->\n%s\n", data->infos.content1);
             fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$PRESENTATION_PART2_CONTENT$-->", 28)))
         {
-            fprintf(data->maindata.res, "<!--$PRESENTATION_PART2_CONTENT$-->\n%s\n<!--$/PRESENTATION_PART2_CONTENT$-->\n", data->infos.content2);
-            fgets(ligne, 500, data->maindata.index);
+            fprintf(data->maindata.res, "<!--$PRESENTATION_PART2_CONTENT$-->\n%s\n\n", data->infos.content2);
             fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$PRESENTATION_PART3_CONTENT$-->", 28)))
         {
-            fprintf(data->maindata.res, "<!--$PRESENTATION_PART3_CONTENT$-->\n%s\n<!--$/PRESENTATION_PART3_CONTENT$-->\n", data->infos.content3);
+            fprintf(data->maindata.res, "<!--$PRESENTATION_PART3_CONTENT$-->\n%s\n\n", data->infos.content3);
+            fgets(ligne, 500, data->maindata.index);
+        }
+        else if(!(strncmp(ligne, "                    <p id=\"map_legend_address\">", 40)))
+        {
+            fprintf(data->maindata.res, "                    <p id=\"map_legend_address\">\n%s\n", data->infos.address);
             fgets(ligne, 500, data->maindata.index);
             fgets(ligne, 500, data->maindata.index);
         }
-        else if(!(strncmp(ligne, "<!--$ADDRESS$-->", 14)))
+        else if(!(strncmp(ligne, "<!--$FACEBOOK-->", 14)))
         {
-            fprintf(data->maindata.res, "<!--$ADDRESS$-->\n%s\n<!--$/ADDRESS$-->\n", data->infos.address);
-            fgets(ligne, 500, data->maindata.index);
-            fgets(ligne, 500, data->maindata.index);
-        }
-        else if(!(strncmp(ligne, "<!--$FACEBOOK$-->", 14)))
-        {
-            fprintf(data->maindata.res, "<!--$FACEBOOK-->\n\n\t\t\t\t\t<a href=\"%s\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\t<div class=\"icon_rounder\" id=\"ic_fb\"><img id=\"fb_img\" src=\"images/facebook.png\"></div>\n\t\t\t\t\t\t<span id=\"fb_id\">%s</span>\n\t\t\t\t\t</li>\n\t\t\t\t\t</a>\n<!--$/FACEBOOK$-->", data->infos.fblink, data->infos.fbname);
-            for(i = 0; i<10; i++)
+            fprintf(data->maindata.res, "<!--$FACEBOOK-->\n\n\t\t\t\t\t<a href=\"%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_fb\"><img id=\"fb_img\" src=\"images/facebook.png\"></div>\n<span id=\"fb_id\">%s</span>\n</li>\n</a>\n", data->infos.fblink, data->infos.fbname);
+            for(i = 0; i<9; i++)
                 fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$TWITTER-->", 14)))
         {
-            fprintf(data->maindata.res, "<!--$TWITTER-->\n<a href=\"%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_tw\"><img id=\"tw_img\" src=\"images/twitter.png\"></div>\n<span id=\"tw_id\">\n%s\n</span>\n</li>\n</a>\n<!--$/TWITTER-->\n\n", data->infos.twlink, data->infos.twname);
-            for(i = 0; i<10; i++)
+            fprintf(data->maindata.res, "<!--$TWITTER-->\n<a href=\"%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_tw\"><img id=\"tw_img\" src=\"images/twitter.png\"></div>\n<span id=\"tw_id\">\n%s\n</span>\n</li>\n</a>\n\n", data->infos.twlink, data->infos.twname);
+            for(i = 0; i<9; i++)
                 fgets(ligne, 500, data->maindata.index);
         }
         else if(!(strncmp(ligne, "<!--$GOOGLEPLUS-->", 15)))
         {
-            fprintf(data->maindata.res, "<!--$GOOGLEPLUS-->\n<a href=\"%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_gp\"><img id=\"gp_img\" src=\"images/googleplus.png\"></div>\n<span id=\"gp_id\">\n%s\n</span>\n</li>\n</a>\n<!--$/GOOGLEPLUS-->\n\n", data->infos.gplink, data->infos.gpname);
-            for(i = 0; i<10; i++)
+            fprintf(data->maindata.res, "<!--$GOOGLEPLUS-->\n<a href=\"%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_gp\"><img id=\"gp_img\" src=\"images/googleplus.png\"></div>\n<span id=\"gp_id\">\n%s\n</span>\n</li>\n</a>\n\n", data->infos.gplink, data->infos.gpname);
+            for(i = 0; i<8; i++)
                 fgets(ligne, 500, data->maindata.index);
         }
         else if(strncmp(ligne, "<!--$MAIL$-->\n", 8) == 0)
         {
-            fprintf(data->maindata.res, "<!--$MAIL-->\n<a href=\"mailto:%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_m\"><img id=\"m_img\" src=\"images/mail.png\"></div>\n<span id=\"m_id\">\n%s\n</span>\n</li>\n</a>\n<!--$/MAIL-->\n\n", data->infos.mail, data->infos.mail);
-            for(i = 0; i<10; i++)
+            fprintf(data->maindata.res, "<!--$MAIL-->\n<a href=\"mailto:%s\">\n<li>\n<div class=\"icon_rounder\" id=\"ic_m\"><img id=\"m_img\" src=\"images/mail.png\"></div>\n<span id=\"m_id\">\n%s\n</span>\n</li>\n</a>\n\n", data->infos.mail, data->infos.mail);
+            for(i = 0; i<8; i++)
                 fgets(ligne, 500, data->maindata.index);
         }
         else
@@ -201,9 +204,7 @@ G_MODULE_EXPORT void change_template(GtkWidget *widget, struct Data *data)
     if(widget == data->maindata.template_button[MATERIAL])
     {
         gtk_label_set_text(data->maindata.current_template, "Template currently selected : Material");
-
         strcpy(data->template_selected, "material/");
-
         update_template_path(data);
     }
     else if(widget == data->maindata.template_button[FLAT])
@@ -230,12 +231,17 @@ G_MODULE_EXPORT void change_template(GtkWidget *widget, struct Data *data)
 void update_template_path(struct Data *data)
 {
 
-    memset(&(data->template_path[10]), 0, 8);
-    strcpy(&(data->template_path[10]), data->template_selected);
+    memset(&(data->template_path[20]), 0, 8);
+    strcpy(&(data->template_path[20]), data->template_selected);
 
     memset(data->maindata.index_path, 0, 50);
     strcpy(data->maindata.index_path, data->template_path);
     strcat(data->maindata.index_path, "index_var.html");
+
+
+    memset(data->maindata.res_path, 0, 50);
+    strcpy(data->maindata.res_path, data->template_path);
+    strcat(data->maindata.res_path, "index.html");
 
     printf("%s\n%s\n%s\n\n", data->template_path, data->template_selected, data->maindata.index_path);
 }

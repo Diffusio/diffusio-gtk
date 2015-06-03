@@ -80,8 +80,8 @@ struct MainData
     GtkEntry *gpname;
     GtkEntry *gplink;
 
-    char index_path[50];
-    char res_path[50];
+    char index_path[50];  //index_var.html
+    char res_path[50];  //index.html
 
     FILE* index;
     FILE *res;
@@ -126,7 +126,6 @@ struct Data
     struct News news;
     struct Infos infos;
     FILE *save;
-
 
     gchar template_selected[10];
     gchar template_path[29];
