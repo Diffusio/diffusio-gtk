@@ -7,8 +7,14 @@ var mapOptions = {
   mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 var marker;
+var b_hgt,b_wth;
+var contents = document.getElementsByClassName('wide_div');
+var contents_l = contents.length;
 
 //Initialisation
+getViewport();
+for(var a=0; a<contents_l; a++)
+    contents[a].style.height = b_hgt;
 document.getElementById("open_link").href = "https://www.google.fr/maps/search/" + address.replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+");
 document.getElementById("open_link_1").href = "https://www.google.fr/maps/search/" + address.replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+");
 document.getElementById("open_link_2").href = "https://www.here.com/search/" + address.replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace("<br>"," ").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+").replace(" ","+");
@@ -35,6 +41,31 @@ function initialize() {
     geocoder = new google.maps.Geocoder();
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     codeAddress();
+}
+
+function getViewport() {
+
+
+ // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+ if (typeof window.innerWidth != 'undefined') {
+   b_wth = window.innerWidth,
+   b_hgt = window.innerHeight
+ }
+
+// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+ else if (typeof document.documentElement != 'undefined'
+ && typeof document.documentElement.clientWidth !=
+ 'undefined' && document.documentElement.clientWidth != 0) {
+    b_wth = document.documentElement.clientWidth,
+    b_hgt = document.documentElement.clientHeight
+ }
+
+ // older versions of IE
+ else {
+   b_wth = document.getElementsByTagName('body')[0].clientWidth,
+   b_hgt = document.getElementsByTagName('body')[0].clientHeight
+ }
+ return [b_wth, b_hgt];
 }
 
 function codeAddress() {
@@ -188,4 +219,12 @@ function findSwipeDirection(el,d)
     {
         openDrawer();  
     }
+}
+
+function update()
+{
+    getViewport();
+for(var a=0; a<contents_l; a++)
+    contents[a].style.height = b_hgt;
+    document.getElementById('sideBar').style.height = b_hgt;
 }
