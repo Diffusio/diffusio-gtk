@@ -48,19 +48,19 @@
 			<Add library="glib-2.0" />
 			<Add directory="$(#gtk.lib)" />
 		</Linker>
-		<Unit filename="src/addnews.c">
+		<Unit filename="Diffusio/src/addnews.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/addnews.h" />
-		<Unit filename="src/main.c">
+		<Unit filename="Diffusio/src/addnews.h" />
+		<Unit filename="Diffusio/src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/main.h" />
-		<Unit filename="src/session.c">
+		<Unit filename="Diffusio/src/main.h" />
+		<Unit filename="Diffusio/src/session.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/session.h" />
-		<Unit filename="src/struct.h" />
+		<Unit filename="Diffusio/src/session.h" />
+		<Unit filename="Diffusio/src/struct.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
