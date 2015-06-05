@@ -254,7 +254,7 @@ void displayRenderer(struct Data *data)
 {
     char start[50];
     system("SET var=%cd%");
-    sprintf(start, "start QtWeb.exe %%cd%%\\res\\templates\\%sindex.html", data->template_selected);
+    sprintf(start, "start QtWeb.exe %%cd%%\\res\\templates\\%s\\index.html", data->template_selected);
     printf("%s",start);
     system(start);
 }

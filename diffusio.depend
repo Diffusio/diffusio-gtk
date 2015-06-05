@@ -3964,3 +3964,45 @@
 1301114756 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
+1433526280 source:c:\users\kk\documents\github\diffusio-gtk\diffusio\src\addnews.c
+	"addnews.h"
+
+1433526280 c:\users\kk\documents\github\diffusio-gtk\diffusio\src\addnews.h
+	<time.h>
+	"session.h"
+	"main.h"
+	"struct.h"
+
+1433526280 c:\users\kk\documents\github\diffusio-gtk\diffusio\src\session.h
+	<windows.h>
+	<gtk/gtk.h>
+	"main.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"addnews.h"
+	"struct.h"
+
+1433527718 c:\users\kk\documents\github\diffusio-gtk\diffusio\src\main.h
+	<gtk/gtk.h>
+	"session.h"
+	"addnews.h"
+	"struct.h"
+	<sys/stat.h>
+	<fcntl.h>
+	<errno.h>
+	<unistd.h>
+	<string.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<unistd.h>
+
+1433526486 c:\users\kk\documents\github\diffusio-gtk\diffusio\src\struct.h
+	"jsmn.h"
+
+1433026728 c:\users\kk\documents\github\diffusio-gtk\diffusio\src\jsmn.h
+	<stddef.h>
+
+1433526280 source:c:\users\kk\documents\github\diffusio-gtk\diffusio\src\session.c
+	"session.h"
+
