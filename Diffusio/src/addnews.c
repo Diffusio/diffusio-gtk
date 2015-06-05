@@ -27,6 +27,7 @@
 
 #include "addnews.h"
 
+
 int copyFile(char file1[99], char file2[99])
 {
 	FILE *f1, *f2;
