@@ -58,7 +58,8 @@ int main(int argc, char *argv [])
     g_free (filename);
 
     load_widgets(&data);
-    gtk_builder_connect_signals(data.builder, &data);
+    gtk_builder_connect_signals(data.builder, &data); /*connecte les signaux entrés dans glade et envoit
+                                                       *un pointeur sur data à chaque callback*/
 
     g_timeout_add(2000, close_splash, &data);
     gtk_main();
@@ -182,7 +183,7 @@ G_MODULE_EXPORT void openAboutWindow(GtkWidget *menuitem, struct Data *data)
 }
 
 
-G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *data)
+/*G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *data)
 {
 
     const gchar *text = gtk_entry_get_text(data->sessiondata.name_entry);
@@ -207,23 +208,23 @@ G_MODULE_EXPORT void session_new_changed(GtkWidget *widget, struct Data *data)
         gtk_widget_set_sensitive(data->sessiondata.new_button, 0);
 
     g_free(folder);
-}
+}*/
 
 
 
 
-G_MODULE_EXPORT void session_new_delete(GtkWidget *widget, struct Data *data)
+/*G_MODULE_EXPORT void session_new_delete(GtkWidget *widget, struct Data *data)
 {
     gtk_entry_set_text(data->sessiondata.name_entry, "");
     if(gtk_file_chooser_get_uri(data->sessiondata.new_chooser) != NULL)
         gtk_file_chooser_unselect_uri(data->sessiondata.new_chooser, gtk_file_chooser_get_uri(data->sessiondata.new_chooser));
 
     gtk_label_set_label(data->sessiondata.folder_label, "");
-}
+}*/
 
 
 
-
+/*
 
 G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget, struct Data *data)
 {
@@ -240,12 +241,12 @@ G_MODULE_EXPORT void session_open_chooser_selection_changed_cb(GtkWidget *widget
         gtk_widget_set_sensitive(data->sessiondata.opentab_open_button, 0);
     }
 
-}
+}*/
 
 
 
-
+/*
 G_MODULE_EXPORT void session_open_delete_button_clicked_cb(GtkWidget *widget, struct Data *data)
 {
     gtk_file_chooser_unselect_uri(data->sessiondata.open_chooser, gtk_file_chooser_get_uri(data->sessiondata.open_chooser));
-}
+}*/

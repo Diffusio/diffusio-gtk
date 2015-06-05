@@ -1,30 +1,3 @@
-/*
- * Diffusio - Build presentation websites easily
- * https://github.com/diffusio
- * http://diffusio.co
- * 
- * Copyright (C) 2015 
- * 
- * Pierre JACQUIER  
- * http://pierre-jacquier.com
- * 
- * Grégoire DUVAUCHELLE
- * https://github.com/kalterkrieg
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation, either version 2.1 of the
- * License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public 
-*/
-
-
 #include "main.h"
 
 /*
@@ -234,7 +207,7 @@ void open_error_dialog(struct Data *data, const gchar *message)
     gtk_widget_destroy (dialog);
 }
 
-void get_infos(struct Data *data)
+void get_infos(struct Data *data) //récupère le contenu des entries et les entres dans les variable de la sous structure infos
 {
 
     data->infos.site_title = gtk_entry_get_text(GTK_ENTRY(data->maindata.site_title));
@@ -280,7 +253,7 @@ void get_infos(struct Data *data)
 G_MODULE_EXPORT int update_infos(GtkWidget *widget, struct Data *data)
 {
 
-    if(data->template_selected[0] == 0){
+    if(data->template_selected[0] == 0){ //Vérifie que l'utilisateur à choisis une template
         open_error_dialog(data, "Select a template first!");
         return TRUE;
     }
@@ -395,7 +368,7 @@ int verif_html_comment(struct Data *data)
     else return 0;
 }
 
-void update_html(struct Data *data)
+void update_html(struct Data *data) //génère index.html en remplaçant les balises de index_var par les valeurs entrées par l'utilisateur
 {
 
     data->maindata.index = fopen(data->maindata.index_path, "r");
@@ -488,7 +461,7 @@ void update_html(struct Data *data)
 G_MODULE_EXPORT void change_template(GtkWidget *widget, struct Data *data)
 {
     strcpy(data->template_selected, "");
-    if(widget == data->maindata.template_button[MATERIAL])
+    if(widget == data->maindata.template_button[MATERIAL])  //on regarde quel bouton a généré le signal
     {
         gtk_label_set_text(data->maindata.current_template, "Template currently selected : Material");
         strcpy(data->template_selected, "material");
