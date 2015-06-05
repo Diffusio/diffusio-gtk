@@ -1,4 +1,0 @@
-ouverture de session
-!! ouverture du fichier fail
-crash à la fermeture
-tester avec les autres templates
