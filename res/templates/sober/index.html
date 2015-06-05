@@ -21,20 +21,20 @@ License
 <DOCTYPE html>
 <html>
 	<head>
-		<title>Sober</title>
+		<title>
+Site Title
+		</title>
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500' rel='stylesheet' type='text/css'>
 		<link rel='stylesheet' href='style/style.css'>
-		<script src="js/jquery.js"></script>
-		<script src="js/side.js"></script>
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
 		<meta charset="utf-8">
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
-	<body>	  
+	<body onscroll="closeDrawer()">	  
 	  <header>
 		<ul id="navLarge">
-			<img src="images/diffusio-logo.png" id="title_logo">
+			<img src="images/logo1.png" id="title_logo">
 			<li id="title">Sober</li>
 			<ul id="rightNav">
 				<a onclick="setVisibleNotVisibleNotVisible(1,2,3);"><li class="floatLeft button" id='tab_1'>Presentation</li></a>
@@ -42,239 +42,165 @@ License
 				<a onclick="setVisibleNotVisibleNotVisible(3,2,1);"><li class="floatLeft buttonUnSelected" id='tab_3'>About</li></a>
 			</ul>
 		</ul>
-		<ul id="navTiny">
-			<li id="sideOpen" class="floatLeft"><a href="#" class="menu-icon border-icon">menu icon</a></li>
-			<li id="title_tiny" class="floatLeft">Diffusio</li>
+		<ul id="navTiny" onclick="toogleDrawer()">
+			<li id="sideOpen" class="floatLeft">
+<div id="arrow" class="material-icon hamburger">
+			<span class="first"></span>
+			<span class="second"></span>
+			<span class="third"></span>
+		</div>
+			</li>
+			<li id="title_tiny" class="floatLeft">
+<!--$SITE_TITLE$-->
+auie
+			</li>
 		</ul>
 	 </header>
-		<ul class='sideBar'>
+		<ul id='sideBar'>
 			<li>
 				<ul class=''>
-					 <li class="sideHeader"><div class='icon-left-open size2em' id='sideClose' style='color: #000;'><div class="arrow-left"></div><span href="leftPadding50">Navigation</span></div></li>
-					 <a   onclick="setVisibleNotVisibleNotVisible(1,2,3)"><li class="subPage">Presentation</li></a>
-					 <a   onclick="setVisibleNotVisibleNotVisible(2,3,1)"><li class="subPage">News</li></a>
-					 <a   onclick="setVisibleNotVisibleNotVisible(3,1,2)"><li class="subPage">More</li></a>
+					 <!--<li id="sideHeader" onclick="closeDrawer()"><div class='icon-left-open size2em' id='sideClose' style='color: #000;'><div class="arrow-left"></div><span href="leftPadding50">Navigation</span></div></li>-->
+					 <a   onclick="setVisibleNotVisibleNotVisible(1,2,3)"><li class="subPage side_selected"  onclick="closeDrawer()" id="sb_1">Presentation</li></a>
+					 <a   onclick="setVisibleNotVisibleNotVisible(2,3,1)"><li class="subPage" onclick="closeDrawer()" id="sb_2">News</li></a>
+					 <a   onclick="setVisibleNotVisibleNotVisible(3,1,2)"><li class="subPage" onclick="closeDrawer()" id="sb_3">More</li></a>
 				</ul>
 			</li>
 		</ul>
-		<div id="content_1" class="content">
+		<div id="content_1"  onclick="closeDrawer()" class="content">
 			<div class="wide_div white" id="w_d_1">
 			 		<div class='v_align'>
-				 		<img src="images/logo1.svg" class="logo_left logo">
 				 		<div class='w_text'>
-				 			<p class="slog slog_right">
-Introduction
+				 			<p class="slog slog_c">
+<!--$PRESENTATION_PART1_TITLE$-->
+a
                             </p>
-				 			<p class="under_slog under_slog_right">
-We challenged ourselves to create a visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design. This spec is a living document that will be updated as we continue to develop the tenets and specifics of material design.
-
+				 			<p class="under_slog under_slog_c">
+<!--$PRESENTATION_PART1_CONTENT$-->
+a
                             </p>
 				 		</div>
 		 			</div>
 		 		</div>
 		 		<div class="wide_div grey" id="w_d_2">
 			 		<div class='v_align'>
-				 		<img src="images/logo2.svg" class="logo_right logo">
+				 		<img src="images/logo2.png" class="logo_right logo">
 				 		<p class="slog slog_left">
-Material is the metaphor
+<!--$PRESENTATION_PART2_TITLE$-->
+e
                         </p>
 				 		<p class="under_slog under_slog_left">
-A material metaphor is the unifying theory of a rationalized space and a system of motion. The material is grounded in tactile reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic.
-<br>
-Surfaces and edges of the material provide visual cues that are grounded in reality. The use of familiar tactile attributes helps users quickly understand affordances. Yet the flexibility of the material creates new affordances that supercede those in the physical world, without breaking the rules of physics.
+<!--$PRESENTATION_PART2_CONTENT$-->
+u
+
 			 		</div>
 		 		</div>
 		 		<div class="wide_div white" id="w_d_3">
 			 		<div class='v_align'>
-				 		<img src="images/logo3.svg" class="logo_left logo">
+				 		<img src="images/logo3.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
-Motion provides meaning
+<!--$PRESENTATION_PART3_TITLE$-->
+e
                             </p>
 				 			<p class="under_slog under_slog_right">
-Motion respects and reinforces the user as the prime mover. Primary user actions are inflection points that initiate motion, transforming the whole design.
-<br>
-All action takes place in a single environment. Objects are presented to the user without breaking the continuity of experience even as they transform and reorganize.
-<br>
-Motion is meaningful and appropriate, serving to focus attention and maintain continuity. Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.
+<!--$PRESENTATION_PART3_CONTENT$-->
+i
+
+
+
                             </p>
 				 		</div>
 			 		</div>
 		 		</div>
 		</div>
-		<div id="content_2" class="content notVisible">
-			<!--#$#NEW-->
+		<div id="content_2" class="content notVisible"><div id="news_container">
+<!--#$#NEW-->
 
-<!--##10-->
-
-<div class='card elevation-1 news' id='news_10'><div class='news_datetime' id='news_datetime_10'>5/18/2015 13:26:6
-</div><span class='news_title'   id='news_title_10'><a class='pointer' onclick='openNews(10);'>Title Hey</a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_10'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(10)'>READ MORE</a></div></div>
-
-
-<!--##9-->
-
-<div class='card elevation-1 news' id='news_9'><div class='news_datetime' id='news_datetime_9'>5/18/2015 10:19:46
-</div><span class='news_title'   id='news_title_9'><a class='pointer' onclick='openNews(9);'>Title </a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_9'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(9)'>READ MORE</a></div></div>
-
-
-<!--##8-->
-
-<div class='card elevation-1 news' id='news_8'><div class='news_datetime' id='news_datetime_8'>5/17/2015 18:3:24
-</div><span class='news_title'   id='news_title_8'><a class='pointer' onclick='openNews(8);'>Added for demo</a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_8'>Video demo</p><div class='read_more'><a class='pointer' onclick='openCircleNews(8)'>READ MORE</a></div></div>
-
-
-<!--##7-->
-
-<div class='card elevation-1 news' id='news_7'><div class='news_datetime' id='news_datetime_7'>5/17/2015 17:59:44
-</div><span class='news_title'   id='news_title_7'><a class='pointer' onclick='openNews(7);'>Title</a> </span><p class='news_summary'>Summary</p><p class='news_content'  id='news_content_7'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(7)'>READ MORE</a></div></div>
-
-
-<!--##6-->
-
-<div class='card elevation-1 news' id='news_6'><div class='news_datetime' id='news_datetime_6'>5/17/2015 17:59:24
-</div><span class='news_title'   id='news_title_6'><a class='pointer' onclick='openNews(6);'>Added via GTK</a> </span><p class='news_summary'>Diffusio rocks !</p><p class='news_content'  id='news_content_6'>Content</p><div class='read_more'><a class='pointer' onclick='openCircleNews(6)'>READ MORE</a></div></div>
-
-
-<!--##5-->
-
-<div class='card elevation-1 news' id='news_5'><div class='news_datetime' id='news_datetime_5'>5/16/2015 23:8:25
-</div><span class='news_title'   id='news_title_5'><a class='pointer' onclick='openNews(5);'>This</a> </span><p class='news_summary'>is</p><p class='news_content'  id='news_content_5'>one</p><div class='read_more'><a class='pointer' onclick='openCircleNews(5)'>READ MORE</a></div></div>
-
-<!--##4-->
-		<div class="card elevation-1 news" id="news_4">
-	 		<div class="news_datetime" id="news_datetime_4">
-	 			04/21/2045 - 14:54
-	 		</div>
-	 		<span class="news_title"   id="news_title_4"><a class="pointer" onclick="openNews(3)">Another news title</a></span>
-	 		<p class="news_summary">First news ahah</p>
-	 		<p class="news_content"  id="news_content_4">
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-			</p>
-			<div class="read_more"><a class="pointer" onclick="openCircleNews(4)">READ MORE</a></div>
 		</div>
-<!--##3-->
-		<div class="card elevation-1 news" id="news_3">
-	 		<div class="news_datetime" id="news_datetime_3">04/21/2045 - 14:54</div>
-	 		<span class="news_title"   id="news_title_3">
-	 		<a class="pointer" onclick="openNews(3);">Another news title</a> 
-	 		</span>
-	 		<p class="news_summary">First news ahah</p>
-	 		<p class="news_content"  id="news_content_3">
-A 3 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-					</p>
-					<div class="read_more"><a class="pointer" onclick="openCircleNews(3)">READ MORE</a></div>
-		</div>
-<!--##2-->
- 		<div class="card elevation-1 news" id="news_2">
-	 		<div class="news_datetime" id="news_datetime_2">04/21/2045 - 14:54</div>
-	 		<span class="news_title"   id="news_title_2">
-	 		<a class="pointer" onclick="openNews(2)">Another news title</a> 
-	 		</span>
-	 		
-	 		<p class="news_summary">First news ahah</p>
-	 		<p class="news_content"  id="news_content_2">
-A 2 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-			</p>
-			<div class="read_more"><a class="pointer" onclick="openCircleNews(2)">READ MORE</a></div>
-		</div>
-<!--##1-->
-		<div class="card elevation-1 news" id="news_1">
- 			<div class="news_datetime" id="news_datetime_1">04/21/2045 - 14:54</div>
-	 		<span class="news_title" id="news_title_1">
-	 		<a class="pointer" onclick="openNews(1)">A news title</a> 
-	 		</span>
-	 		<p class="news_summary" onclick="closeCircleNews(1)">First news ahah</p>
-	 		<p class="news_content" id="news_content_1">
-A 1 subdomain is configured with a CNAME record through your DNS provider.
-We strongly recommend that you use a custom subdomain for these reasons:
-It gives your GitHub Pages site the benefit of our Content Delivery Network.
-It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-			</p>
-			<div class="read_more"><a class="pointer" onclick="openCircleNews(1)">READ MORE</a></div>
-			</div>
 		</div>
 		<div id="content_3" class="content notVisible">
-			<p>Code hosted on GitHub</p><a href='https://github.com/diffusio'><img src='images/github.png' width='100'></a>
-		</div>
-		<div id="content_4" class="content notVisible">
-			<p>Authors : </p><p class='name'>Pierre JACQUIER</p><p class='name'>Grégoire DUVAUCHELLE</p>
+			<div class="card_mat elevation-1" id="map_card">
+			 	<div id="map_canvas" style="height:255px;"></div>
+			    <div id="map_legend" class="elevation-1">
+                    <span id="map_legend_header">
+Localisation
+                    </span>
+                    <p id="map_legend_address">
+e
+                    <img  id="leg_more" src="images/more_w.png" onclick="openMapDropdown()">
+                    <a id="open_link" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"  src="images/open.png"></div></a>
+                    <ul id="dropdown_map" class="paper-shadow-top-z-2 paper-shadow-bottom-z-2">
+                    	<li id="drop_item_1" onclick="closeMapDropdown()">
+                    		Copy address
+                    	</li>
+                    	
+                    	<a id="open_link_2" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                    	<li id="drop_item_2" onclick="closeMapDropdown()">
+                    		Open in Here Maps
+                    	</li></a><a id="open_link_1" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                    	<li id="drop_item_3" onclick="closeMapDropdown()">
+                    		Open in Google Maps
+                    	</li></a>
+
+                    </ul>
+                </div>
+            </div>
+		 	<div class="card_mat elevation-1 social_card">
+		 		<div class="elevation-1" id="social_header">
+Contact us
+
+		 		</div>
+		 		<ul id="social_list">
+<!--$FACEBOOK-->
+
+					<a href="e">
+<li>
+<div class="icon_rounder" id="ic_fb"><img id="fb_img" src="images/facebook.png"></div>
+<span id="fb_id">e</span>
+</li>
+</a>
+                    
+<!--$TWITTER-->
+<a href="e">
+<li>
+<div class="icon_rounder" id="ic_tw"><img id="tw_img" src="images/twitter.png"></div>
+<span id="tw_id">
+e
+</span>
+</li>
+</a>
+
+<!--$GOOGLEPLUS-->
+<a href="e">
+<li>
+<div class="icon_rounder" id="ic_gp"><img id="gp_img" src="images/googleplus.png"></div>
+<span id="gp_id">
+e
+</span>
+</li>
+</a>
+
+<!--$MAIL-->
+<a href="mailto:eo">
+<li>
+<div class="icon_rounder" id="ic_m"><img id="m_img" src="images/mail.png"></div>
+<span id="m_id">
+eo
+</span>
+</li>
+</a>
+
+					
+		 		</ul>
+			</div>
 		</div>
 		<div id="please_scroll">
 			<img src="images/scroll.png">
 		</div>
-		<script type="text/javascript">
-		function setUnselected(tabid)
-		{
-			document.getElementById(tabid).style.backgroundColor = 'rgb(30,30,30)';
-			document.getElementById(tabid).style.color = 'white';
-		}
-		function setSelected(tabid)
-		{
-			document.getElementById(tabid).style.backgroundColor = 'white';
-			document.getElementById(tabid).style.color = 'rgb(30,30,30)';
-		}
-		function setVisibleNotVisibleNotVisible(visible, not_visible1, not_visible2, not_visible3)
-		{
-			document.getElementById('content_' + visible).className = "content";
-			document.getElementById('content_' + not_visible1).className = "content notVisible";
-			document.getElementById('content_' + not_visible2).className = "content notVisible";
-			document.getElementById('tab_' + visible).className = "floatLeft button";
-			document.getElementById('tab_' + not_visible1).className = "floatLeft buttonUnSelected";
-			document.getElementById('tab_' + not_visible2).className = "floatLeft buttonUnSelected";		
-		}
-		</script>
+        <div id="shadow" onclick="closeDrawer()"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src="js/script.js"></script>
+		
 	</body>
 </html>

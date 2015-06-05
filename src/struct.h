@@ -51,6 +51,7 @@ struct MainData
 {
     GtkWidget *MainWindow;
     GtkWidget *errdial;
+    GtkWidget *save_dialog;
     GtkWidget *quit;
     GtkWidget *addnew_button;
     GtkLabel *current_template;
@@ -87,6 +88,7 @@ struct MainData
     FILE *res;
 
     GtkButton *render;
+    GtkButton *explorer;
 
 };
 
@@ -96,23 +98,23 @@ struct Infos
     /*char *title[3];
     char *logo[3];                     Idem
     char *content[3];*/
-    char *title1;
-    char *title2;
-    char *title3;
-    char *logo1;
-    char *logo2;
-    char *logo3;
-    char *content1;
-    char *content2;
-    char *content3;
-    char *address;
-    char *mail;
-    char *fbname;
-    char *fblink;
-    char *twname;
-    char *twlink;
-    char *gpname;
-    char *gplink;
+    gchar *title1;
+    gchar *title2;
+    gchar *title3;
+    gchar *logo1;
+    gchar *logo2;
+    gchar *logo3;
+    gchar *content1;
+    gchar *content2;
+    gchar *content3;
+    gchar *address;
+    gchar *mail;
+    gchar *fbname;
+    gchar *fblink;
+    gchar *twname;
+    gchar *twlink;
+    gchar *gpname;
+    gchar *gplink;
 
 };
 
@@ -126,12 +128,9 @@ struct Data
     struct News news;
     struct Infos infos;
     FILE *save;
+    gchar template_selected[20];
+    gchar template_path[40];
 
-    gchar template_selected[10];
-    gchar template_path[29];
-    gchar *savefile_path;
-
-    jsmn_parser p;
 
 };
 

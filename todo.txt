@@ -1,4 +1,4 @@
-enlever les ancres fermantes
-écrire la fonction \n -> <br>
-copie du dossier et des logos
-sauvegarde et ouverture de session
+ouverture de session
+!! ouverture du fichier fail
+crash à la fermeture
+tester avec les autres templates

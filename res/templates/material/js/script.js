@@ -16,7 +16,17 @@
 License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
-
+var scripts =  document.getElementsByTagName('script');
+var torefreshs = ['script.js'] ; // list of js to be refresh
+var key = 1; // change this key every time you want force a refresh
+for(var i=0;i<scripts.length;i++){ 
+   for(var j=0;j<torefreshs;j++){ 
+      if(scripts[i].src && (scripts[i].src.indexOf(torefreshs[j]) > -1)){
+        new_src = scripts[i].src.replace(torefreshs[j],torefreshs[j] + 'k=' + key );
+        scripts[i].src = new_src; // change src in order to refresh js
+      } 
+   }
+}
 
 //Variables
 var last_scrollpos_news, current_tab=1, header_height = document.getElementById('header').offsetHeight;
@@ -34,10 +44,16 @@ var current_pos=0;
 var map;
 var address = document.getElementById("map_legend_address").innerHTML;
 document.onkeydown = checkKey;
-var mapOptions = {
-  zoom: 15,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
+var mapOptions;
+try {
+    mapOptions = {
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 }
+catch(err) {
+    
+} 
 var marker;
 
 //Initialisation
@@ -71,7 +87,13 @@ if((""+window.location+"") == root + "#news")
     setVisibleNotVisibleNotVisible(2,3,1)
 if((""+window.location+"") == root + "#more")
     setVisibleNotVisibleNotVisible(3,2,1)
-
+var splash = document.getElementById('splash');
+splash.style.width = 0;
+splash.style.height = 0;
+document.getElementById('anim').style.opacity = 0;
+document.getElementById('anim_loading').style.opacity = 0;
+document.getElementById('splash').style.opacity = 1;
+    
 //Fonctions
 function getViewport() {
 
@@ -424,7 +446,7 @@ function movePresentation(pos_to_go)
     switch(pos_to_go)
        {
            case 0:
-                scrollTo(document.body, pos[0], 500);
+                smoothScrollTo(pos[0]);
                 document.getElementById("FAB_pres").style.opacity = 1;
                 document.getElementById('header').style.background = "#009688";
                 document.getElementById("pres_progress_0").getElementsByTagName("DIV")[0].style.background = "white";
@@ -435,7 +457,7 @@ function movePresentation(pos_to_go)
                document.getElementById("indic_3").style.border = "solid white 1px"; 
                 break;
            case 1:
-                scrollTo(document.body, pos[1], 500);
+                smoothScrollTo(pos[1]);
                 document.getElementById('header').style.background = "gray";
                 document.getElementById("FAB_pres").style.opacity = 0;
                 document.getElementById("pres_progress_0").getElementsByTagName("DIV")[0].style.background = "transparent";
@@ -446,7 +468,7 @@ function movePresentation(pos_to_go)
                document.getElementById("indic_3").style.border = "solid grey 1px"; 
                 break;
            case 2:
-                scrollTo(document.body, pos[2], 500);
+                smoothScrollTo(pos[2]);
                 document.getElementById('header').style.background = "#E61875";
                 document.getElementById("FAB_pres").style.opacity = 0;
                 document.getElementById("pres_progress_0").getElementsByTagName("DIV")[0].style.background = "transparent";
@@ -457,7 +479,7 @@ function movePresentation(pos_to_go)
                document.getElementById("indic_3").style.border = "solid white 1px"; 
                 break;
            case -1:
-                smooth_scroll_to(document.body, pos[2], 600);
+                smoothScrollTo(pos[2]);
                 document.getElementById('header').style.background = "#E61875";
                 document.getElementById("FAB_pres").style.opacity = 0;  
                current_pos = 2;
@@ -469,7 +491,7 @@ function movePresentation(pos_to_go)
                document.getElementById("indic_3").style.border = "solid white 1px"; 
                break;
             case 3:
-                scrollTo(document.body, pos[0], 500);
+                smoothScrollTo(pos[0]);
                 document.getElementById('header').style.background = "#009688";
                 document.getElementById("FAB_pres").style.opacity = 1;  
                current_pos = 0;
@@ -490,10 +512,10 @@ function detectSwipe(el,func) {
       swipe_det.sY = 0;
       swipe_det.eX = 0;
       swipe_det.eY = 0;
-      var min_x = 150;  //min x swipe for horizontal swipe
-      var max_x = 180;  //max x difference for vertical swipe
-      var min_y = 140;  //min y swipe for vertical swipe
-      var max_y = 180;  //max y difference for horizontal swipe
+      var min_x = 600;  //min x swipe for horizontal swipe
+      var max_x = 300;  //max x difference for vertical swipe
+      var min_y = 200;  //min y swipe for vertical swipe
+      var max_y = 600;  //max y difference for horizontal swipe
       var direc = "";
       ele = document.body;
       ele.addEventListener('touchstart',function(e){
@@ -569,73 +591,40 @@ function findSwipeDirection(el,d)
 }
 
 
-var smooth_scroll_to = function(element, target, duration) {
-    target = Math.round(target);
-    duration = Math.round(duration);
-    if (duration < 0) {
-        return Promise.reject("bad duration");
+function animation(effectFrame, duration, from, to, easing, framespacing) {
+    var start = Date.now(),
+        change = to - from;
+    duration = duration || 1000;
+    if(typeof from === 'function') {
+        easing = from;
+        from = 0;
     }
-    if (duration === 0) {
-        element.scrollTop = target;
-        return Promise.resolve();
-    }
+    easing = easing || function(x, t, b, c, d) { return c*t/d+b; };
+    from = from || 0;
+    to = to || 1;
+    framespacing = framespacing || 1;
     
-    var start_time = Date.now();
-    var end_time = start_time + duration;
-
-    var start_top = element.scrollTop;
-    var distance = target - start_top;
-
-    // based on http://en.wikipedia.org/wiki/Smoothstep
-    var smooth_step = function(start, end, point) {
-        if(point <= start) { return 0; }
-        if(point >= end) { return 1; }
-        var x = (point - start) / (end - start); // interpolation
-        return x*x*(3 - 2*x);
-    }
-
-    return new Promise(function(resolve, reject) {
-        // This is to keep track of where the element's scrollTop is
-        // supposed to be, based on what we're doing
-        var previous_top = element.scrollTop;
-
-        // This is like a think function from a game loop
-        var scroll_frame = function() {
-            if(element.scrollTop != previous_top) {
-                reject("interrupted");
-                return;
-            }
-
-            // set the scrollTop for this frame
-            var now = Date.now();
-            var point = smooth_step(start_time, end_time, now);
-            var frameTop = Math.round(start_top + (distance * point));
-            element.scrollTop = frameTop;
-
-            // check if we're done!
-            if(now >= end_time) {
-                resolve();
-                return;
-            }
-
-            // If we were supposed to scroll but didn't, then we
-            // probably hit the limit, so consider it done; not
-            // interrupted.
-            if(element.scrollTop === previous_top
-                && element.scrollTop !== frameTop) {
-                resolve();
-                return;
-            }
-            previous_top = element.scrollTop;
-
-            // schedule next frame for execution
-            setTimeout(scroll_frame, 0);
+    (function interval() {
+        var time = (Date.now() - start);
+         if(time < duration) {
+            effectFrame(easing(0, time, from, change, duration));
+             scrolling = true;
+            window.setTimeout(interval, framespacing );
+        } else {
+            effectFrame(to);
+            scrolling = false;
         }
-
-        // boostrap the animation process
-        setTimeout(scroll_frame, 0);
-    });
+    }());
 }
+           
+
+window.smoothScrollTo = function (target, duration) {
+    var start = window.pageYOffset;        
+    duration = duration || 500;
+    
+    animation(function(position) { window.scroll(0,position); }, duration, start, target);
+    
+};
 movePresentation(0);
 
 function scrollTo(element, to, duration) {
@@ -682,28 +671,4 @@ function closeMapDropdown()
     document.getElementById("drop_item_3").style.fontSize = "0em";
     document.getElementById("dropdown_map").style.maxWidth = "0px";
     document.getElementById("dropdown_map").style.maxHeight = "0px";
-}
-
-function openSocialDropdown()
-{
-    document.getElementById("dropdown_social").style.transition = "max-height 5s, max-width 5s, opacity 0.3s"
-    document.getElementById("drop_social_item_1").style.transition = "font-size 0.3s";
-    document.getElementById("drop_social_item_2").style.transition = "font-size 0.3s";
-    document.getElementById("dropdown_social").style.opacity = 1;
-    document.getElementById("drop_social_item_1").style.fontSize = "15px";
-    document.getElementById("drop_social_item_2").style.fontSize = "15px";
-    document.getElementById("dropdown_social").style.maxWidth = "9999px";
-    document.getElementById("dropdown_social").style.maxHeight = "9999px";
-}
-
-function closeSocialDropdown()
-{
-    document.getElementById("dropdown_social").style.transition = "max-height 0.3s, max-width 0.3s, opacity 0.3s"
-    document.getElementById("drop_social_item_1").style.transition = "font-size 0.3s";
-    document.getElementById("drop_social_item_2").style.transition = "font-size 0.3s";
-    document.getElementById("dropdown_social").style.opacity = 0;
-    document.getElementById("drop_social_item_1").style.fontSize = "0em";
-    document.getElementById("drop_social_item_2").style.fontSize = "0em";
-    document.getElementById("dropdown_social").style.maxWidth = "0px";
-    document.getElementById("dropdown_social").style.maxHeight = "0px";
 }

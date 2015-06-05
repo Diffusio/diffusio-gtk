@@ -12,7 +12,7 @@ int main(int argc, char *argv [])
 
     data.builder = gtk_builder_new();
 
-    filename =  g_build_filename ("../../src/diffusio.glade", NULL);
+    filename =  g_build_filename ("src/diffusio.glade", NULL);
 
     if(!gtk_builder_add_from_file(data.builder, filename, &error))
     {
@@ -26,7 +26,6 @@ int main(int argc, char *argv [])
     data.sessiondata.splash_window = GTK_WIDGET(gtk_builder_get_object(data.builder, "splash_screen"));
 
     gtk_widget_show_all(data.sessiondata.splash_window);
-    jsmn_init(&(data.p));
 
     data.news.id = 0;
     g_free (filename);
@@ -44,7 +43,7 @@ int main(int argc, char *argv [])
 gboolean close_splash(struct Data *data)
 {
     gtk_widget_hide(data->sessiondata.splash_window);
-    gtk_widget_show_all(data->sessiondata.SessionWindow);
+    gtk_widget_show_all(data->maindata.MainWindow);
     return(FALSE);
 }
 
@@ -111,30 +110,42 @@ void load_widgets(struct Data *data)
     data->maindata.gpname = GTK_ENTRY(gtk_builder_get_object(data->builder, "gpname"));
     data->maindata.gplink = GTK_ENTRY(gtk_builder_get_object(data->builder, "gplink"));
 
+    data->maindata.save_dialog = GTK_DIALOG(gtk_builder_get_object(data->builder, "save_dialog"));
+
     data->infos.logo1 = NULL;
     data->infos.logo2 = NULL;
     data->infos.logo3 = NULL;
-    data->infos.content1= NULL;
+    data->infos.content1 = NULL;
     data->infos.content2 = NULL;
     data->infos.content3 = NULL;
-
-    data->maindata.site_title = GTK_ENTRY(gtk_builder_get_object(data->builder, "site_title"));
-
+    data->infos.title1 = "";
+    data->infos.title2 = "";
+    data->infos.title3 = "";
     data->infos.address = "";
     data->infos.mail = "";
     data->infos.fbname = "";
     data->infos.fblink = "";
     data->infos.twname = "";
     data->infos.twlink = "";
-    data->infos.gpname  = "";
+    data->infos.gpname = "";
     data->infos.gplink = "";
 
-    strcpy(data->maindata.index_path,"../../res/templates/");
-    strcpy(data->maindata.res_path, "../../res/templates/");
+    data->maindata.site_title = GTK_ENTRY(gtk_builder_get_object(data->builder, "site_title"));
+
+    data->maindata.explorer = GTK_BUTTON(gtk_builder_get_object(data->builder, "open_explorer"));
+
+    strcpy(data->maindata.index_path,"res/templates/");
+    strcpy(data->maindata.res_path, "res/templates/");
+
+    strcpy(data->template_path, "res/templates/");
+
+    data->maindata.MainWindow = GTK_WIDGET(gtk_builder_get_object (data->builder, "MainWindow"));
+    data->maindata.addnew_button = GTK_WIDGET(gtk_builder_get_object(data->builder, "add"));
 
     data->template_selected[0] = 0;
 
     data->maindata.render = GTK_BUTTON(gtk_builder_get_object(data->builder, "render"));
+
 }
 
 G_MODULE_EXPORT void openAboutWindow(GtkWidget *menuitem, struct Data *data)

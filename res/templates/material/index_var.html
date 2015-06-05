@@ -1,8 +1,27 @@
+<!--
+ * Diffusio - Build presentation websites easily
+ * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+
 <DOCTYPE html>
 <html>
 	<head>
 		<title>
-<!--$SITE_TITLE$-->
 Site Title
 		</title>
 	    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
@@ -13,6 +32,11 @@ Site Title
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body  onload="initialize()" onmousemove="mouse_position(event);setIndicator()" onresize="updateAll()">	 
+	 <div id="splash">
+            <img src="images/anim.gif" id="anim">
+            
+        </div>
+        <div id="anim_loading"><span>Loading …</span></div>
 		<header id='header' class="">
 	 		<div id="site_title">
 	 			<span>
@@ -51,7 +75,7 @@ MORE
 		<section id="content_1" class='content'>
 		 		<div class="wide_div white" id="w_d_1">
 			 		<div class='v_align'>
-				 		<img src="images/logo.png" class="logo_left logo">
+				 		<img src="images/logo1.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART1_TITLE$-->
@@ -69,7 +93,7 @@ Presentation Content 1
 		 		</div>
 		 		<div class="wide_div grey" id="w_d_2">
 			 		<div class='v_align'>
-				 		<img src="images/logo2.svg" class="logo_right logo">
+				 		<img src="images/logo2.png" class="logo_right logo">
 				 		<p class="slog slog_left">
 <!--$PRESENTATION_PART2_TITLE$-->
 Presentation Title 2
@@ -81,7 +105,7 @@ Presentation Content 2
 		 		</div>
 		 		<div class="wide_div white" id="w_d_3">
 			 		<div class='v_align'>
-				 		<img src="images/logo3.svg" class="logo_left logo">
+				 		<img src="images/logo3.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART3_TITLE$-->
@@ -111,7 +135,7 @@ Address
 					</p>
                     <img  id="leg_more" src="images/more_w.png" onclick="openMapDropdown()">
                     <a id="open_link" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
-                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"   src="images/open.svg"></div></a>
+                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"   src="images/open.png"></div></a>
                     <ul id="dropdown_map" class="paper-shadow-top-z-2 paper-shadow-bottom-z-2">
                     	<li id="drop_item_1" onclick="closeMapDropdown()">
                     		Copy address

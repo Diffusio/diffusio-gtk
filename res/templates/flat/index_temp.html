@@ -1,267 +1,229 @@
+<!--
+ * Diffusio - Build presentation websites easily
+ * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+
 <DOCTYPE html>
 <html>
 	<head>
-		<title>Diffusio</title>
-		<link rel='stylesheet' href='style/style.css'>
+		<title>
+auie
+        </title>
+		<link rel='stylesheet' href='fonts/fonts.css'>
+        <link rel='stylesheet' href='style/style.css'>
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
 		<meta charset="utf-8">
-			<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
-	<body onresize="update()">	 
-<div id="wrapper">
-	 	<header id='header' class="">
-	 		<div id="site_title">
-	 		<img src="images/logo.png">
-	 		<br>
-	 		<span>
-Different
-			</span>
-			</div>
-	 		<!--<div id="nav_div" class="">
-	 		<ul id="nav">
-	 			<li id="tab_1" class="selectedTab">
-	 			<a   id='a_tab_1'  onclick="setVisibleNotVisibleNotVisible(1,2,3,4)">
-PRESENTATION
-	 			</a>
-	 			</li>
-	 			<li id="tab_2" class="unselectedTab">
-	 			<a  id='a_tab_2' onclick="setVisibleNotVisibleNotVisible(2,1,3,4)">
-NEWS
-	 			</a>Diff
-	 			</li>
-	 			<li id="tab_3" class="unselectedTab">
-	 			<span id='ttt'><a   id='a_tab_3'  onclick="setVisibleNotVisibleNotVisible(3,4,1,2)">
-TAB 3
-	 			</a></span>
-	 			</li>
-	 			<li id="tab_4" class="unselectedTab	">
-	 			<a   id='a_tab_4'  onclick="setVisibleNotVisibleNotVisible(4,1,2,3)">
-VERY-LONG-TAB 4
-	 			</a>
-	 			</li>
-	 		</ul>
-	 		
-	 		</div>
-	 		<div id="tab_indicator" class="tab_indicator"></div>
-	 		<div id="tab_indicator_m" class="tab_indicator"></div>-->
-	 	</header>
-	 	<header id='header2' class="elevation-1">
-	 		<div id="site_title"><span>
-			</span>
-			</div>
-	 	</header>
-	 	
-	 <section id="content_1" class='content'>
-	 <div class="section_title"><span>
-Presentation	 
-	 </span></div>
-	 		<div class="wide_div white" id="w_d_1">
-	 		<div class='v_align'>
-		 		<div class='w_text'>
-		 		<span class="slog slog_right">Lorem Ipsum</span>
-		 		<p class="under_slog under_slog_right">GNOME 3 présente une interface utilisateur complètement repensée pour ne pas interférer avec votre travail, minimiser les distractions et vous aider à faire ce que vous souhaitez. La première fois que vous vous connectez, vous voyez un bureau vide et la barre supérieure.<br>
-                    Cliquez sur le bouton grille en bas du dash pour afficher la vue d'ensemble des applications. Ici sont réunies toutes les applications installées sur votre ordinateur. Cliquez sur n'importe quelle application pour la lancer ou déplacez une application vers la vue d'ensemble ou sur un aperçu d'espace de travail. Vous pouvez aussi déplacer une application sur le dash pour qu'elle devienne une application favorite. Vos applications favorites restent dans le dash même si elles ne sont pas en cours d'exécution, vous pouvez ainsi y accéder rapidement.
-</p>
-		 	</div>
-	 		</div>
-	 		</div>
-	 		<div class="wide_div grey" id="w_d_2">
-	 		<div class='v_align'>
-		 		<span class="slog slog_left">This Website</span>
-		 		<p class="under_slog under_slog_left">Pour accéder à vos fenêtres ou applications, cliquez sur le bouton Activités ou envoyer tout simplement le pointeur de la souris dans le coin actif supérieur gauche. Vous pouvez aussi appuyer sur la touche Logo de votre clavier. Vous pouvez afficher vos fenêtres et applications dans la vue d'ensemble. Vous pouvez aussi commencer à saisir du texte pour rechercher vos applications, fichiers et dossiers.
-<br>
-Sur la gauche de la vue d'ensemble, vous trouvez le dash. Le dash affiche vos applications préférées et celles en cours d'exécution. Cliquez sur une icône du dash pour lancer cette application. Si l'application est déjà en cours d'exécution, elle est mise en surbrillance. Un clic sur l'icône fait apparaître la fenêtre la plus récemment utilisée. Vous pouvez aussi faire glisser l'icône dans la vue des activités, ou sur n'importe quel espace de travail à droite.</p>
-	 		</div>
-	 		</div>
-	 		<div class="wide_div white" id="w_d_3">
-	 		<div class='v_align'>
-		 		<div class='w_text'>
-		 		<span class="slog slog_right">Lorem Ipsum</span>
-		 		<p class="under_slog under_slog_right">Cette page fournit un aperçu des raccourcis clavier qui peuvent vous aider à utiliser votre bureau et les applications plus efficacement. Si vous ne pouvez pas utiliser de souris ni d'appareil de pointage, consultez Navigation au clavier pour savoir comment naviguer dans les interfaces uniquement via le clavier.
-</p>
-		 	</div>
-	 		</div>
-	 		</div>
-	</section>
-
-
-	<section  id="content_2"  class='content'>
-		 <div class="section_title"><span>
-News
-	 </span></div>
-	 <div id="news_container">
-<!--
-##NEW
--->
-
-<!--
-##4
--->
-
-	<div class="card elevation-1 news" id="news_4">
-		 		<div class="news_datetime" id="news_datetime_4">04/21/2045 - 14:54</div>
-		 		<span class="news_title"   id="news_title_4">
-		 		<a class="pointer" onclick="openNews(3)">Another news title</a> 
-		 		</span>
-		 		
-		 		<p class="news_summary">First news ahah</p>
-		 		<p class="news_content"  id="news_content_4">
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-				</p>
-				<div class="read_more"><a class="pointer" onclick="openCircleNews(4)">READ MORE</a></div>
-			</div>
-
-
-<!--
-##3
--->
-
-	 		
-			<div class="card elevation-1 news" id="news_3">
-		 		<div class="news_datetime" id="news_datetime_3">04/21/2045 - 14:54</div>
-		 		<span class="news_title"   id="news_title_3">
-		 		<a class="pointer" onclick="openNews(3);">Another news title</a> 
-		 		</span>
-		 		
-		 		<p class="news_summary">First news ahah</p>
-		 		<p class="news_content"  id="news_content_3">
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-				</p>
-				<div class="read_more"><a class="pointer" onclick="openCircleNews(3)">READ MORE</a></div>
-			</div>
-	 		
-
-<!--
-##2
--->
-
-	 		<div class="card elevation-1 news" id="news_2">
-		 		<div class="news_datetime" id="news_datetime_2">04/21/2045 - 14:54</div>
-		 		<span class="news_title"   id="news_title_2">
-		 		<a class="pointer" onclick="openNews(2)">Another news title</a> 
-		 		</span>
-		 		
-		 		<p class="news_summary">First news ahah</p>
-		 		<p class="news_content"  id="news_content_2">
-	A 2 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-				</p>
-				<div class="read_more"><a class="pointer" onclick="openCircleNews(2)">READ MORE</a></div>
-			</div>
-
-
-<!--
-##
-1
-##
--->
-
-
-<div class="card elevation-1 news" id="news_1">
-	 			<div class="news_datetime" id="news_datetime_1">04/21/2045 - 14:54</div>
-		 		<span class="news_title" id="news_title_1">
-		 		<a class="pointer" onclick="openNews(1)">A news title</a> 
-		 		</span>
-		 		<p class="news_summary" onclick="closeCircleNews(1)">First news ahah</p>
-		 		<p class="news_content" id="news_content_1">
-	A 1 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-				</p>
-				<div class="read_more"><a class="pointer" onclick="openCircleNews(1)">READ MORE</a></div>
-		</div>
-		</div>
-	</section>
-
-
-
-
-	<section id="content_3" class='content'>
-	 <div class="section_title"><span>
-More
-	 </span></div>
-	 		<div class="card img_card elevation-1">
-	 			<img src='images/sample_img_card.jpg'>
-	 		</div>
-	 		<div class="card elevation-1 "><span class="card_header">Lorem Ipsum</span><p>Note: Some DNS providers support configuring apex domains with an ALIAS or ANAME record, but there is no industry standard for these. Some DNS providers (like DNSimple) allow an apex domain configured with an ALIAS or ANAME record to point to some other domain name.It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-Pages will load significantly faster because .</p></div>
-	</section>
-
-	</div>
-    <div id="shadow_news"></div>
-    <img id="close_news" src="images/close.png" onclick="closeCircleNews()"></div>
-    <div class="" id="news_opened">
-        <div id="news_headerbar">
-		 		
-		 		<span class="news_title"   id="news_title_opened">
-		 		Another news title
-		 		</span>
-            <span class="news_datetime" id="news_datetime_opened">04/21/2045 - 14:54</span>
+	<body onscroll="update()">	 
+        <div id="wrapper">
+        <div id="cover">
+            <div class="valign" id="text">
+            <span id="title">
+<!--$SITE_TITLE$-->
+auie
+            </span>
+            <p id="under_slog">
+<!--$PRESENTATION_PART1_TITLE$-->
+a
+            </p>
+                </div>
+            <div class="valign" id="logo">
+                <img src="images/logo.png">
             </div>
-		 		<p id="news_summary_opened">First news ahah</p>
-		 		<p class="news_content"  id="news_content_opened">
-	A 3 subdomain is configured with a CNAME record through your DNS provider.
-	We strongly recommend that you use a custom subdomain for these reasons:
-	It gives your GitHub Pages site the benefit of our Content Delivery Network.
-	It will not be affected by changes in the underlying IP addresses of GitHub's servers.
-	Pages will load significantly faster because Denial of Service protection can be implemented more efficiently.
-				</p>
+        </div>
+        <div id="header">
+            <div class="valign">
+            <ul id="tabs">
+                <li>
+                    <a href="#content_1"><ul  class="sub_tab">
+                        <li><img src="images/tab1-1.png" class="tab_img"></li>
+                        <li id="subtab1li">Presentation</li>
+                    </ul></a>
+                </li>
+                <li>
+                    <a href="#content_2"><ul class="sub_tab">
+                        <li><img src="images/tab2-2.png" class="tab_img"></li>
+                        <li>News</li>
+                    </ul></a>
+                </li>
+                <li>
+                    <a href="#content_3"><ul class="sub_tab">
+                        <li><img src="images/tab3.png" class="tab_img"></li>
+                        <li>More</li>
+                    </ul></a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div id="content_1" name="content_1">
+            <div class='pres_band'>
+				 		<img src="images/logo.png" class="logo_left logo">
+				 		<div class='w_text'>
+				 			<p class="slog slog_right">
+<!--$PRESENTATION_PART1_TITLE$-->
+a
+                            </p>
+				 			<p class="under_slog under_slog_right">
+<!--$PRESENTATION_PART1_CONTENT$-->
+a
+                            </p>
+				 		</div>
+		 			</div>
+            <div class='pres_band'>
+				 		<img src="images/tab1.png" class="logo_left logo">
+				 		<div class='w_text'>
+				 			<p class="slog slog_right">
+<!--$PRESENTATION_PART2_TITLE$-->
+e
+                            </p>
+				 			<p class="under_slog under_slog_right">
+<!--$PRESENTATION_PART2_CONTENT$-->
+u
+
+
+                            </p>
+				 		</div>
+		 			</div>
+            <div class='pres_band'>
+				 		<img src="images/tab2.png" class="logo_left logo">
+				 		<div class='w_text'>
+				 			<p class="slog slog_right">
+<!--$PRESENTATION_PART3_TITLE$-->
+e
+                            </p>
+				 			<p class="under_slog under_slog_right">
+<!--$PRESENTATION_PART3_CONTENT$-->
+i
+
+
+                            </p>
+				 		</div>
+		 			</div>
+        </div>
+        <div id="content_2"  name="content_2">
+            <div id="header_2" >
+            <div>News</div>
+        </div>
+            <div id="news_container" class="">
+<!--#$#NEW-->
+
 			</div>
+            </div>
+        
+        
+            </div>
+        <div id="content_3"  name="content_3">
+            <div id="header_3">
+            <div>More</div>
+        </div>
+            <div class="card elevation-1" id="map_card">
+			 	<div id="map_canvas" style="height:255px;"></div>
+			    <div id="map_legend" class="elevation-1">
+                    <span id="map_legend_header">
+Localisation
+					</span>
+                    <p id="map_legend_address">
+e
+                    <img  id="leg_more" src="images/more_w.png" onclick="openMapDropdown()">
+                    <a id="open_link" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"   src="images/open.png"></div></a>
+                    <ul id="dropdown_map" class="paper-shadow-top-z-2 paper-shadow-bottom-z-2">
+                    	<li id="drop_item_1" onclick="closeMapDropdown()">
+                    		Copy address
+                    	</li>
+                    	
+                    	<a id="open_link_2" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                    	<li id="drop_item_2" onclick="closeMapDropdown()">
+                    		Open in Here Maps
+                    	</li></a><a id="open_link_1" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                    	<li id="drop_item_3" onclick="closeMapDropdown()">
+                    		Open in Google Maps
+                    	</li></a>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="footer">
+                                <ul id="social_list">
+<!--$FACEBOOK-->
+
+					<a href="e">
+<li>
+<div class="icon_rounder" id="ic_fb"><img id="fb_img" src="images/facebook.png"></div>
+<span id="fb_id">e</span>
+</li>
+</a>
+                    
+<!--$TWITTER-->
+<a href="e">
+<li>
+<div class="icon_rounder" id="ic_tw"><img id="tw_img" src="images/twitter.png"></div>
+<span id="tw_id">
+e
+</span>
+</li>
+</a>
+
+<!--$GOOGLEPLUS-->
+<a href="e">
+<li>
+<div class="icon_rounder" id="ic_gp"><img id="gp_img" src="images/googleplus.png"></div>
+<span id="gp_id">
+e
+</span>
+</li>
+</a>
+
+<!--$MAIL-->
+<a href="mailto:eo">
+<li>
+<div class="icon_rounder" id="ic_m"><img id="m_img" src="images/mail.png"></div>
+<span id="m_id">
+eo
+</span>
+</li>
+</a>
+
+                    
+                </ul>
+                <div id='footer_bottom'>
+<!--$SITE_TITLE$-->
+auie
+                </div>
+            </div>
+            </div>
+        
+        <div id="header_1">
+            <div>Presentation</div>
+        </div>
+        <ul id="h1_tabs" class="h_tabs">
+            <a href="#content_1"><li>Presentation</li></a>
+            <a href="#content_2"><li>News</li></a>
+            <a href="#content_3"><li>More</li></a>
+            <li><img src="images/logo.png" onclick="scrollToTop()"></li>
+            </ul>
+        <div id="FAB" onclick="scrollToTop()">
+            <img src="images/arrow_up.png">
+        </div>
+            
+            </div>
 		<script type="text/javascript" src="js/script.js"></script> 
 		
 	</body>

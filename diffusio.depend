@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1433281635 source:c:\users\kk\documents\mega\diffusio-gtk\src\main.c
+1433476727 source:c:\users\kk\documents\mega\diffusio-gtk\src\main.c
 	"main.h"
 
-1433282279 c:\users\kk\documents\mega\diffusio-gtk\src\main.h
+1433464297 c:\users\kk\documents\mega\diffusio-gtk\src\main.h
 	<gtk/gtk.h>
 	"session.h"
 	"addnews.h"
@@ -10,6 +10,10 @@
 	<sys/stat.h>
 	<fcntl.h>
 	<errno.h>
+	<unistd.h>
+	<string.h>
+	<sys/types.h>
+	<sys/stat.h>
 	<unistd.h>
 
 1284281758 c:\program files (x86)\codeblocks\mingw\include\gtk-2.0\gtk\gtk.h
@@ -2193,7 +2197,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1433285025 source:c:\users\kk\documents\mega\diffusio-gtk\src\session.c
+1433476008 source:c:\users\kk\documents\mega\diffusio-gtk\src\session.c
 	"session.h"
 
 1379763816 c:\program files (x86)\codeblocks\mingw\include\glib-2.0\gobject\gbinding.h
@@ -3695,7 +3699,7 @@
 	"main.h"
 	"struct.h"
 
-1433282279 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
+1433475273 c:\users\kk\documents\mega\diffusio-gtk\src\struct.h
 	"jsmn.h"
 
 1433282279 source:c:\users\kk\documents\mega\diffusio-gtk\src\addnews.c
@@ -3720,16 +3724,16 @@
 	<stdlib.h>
 	"jsmn.h"
 
-1433076032 source:c:\users\marjorie\documents\mega\diffusio-gtk\src\addnews.c
+1433282279 source:c:\users\marjorie\documents\mega\diffusio-gtk\src\addnews.c
 	"addnews.h"
 
-1433075494 c:\users\marjorie\documents\mega\diffusio-gtk\src\addnews.h
+1433281276 c:\users\marjorie\documents\mega\diffusio-gtk\src\addnews.h
 	<time.h>
 	"session.h"
 	"main.h"
 	"struct.h"
 
-1433200317 c:\users\marjorie\documents\mega\diffusio-gtk\src\session.h
+1433259520 c:\users\marjorie\documents\mega\diffusio-gtk\src\session.h
 	<windows.h>
 	<gtk/gtk.h>
 	"main.h"
@@ -3739,7 +3743,7 @@
 	"addnews.h"
 	"struct.h"
 
-1433201792 c:\users\marjorie\documents\mega\diffusio-gtk\src\main.h
+1433338374 c:\users\marjorie\documents\mega\diffusio-gtk\src\main.h
 	<gtk/gtk.h>
 	"session.h"
 	"addnews.h"
@@ -3748,8 +3752,9 @@
 	<fcntl.h>
 	<errno.h>
 	<unistd.h>
+	<string.h>
 
-1433239352 c:\users\marjorie\documents\mega\diffusio-gtk\src\struct.h
+1433339412 c:\users\marjorie\documents\mega\diffusio-gtk\src\struct.h
 	"jsmn.h"
 
 1433026728 c:\users\marjorie\documents\mega\diffusio-gtk\src\jsmn.h
@@ -3759,10 +3764,10 @@
 	<stdlib.h>
 	"jsmn.h"
 
-1433237767 source:c:\users\marjorie\documents\mega\diffusio-gtk\src\main.c
+1433402642 source:c:\users\marjorie\documents\mega\diffusio-gtk\src\main.c
 	"main.h"
 
-1433235955 source:c:\users\marjorie\documents\mega\diffusio-gtk\src\session.c
+1433351050 source:c:\users\marjorie\documents\mega\diffusio-gtk\src\session.c
 	"session.h"
 
 1301114762 c:\program files (x86)\codeblocks\mingw\include\windows.h

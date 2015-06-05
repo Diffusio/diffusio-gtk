@@ -1,9 +1,28 @@
+<!--
+ * Diffusio - Build presentation websites easily
+ * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+
 <DOCTYPE html>
 <html>
 	<head>
 		<title>
-<!--$SITE_TITLE$-->
-
+Site Title
 		</title>
 	    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
 		<link rel='stylesheet' href='style/style.css'>
@@ -13,11 +32,16 @@
 		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body  onload="initialize()" onmousemove="mouse_position(event);setIndicator()" onresize="updateAll()">	 
+	 <div id="splash">
+            <img src="images/anim.gif" id="anim">
+            
+        </div>
+        <div id="anim_loading"><span>Loading …</span></div>
 		<header id='header' class="">
 	 		<div id="site_title">
 	 			<span>
 <!--$SITE_TITLE$-->
-
+auieiuaeuieuae
 				</span>
 			</div>
 	 		<div id="nav_div" class="">
@@ -51,15 +75,15 @@ MORE
 		<section id="content_1" class='content'>
 		 		<div class="wide_div white" id="w_d_1">
 			 		<div class='v_align'>
-				 		<img src="images/logo.png" class="logo_left logo">
+				 		<img src="images/logo1.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART1_TITLE$-->
-
+a
                             </p>
 				 			<p class="under_slog under_slog_right">
 <!--$PRESENTATION_PART1_CONTENT$-->
-
+e
                             </p>
 				 		</div>
 				 		<div id="FAB_pres"  class="FAB elevation-2" onclick="movePresentation(1)">
@@ -69,28 +93,28 @@ MORE
 		 		</div>
 		 		<div class="wide_div grey" id="w_d_2">
 			 		<div class='v_align'>
-				 		<img src="images/logo2.svg" class="logo_right logo">
+				 		<img src="images/logo2.png" class="logo_right logo">
 				 		<p class="slog slog_left">
 <!--$PRESENTATION_PART2_TITLE$-->
-
+a
                         </p>
 				 		<p class="under_slog under_slog_left">
 <!--$PRESENTATION_PART2_CONTENT$-->
-
+e
 
 			 		</div>
 		 		</div>
 		 		<div class="wide_div white" id="w_d_3">
 			 		<div class='v_align'>
-				 		<img src="images/logo3.svg" class="logo_left logo">
+				 		<img src="images/logo3.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART3_TITLE$-->
-
+ae
                             </p>
 				 			<p class="under_slog under_slog_right">
 <!--$PRESENTATION_PART3_CONTENT$-->
-
+eiu
 
                             </p>
 				 		</div>
@@ -109,10 +133,10 @@ MORE
 Localisation
 					</span>
                     <p id="map_legend_address">
-16 rue denfers rochereau belfort
+s
                     <img  id="leg_more" src="images/more_w.png" onclick="openMapDropdown()">
                     <a id="open_link" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
-                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"   src="images/open.svg"></div></a>
+                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"   src="images/open.png"></div></a>
                     <ul id="dropdown_map" class="paper-shadow-top-z-2 paper-shadow-bottom-z-2">
                     	<li id="drop_item_1" onclick="closeMapDropdown()">
                     		Copy address
@@ -136,39 +160,39 @@ Contact us
 		 		<ul id="social_list">
 <!--$FACEBOOK-->
 
-					<a href="e">
+					<a href="s">
 <li>
 <div class="icon_rounder" id="ic_fb"><img id="fb_img" src="images/facebook.png"></div>
-<span id="fb_id">i</span>
+<span id="fb_id">s</span>
 </li>
 </a>
                     
 <!--$TWITTER-->
-<a href="é">
+<a href="s">
 <li>
 <div class="icon_rounder" id="ic_tw"><img id="tw_img" src="images/twitter.png"></div>
 <span id="tw_id">
-b
+s
 </span>
 </li>
 </a>
 
 <!--$GOOGLEPLUS-->
-<a href="o">
+<a href="sauiei">
 <li>
 <div class="icon_rounder" id="ic_gp"><img id="gp_img" src="images/googleplus.png"></div>
 <span id="gp_id">
-p
+s
 </span>
 </li>
 </a>
 
 <!--$MAIL-->
-<a href="mailto:u">
+<a href="mailto:s">
 <li>
 <div class="icon_rounder" id="ic_m"><img id="m_img" src="images/mail.png"></div>
 <span id="m_id">
-u
+s
 </span>
 </li>
 </a>
@@ -184,7 +208,7 @@ u
                 <div id="indic_1" onclick="movePresentation(0)">
                 <span class="indic_title">
 <!--$PRESENTATION_PART1_TITLE$-->
-
+a
                 </span>
                 </div>
             </li>
@@ -192,7 +216,7 @@ u
                 <div  id="indic_2"  onclick="movePresentation(1)">
                     <span class="indic_title">
 <!--$PRESENTATION_PART2_TITLE$-->
-
+a
                     </span>
                 </div>
             </li>
@@ -200,7 +224,7 @@ u
                 <div  id="indic_3"  onclick="movePresentation(2)">
                     <span class="indic_title">
 <!--$PRESENTATION_PART3_TITLE$-->
-
+ae
                     </span>
                 </div>
             </li>

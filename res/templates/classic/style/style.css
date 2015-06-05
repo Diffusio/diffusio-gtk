@@ -20,17 +20,18 @@ License
 body
 {
   background: white;
-  font-family: Arial;
+  font-family: 'Slabo' , Arial;
   padding: 0;
   margin: 0;
-  background: white;
+  background: rgb(200,200,200);
 }
 
 #page
 {
-  width: 85%;
+  width: 80%;
   background: white;
   margin: auto;
+ padding: 20 50;
   min-height: 100%;
 }
 
@@ -47,14 +48,25 @@ body
   list-style-type: none;
   padding: 10;
   padding-bottom: 0;
+  
 }
 
 #title li
 {
-  display: inline;
-  font-size: 3em; 
+  display: table-cell;
+  font-size: 60px; 
+  vertical-align: middle;
   margin-left: 30;
+}
 
+#site_title
+{
+    padding-left: 20px;
+}
+
+#title li img
+{
+    height: 100px;   
 }
 
 #nav
@@ -71,9 +83,10 @@ box-shadow: 1px 1px 3px #555;
 margin-left: 0;
 padding-top: 5;
 padding-bottom: 4;
-  width: 95%;
+  width: 100%;
   border-radius: 5px; 
-  margin:auto;
+  margin: auto;
+    padding-left: 13;
   list-style-type: none;
 }
 
@@ -86,10 +99,7 @@ padding-bottom: 4;
   padding-right: 10;
 }
 
-#site_title
-{
 
-}
 
 
 
@@ -106,7 +116,7 @@ padding-bottom: 4;
 .content
 {
   width: 100%;
-  padding: 20;
+  padding: 0 20;
   margin:auto;
 }
 
@@ -152,6 +162,231 @@ padding-bottom: 4;
   font-family: Impact;
 }
 
+.news_content
+{
+    display: none;
+}
+
+.news
+{
+    position: relative;
+    border-bottom: solid 1px gray;
+}
+
+
+
+
+
+.news_datetime
+{
+    position: absolute;
+    right: 0;
+}
+
+.news_title
+{
+    font-size: 25;   
+}
+
+.read_more
+{
+    cursor: pointer;
+    color: gray;
+    
+}
+
+#map_legend
+{
+    padding: 10;
+    position: relative;
+}
+
+#leg_more
+{
+    width: 25;
+    right: 10;
+    top: 10;
+    position: absolute;
+    cursor: pointer;
+}
+
+#FAB_map
+{
+    position: absolute;
+    right: 10;
+    top: 50;
+    width: 25;
+}
+
+#dropdown_map
+{
+    max-width: 0;
+    max-height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#dropdown_map li
+{
+    opacity: 0;   
+}
+
+#map_legend_header
+{
+    font-size: 25;   
+}
+
+
+.social_card
+{
+    padding:0;
+    background: white;
+    color: white;
+}
+
+.social_card #social_header
+{
+    font-size: 25px;
+    padding: 20 20 20 10;
+    border-top: solid 1px gray;
+    z-index: 5;
+    text-align: left;
+    margin-bottom: 5;
+    color: black;
+    position: relative;
+}
+
+#social_list
+{
+    background: white;
+    z-index: 4;
+    list-style-type: none;
+    color: #313131;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#social_list li
+{
+    padding: 10 10 10 10;
+    border-bottom: solid rgb(240,240,240) 1px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#social_list a
+{
+    color: #313131;
+}
+
+#social_list li:hover
+{
+    background: rgb(210,210,210);   
+}
+
+#social_list li:last-child
+{
+    padding: 10 10 10 10;
+    border-bottom: none;
+}
+
+#social_list li div
+{
+    vertical-align: middle;
+    width: 50;
+    height: 50;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20;
+}
+
+#social_list li div img
+{
+    position: relative;
+    width: 30;
+    height: 30;
+    top: 10;
+    left: 10;
+}
+
+#ic_fb
+{
+    background: #3f51b5;    
+}
+
+#ic_tw
+{
+    background: #42a5f5;    
+}
+
+#ic_gp
+{
+    background: #d32f2f;
+}
+
+#ic_m
+{
+    background: #00bfa5;
+}
+
+#social_list li a
+{
+    vertical-align: middle;
+    font-size: 1.2em;
+    display: inline-block;
+}
+#more_social
+{
+    position: absolute;
+    top: 25;
+    height: 25;
+    cursor: pointer;
+    right: 20;
+}
+
+
+#dropdown_social
+{
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 20;
+    top: 20;
+    max-height: 0px;
+    max-width: 0px;
+    list-style-type: none;
+    opacity: 0;
+    z-index: 5;
+    transition: max-height 0.6s,max-width 0.6s;
+}
+
+
+#dropdown_social li
+{
+    padding-left: 10;
+    padding-top: 10;
+    padding-bottom: 10;
+    padding-right: 10;
+    color:#313131;
+    font-size: 17px;
+    cursor: pointer;
+    transition: opacity 0.01s 0.5s;
+    font-size: 0px;
+}
+
+.under_slog
+{
+    text-align: justify;   
+}
+
+.wide
+{
+    width: 100%;   
+}
 @media screen and (max-width: 800px)
 {
   #page
@@ -178,3 +413,8 @@ padding-bottom: 4;
   margin-bottom: 20;
 }
 
+.slog
+{
+    font-size: 35;
+    
+}
