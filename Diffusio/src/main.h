@@ -2,12 +2,12 @@
  * Diffusio - Build presentation websites easily
  * https://github.com/diffusio
  * http://diffusio.co
- * 
- * Copyright (C) 2015 
- * 
- * Pierre JACQUIER  
+ *
+ * Copyright (C) 2015
+ *
+ * Pierre JACQUIER
  * http://pierre-jacquier.com
- * 
+ *
  * Grégoire DUVAUCHELLE
  * https://github.com/kalterkrieg
  *
@@ -21,7 +21,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public 
+ * You should have received a copy of the GNU Lesser General Public
 */
 
 
@@ -45,6 +45,8 @@
 #define FLAT 1
 #define SOBER 2
 #define CLASSIC 3
+
+void displayRenderer(struct Data*);
 
 void openMainWindow(struct Data*);
 

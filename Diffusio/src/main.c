@@ -250,6 +250,16 @@ void get_infos(struct Data *data) //récupère le contenu des entries et les entre
 
 }
 
+void displayRenderer(struct Data *data)
+{
+    char start[50];
+    system("SET var=%cd%");
+    sprintf(start, "start QtWeb.exe %%cd%%\\res\\templates\\%sindex.html", data->template_selected);
+    printf("%s",start);
+    system(start);
+}
+
+
 G_MODULE_EXPORT int update_infos(GtkWidget *widget, struct Data *data)
 {
 
@@ -275,6 +285,8 @@ G_MODULE_EXPORT int update_infos(GtkWidget *widget, struct Data *data)
 
     update_html(data);
     copy_logo(data);
+
+    displayRenderer(data);
 
     return FALSE;
 }
