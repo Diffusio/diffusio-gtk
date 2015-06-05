@@ -1,0 +1,87 @@
+/*
+ * Diffusio - Build presentation websites easily
+ * https://github.com/diffusio
+ * http://diffusio.co
+ * 
+ * Copyright (C) 2015 
+ * 
+ * Pierre JACQUIER  
+ * http://pierre-jacquier.com
+ * 
+ * Grégoire DUVAUCHELLE
+ * https://github.com/kalterkrieg
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+ * License along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('raleway-light-webfont.eot');
+    src: url('raleway-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-light-webfont.woff2') format('woff2'),
+         url('raleway-light-webfont.woff') format('woff'),
+         url('raleway-light-webfont.ttf') format('truetype'),
+         url('raleway-light-webfont.svg#ralewaylight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('raleway-medium-webfont.eot');
+    src: url('raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-medium-webfont.woff2') format('woff2'),
+         url('raleway-medium-webfont.woff') format('woff'),
+         url('raleway-medium-webfont.ttf') format('truetype'),
+         url('raleway-medium-webfont.svg#ralewaymedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('raleway-regular-webfont.eot');
+    src: url('raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-regular-webfont.woff2') format('woff2'),
+         url('raleway-regular-webfont.woff') format('woff'),
+         url('raleway-regular-webfont.ttf') format('truetype'),
+         url('raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('raleway-thin-webfont.eot');
+    src: url('raleway-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-thin-webfont.woff2') format('woff2'),
+         url('raleway-thin-webfont.woff') format('woff'),
+         url('raleway-thin-webfont.ttf') format('truetype'),
+         url('raleway-thin-webfont.svg#ralewaythin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+
+}

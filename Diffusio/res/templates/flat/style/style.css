@@ -13,7 +13,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public 
-License
+ * License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
@@ -34,7 +34,8 @@ body
 {
 	margin: 0;
 	padding: 0;
-	font-family:'Roboto', sans-serif;
+    overflow-x: hidden;
+	font-family:'Roboto',sans-serif;
 	background: #072C3E;
     position: relative;
 }
@@ -135,7 +136,7 @@ ul
 
 .tab_img
 {
-    width: 160;
+    width: 200;
     padding: 0 40;
 }
 
@@ -180,7 +181,6 @@ ul
 
 #content_3
 {
-    height: 130vh;
     top:60vh;
     position: relative;
     background: lightgray;
@@ -210,6 +210,48 @@ ul
     
 }
 
+#n_t_d_div 
+{
+    text-align: center;   
+    padding: 20;
+    vertical-align: top;
+}
+
+#n_t_d_div span
+{
+    cursor: pointer;
+    color: #313131;
+    transition: 0.5s;
+    padding: 5 10;
+    font-size: 15px;
+}
+
+#n_t_d_div span:hover
+{
+    border-radius: 3px;
+    background: rgba(123,35,156,0.1);
+}
+
+
+#news_to_display
+{
+           border: none;
+    color: #525252;
+    height: 30px;
+    line-height:15px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    background: #DFDFDF;
+}
+
 .read_more
 {
     background: rgba(0,0,0,0.1);
@@ -217,6 +259,17 @@ ul
     cursor: pointer;
     width: 100%;
     padding: 15;
+    transition: 0.5s;
+}
+
+.read_more a
+{
+    width: 100%;
+}
+
+.read_more:hover
+{
+       opacity: 0.9;
 }
 
 .news_datetime
@@ -268,7 +321,7 @@ ul
 #footer
 {
     background: #263238;
-    position: absolute;
+    position: relative;
     bottom:0;
     width: 100%;
 }
@@ -402,3 +455,300 @@ ul
     transition: 0.5s;
 }
 
+#content_3
+{
+    padding-top: 50;   
+}
+
+#map_card
+{
+    padding: 50;
+}
+#map_canvas 
+{
+    height: 570; 
+    z-index: 2;
+}
+
+#map_card
+{
+    padding: 0;
+}
+
+#map_legend
+{
+    text-align: left;
+    padding: 10;
+    background: #5677FC;
+    z-index: 5;
+    position: relative;
+
+}
+
+
+
+#leg_more
+{
+    position: absolute;
+    right: 10;
+    bottom: 10;
+    width: 20;
+    height: 20;
+    cursor: pointer;
+}
+
+
+
+
+#map_legend #map_legend_header
+{
+    font-size: 20px;
+    color: white;
+}
+
+#map_legend_address
+{
+    font-size: 12px;
+    color: rgb(240,240,240);
+}
+#header
+{
+ transition: 0.6s;   
+}
+
+#dropdown_map
+{
+    background: white;
+    border-radius: 2px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 8;
+    transition: all 0.5s;
+    bottom: 8;
+    max-height: 0;
+    max-width: 0;
+    list-style-type: none;
+    opacity: 0;
+    z-index: 7;
+}
+
+
+#dropdown_map li
+{
+    padding-left: 10;
+    padding-top: 10;
+    padding-bottom: 10;
+    padding-right: 10;
+    color:#313131;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: opacity 0.01s 0.5s;
+    font-size: 0px;
+}
+
+#dropdown_map li:hover
+{
+    background: #DCDCDC;
+}
+
+
+.m_card
+    {
+        width: 70%;
+        vertical-align: top;
+        z-index: -1;
+        border-radius: 1px;
+        display: inline-block;
+        color: black;
+        padding:30;
+        margin: auto;
+        margin-top: 100;
+        margin-left: 15%;
+        margin-bottom: 30;
+        background: white;
+    }
+
+#open
+{
+    width: 25;  
+    position: absolute;
+    right: 10;
+    top: 10;
+}
+
+@media screen and (max-width:700px)
+{
+       .sub_tab
+    {
+        font-size: 17px;
+        font-weight: 200;
+        padding: 0;
+    }
+
+    #text
+    {
+        width: 100vw;
+        display: block;
+        text-align: center;
+    }
+    
+    #fb_id
+    {
+        display: none;
+    }
+    #tw_id
+    {
+        display: none;
+    }
+    
+    
+.m_card
+    {
+        width: 90%;
+        vertical-align: top;
+        z-index: -1;
+        border-radius: 1px;
+        display: inline-block;
+        color: black;
+        padding:30;
+        margin-top: 100;
+        margin-left: 5%;
+        margin-bottom: 30;
+        background: white;
+    }
+    #gp_id
+    {
+        display: none;
+    }
+    #m_id
+    {
+        display: none;
+    }
+    
+    #logo
+    {
+        display: block;
+        margin: auto;
+    }
+    
+    #logo img
+    {
+        width:150;
+        margin-left: -60;
+        margin-top: -100;
+    }
+    
+    #cover
+    {
+        padding: 0;
+    }
+    
+    #cover #title
+    {
+        font-size: 50px;  
+        text-align: center;
+        margin: auto;
+        width: 500;
+    }
+    
+    #cover #under_slog
+    {
+        font-size: 25px;  
+        text-align: center;
+        
+    }
+    
+    #header
+    {
+        padding: 0;
+        height: 30vh;
+        top: 70vh;
+    }
+    
+    #tabs > li
+    {
+        text-align: center;
+    }
+    
+    
+#h1_tabs li
+{
+    float: left;
+    cursor: pointer;
+    display: none;
+    padding: 15 5;
+}
+
+#h1_tabs img
+{
+  height: 65px;
+    display: none;
+  margin-top: -20px;
+    vertical-align: top;
+}
+#header_1 div
+{
+    padding: 25;
+    font-size: 35px;
+    font-weight: 200;
+}
+
+    #content_1
+    {
+        padding: 10;   
+    }
+    
+    #content_2
+    {
+        padding: 0;
+    }
+    
+    #news_container
+    {
+        padding: 0;  
+        padding-top: 150;
+    }
+    
+    .news
+    {
+        width: 90%;   
+    }
+    
+    .logo
+    {
+        width: 60;       
+        margin-bottom: 20;
+    }
+    
+    .slog
+    {
+        font-size: 30;   
+    }
+    
+    .under_slog
+    {
+        text-align: justify;
+    }
+    
+    .tab_img
+    {
+        
+        width: 110px;
+        padding: 0 40;
+    }
+    #social_list li
+{
+    display: inline-block;
+    padding: 20 5;
+    padding-bottom: 0;
+    width: 24%;
+}
+    #social_list
+    {
+        margin: 0;
+        padding: 0;
+    }
+    
+
+}

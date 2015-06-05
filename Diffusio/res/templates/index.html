@@ -1,9 +1,37 @@
+<!--
+ * Diffusio - Build presentation websites easily
+ * https://github.com/diffusio
+ * http://diffusio.co
+ * 
+ * Copyright (C) 2015 
+ * 
+ * Pierre JACQUIER  
+ * http://pierre-jacquier.com
+ * 
+ * Grégoire DUVAUCHELLE
+ * https://github.com/kalterkrieg
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public 
+ * License along with this program. If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+
 <DOCTYPE html>
 <html>
 	<head>
 		<title>Templates - Diffusio</title>
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
-		<link rel='stylesheet' href='style.css'>
+		<link rel='stylesheet' href='style/style.css'>
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0">
 	</head>
 	<body>
@@ -40,27 +68,9 @@
 			</div>
 		</div>
 		 <div onclick="toogleMobile();"id="FAB" class="elevation-2">
-		 <img id="smartp" src="smartphone.png">
+		 <img id="smartp" src="images/smartphone.png">
 		 <div id="help_FAB" class="elevation-2"><span id="help_FAB_content">Switch to Mobile view</span></div>
 		 </div>
-		<script type="text/javascript">
-			var desktop = false;
-			function toogleMobile()
-			{
-				var wth = desktop ? "70%" : "400px";
-				var hgt = desktop ? "600px" : "600px";
-				var icon = desktop ? "smartphone.png" : "laptop.png";
-				var help_FAB = desktop ? "Switch to Mobile view" : "Switch to Desktop view";
-
-				for (i = 1; i < 5; i++) 
-					{
-						document.getElementById('frame_' + i).style.width = wth;
-						document.getElementById('frame_' + i).style.height = hgt;
-					}
-					desktop = !desktop;			
-				document.getElementById('smartp').src = icon;
-				document.getElementById('help_FAB_content').innerHTML = help_FAB;
-			}
-		</script>
+		<script src="js/script.js"></script>
 	</body>
 </html>

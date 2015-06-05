@@ -1,6 +1,15 @@
 /*
  * Diffusio - Build presentation websites easily
- * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ * https://github.com/diffusio
+ * http://diffusio.co
+ * 
+ * Copyright (C) 2015 
+ * 
+ * Pierre JACQUIER  
+ * http://pierre-jacquier.com
+ * 
+ * Grégoire DUVAUCHELLE
+ * https://github.com/kalterkrieg
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -13,9 +22,9 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public 
-License
- * along with this program. If not, see <http://www.gnu.org/licenses/>. 
+ * License along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 Array.prototype.shuffle = function() {
   var i = this.length, j, temp;
@@ -27,7 +36,16 @@ Array.prototype.shuffle = function() {
      this[j] = temp;
   }
 }
+var map;
+var address = document.getElementById("map_legend_address").innerHTML;
+var geocoder;
+var mapOptions = {
+  zoom: 15,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+}
 
+initialize();
+var marker;
 var last_scroll_pos = 0; 
 var dS;
 var b_wth, b_hgt;
@@ -40,11 +58,51 @@ var j=0;
 for(var i=0;i<news_l;i++)
 {
     news[i].style.background = colors[j];
+    if(i>9)
+        news[i].style.display = 'none';
     if(j>9)
         j = 0;
     else 
         j++;
 }
+
+document.getElementById('news_to_display').max = news_l;
+
+function setDisplayedNews()
+{
+    var max_news = document.getElementById('news_to_display').value;
+    for(var i=max_news;i<news_l;i++)
+    {
+        news[i].style.display = 'none';
+    }
+    for(var i=0;i<max_news;i++)
+    {
+        news[i].style.display = 'inline-block';
+    }
+}
+
+function initialize() {
+    geocoder = new google.maps.Geocoder();
+    map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    codeAddress();
+}
+
+function codeAddress() {
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        if(marker)
+          marker.setMap(null);
+        marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true
+        });
+
+      }
+    });
+}
+
 
 function getViewport() {
 
@@ -74,6 +132,7 @@ function getViewport() {
 
 function openCircleNews(id)
 {
+    smoothScrollTo(document.getElementById('content_2').offsetTop);
     var i;
     for(i=0;i<news_l;i++)
         if(news[i].id != ('news_' + id))
@@ -105,6 +164,7 @@ function closeCircleNews(id)
             news[i].getElementsByClassName('read_more')[0].innerHTML = "READ MORE";
             news[i].getElementsByClassName('read_more')[0].onmousedown = function() {openCircleNews(id)};
         }
+    smoothScrollTo(document.getElementById('content_2').offsetTop);
 }
 
 function update()  
@@ -182,3 +242,31 @@ window.smoothScrollTo = function (target, duration) {
     animation(function(position) { window.scroll(0,position); }, duration, start, target);
     
 };
+
+function openMapDropdown()
+{
+    document.getElementById("dropdown_map").style.transition = "max-height 5s, max-width 5s, opacity 0.3s"
+    document.getElementById("drop_item_1").style.transition = "font-size 0.3s";
+    document.getElementById("drop_item_2").style.transition = "font-size 0.3s";
+    document.getElementById("drop_item_3").style.transition = "font-size 0.3s";
+    document.getElementById("dropdown_map").style.opacity = 1;
+    document.getElementById("drop_item_1").style.fontSize = "15px";
+    document.getElementById("drop_item_2").style.fontSize = "15px";
+    document.getElementById("drop_item_3").style.fontSize = "15px";
+    document.getElementById("dropdown_map").style.maxWidth = "9999px";
+    document.getElementById("dropdown_map").style.maxHeight = "9999px";
+}
+
+function closeMapDropdown()
+{
+    document.getElementById("dropdown_map").style.transition = "max-height 0.3s, max-width 0.3s, opacity 0.3s"
+    document.getElementById("drop_item_1").style.transition = "font-size 0.3s";
+    document.getElementById("drop_item_2").style.transition = "font-size 0.3s";
+    document.getElementById("drop_item_3").style.transition = "font-size 0.3s";
+    document.getElementById("dropdown_map").style.opacity = 0;
+    document.getElementById("drop_item_1").style.fontSize = "0em";
+    document.getElementById("drop_item_2").style.fontSize = "0em";
+    document.getElementById("drop_item_3").style.fontSize = "0em";
+    document.getElementById("dropdown_map").style.maxWidth = "0px";
+    document.getElementById("dropdown_map").style.maxHeight = "0px";
+}

@@ -1,6 +1,15 @@
 <!--
  * Diffusio - Build presentation websites easily
- * Copyright (C) 2015 Pierre JACQUIER - Grégoire DUVAUCHELLE
+ * https://github.com/diffusio
+ * http://diffusio.co
+ * 
+ * Copyright (C) 2015 
+ * 
+ * Pierre JACQUIER  
+ * http://pierre-jacquier.com
+ * 
+ * Grégoire DUVAUCHELLE
+ * https://github.com/kalterkrieg
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -13,14 +22,11 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public 
-License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * License along with this program. If not, see <http://www.gnu.org/licenses/>.
  -->
-
 
 <DOCTYPE html>
 <html>
-	<head>
         <title>
 Site Title
         </title>
@@ -45,7 +51,7 @@ Presentation Title 1
             </p>
                 </div>
             <div class="valign" id="logo">
-                <img src="images/logo.png">
+                <img src="images/logo1.png">
             </div>
         </div>
         <div id="header">
@@ -74,7 +80,7 @@ Presentation Title 1
         </div>
         <div id="content_1" name="content_1">
             <div class='pres_band'>
-				 		<img src="images/logo.png" class="logo_left logo">
+				 		<img src="images/logo1.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART1_TITLE$-->
@@ -87,7 +93,7 @@ Presentation Content 1
 				 		</div>
 		 			</div>
             <div class='pres_band'>
-				 		<img src="images/tab1.png" class="logo_left logo">
+				 		<img src="images/logo2.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART2_TITLE$-->
@@ -101,7 +107,7 @@ Presentation Content 2
 				 		</div>
 		 			</div>
             <div class='pres_band'>
-				 		<img src="images/tab2.png" class="logo_left logo">
+				 		<img src="images/logo3.png" class="logo_left logo">
 				 		<div class='w_text'>
 				 			<p class="slog slog_right">
 <!--$PRESENTATION_PART3_TITLE$-->
@@ -123,38 +129,41 @@ Presentation Content 3
 <!--#$#NEW-->
 
 			</div>
+            <div id="n_t_d_div">
+            <input type="number" value="10" id="news_to_display" min="5" max="999999"  step="5" />
+           <span onclick="setDisplayedNews(); smoothScrollTo(document.getElementById('content_2').offsetTop)">SET</span>
+        </div>
             </div>
         
         
-            </div>
         <div id="content_3"  name="content_3">
             <div id="header_3">
             <div>More</div>
         </div>
-            <div class="card elevation-1" id="map_card">
-			 	<div id="map_canvas" style="height:255px;"></div>
-			    <div id="map_legend" class="elevation-1">
+            <div class="m_card elevation-1" id="map_card">
+                <div id="map_canvas" ></div>
+                <div id="map_legend" class="elevation-1">
                     <span id="map_legend_header">
 Localisation
-					</span>
+                    </span>
                     <p id="map_legend_address">
-Address
-					</p>
+UTBM Belfort
+                    </p>
                     <img  id="leg_more" src="images/more_w.png" onclick="openMapDropdown()">
                     <a id="open_link" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
-                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="smartp"   src="images/open.png"></div></a>
+                    <div id="FAB_map"  class="elevation-2" onclick=""><img id="open"   src="images/open.png"></div></a>
                     <ul id="dropdown_map" class="paper-shadow-top-z-2 paper-shadow-bottom-z-2">
-                    	<li id="drop_item_1" onclick="closeMapDropdown()">
-                    		Copy address
-                    	</li>
-                    	
-                    	<a id="open_link_2" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
-                    	<li id="drop_item_2" onclick="closeMapDropdown()">
-                    		Open in Here Maps
-                    	</li></a><a id="open_link_1" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
-                    	<li id="drop_item_3" onclick="closeMapDropdown()">
-                    		Open in Google Maps
-                    	</li></a>
+                        <li id="drop_item_1" onclick="closeMapDropdown()">
+                            Close
+                        </li>
+                        
+                        <a id="open_link_2" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                        <li id="drop_item_2" onclick="closeMapDropdown()">
+                            Open in Here Maps
+                        </li></a><a id="open_link_1" href="https://www.google.fr/maps/search/UTBM+Belfort" target="_blank">
+                        <li id="drop_item_3" onclick="closeMapDropdown()">
+                            Open in Google Maps
+                        </li></a>
 
                     </ul>
                 </div>
@@ -213,16 +222,17 @@ Site Title
             <div>Presentation</div>
         </div>
         <ul id="h1_tabs" class="h_tabs">
-            <a href="#content_1"><li>Presentation</li></a>
-            <a href="#content_2"><li>News</li></a>
-            <a href="#content_3"><li>More</li></a>
-            <li><img src="images/logo.png" onclick="scrollToTop()"></li>
+            <a   onclick="smoothScrollTo(document.getElementById('content_1').offsetTop)"><li>Presentation</li></a>
+            <a   onclick="smoothScrollTo(document.getElementById('content_2').offsetTop)"><li>News</li></a>
+            <a   onclick="smoothScrollTo(document.getElementById('content_3').offsetTop)"><li>More</li></a>
+            <li><img src="images/logo1.png" onclick="smoothScrollTo(0);    last_scroll_pos = 0;    document.getElementById('cover').style.top=0; "></li>
             </ul>
-        <div id="FAB" onclick="scrollToTop()">
+        <div id="FAB"  onclick="smoothScrollTo(0);    last_scroll_pos = 0;    document.getElementById('cover').style.top=0;   ">
             <img src="images/arrow_up.png">
         </div>
             
             </div>
+        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<script type="text/javascript" src="js/script.js"></script> 
 		
 	</body>
