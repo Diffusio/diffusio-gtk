@@ -1,3 +1,30 @@
+/*
+ * Diffusio - Build presentation websites easily
+ * https://github.com/diffusio
+ * http://diffusio.co
+ *
+ * Copyright (C) 2015
+ *
+ * Pierre JACQUIER
+ * http://pierre-jacquier.com
+ *
+ * GrÃ©goire DUVAUCHELLE
+ * https://github.com/kalterkrieg
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation, either version 2.1 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+*/
+
+
 #include "main.h"
 
 /*
@@ -15,7 +42,7 @@ G_MODULE_EXPORT void new_session(GtkButton *button, struct Data *data)
 
 
     errno = 0;
-    if (!(stat(data->save_path, &buf) != 0 && errno == ENOENT)) //si le fichier spécifié existe
+    if (!(stat(data->save_path, &buf) != 0 && errno == ENOENT)) //si le fichier spÃ©cifiÃ© existe
     {
         if(gtk_dialog_run(GTK_DIALOG(data->sessiondata.dialog_fexists)))
         {
@@ -207,7 +234,7 @@ void open_error_dialog(struct Data *data, const gchar *message)
     gtk_widget_destroy (dialog);
 }
 
-void get_infos(struct Data *data) //récupère le contenu des entries et les entres dans les variable de la sous structure infos
+void get_infos(struct Data *data) //rÃ©cupÃ¨re le contenu des entries et les entres dans les variable de la sous structure infos
 {
 
     data->infos.site_title = gtk_entry_get_text(GTK_ENTRY(data->maindata.site_title));
@@ -263,20 +290,20 @@ void displayRenderer(struct Data *data)
 G_MODULE_EXPORT int update_infos(GtkWidget *widget, struct Data *data)
 {
 
-    if(data->template_selected[0] == 0){ //Vérifie que l'utilisateur à choisis une template
+    if(data->template_selected[0] == 0){ //VÃ©rifie que l'utilisateur Ã  choisis une template
         open_error_dialog(data, "Select a template first!");
         return TRUE;
     }
     get_infos(data);
 
-    if(verif_html_comment(data)) //vérifie que l'utilisateur n'entre pas de commentaire html dans les entries ( <!-- )
+    if(verif_html_comment(data)) //vÃ©rifie que l'utilisateur n'entre pas de commentaire html dans les entries ( <!-- )
     {
         open_error_dialog(data, "Tu veux tout casser ou quoi!?");
         return TRUE;
     }
 
     char *temp ;
-    temp = repl_str(data->infos.content1, "\n", "<br>");  //change les retour à la ligne \n en <br>
+    temp = repl_str(data->infos.content1, "\n", "<br>");  //change les retour Ã  la ligne \n en <br>
     strcpy(data->infos.content1, temp);
     temp = repl_str(data->infos.content2, "\n", "<br>");
     strcpy(data->infos.content2, temp);
@@ -380,7 +407,7 @@ int verif_html_comment(struct Data *data)
     else return 0;
 }
 
-void update_html(struct Data *data) //génère index.html en remplaçant les balises de index_var par les valeurs entrées par l'utilisateur
+void update_html(struct Data *data) //gÃ©nÃ¨re index.html en remplaÃ§ant les balises de index_var par les valeurs entrÃ©es par l'utilisateur
 {
 
     data->maindata.index = fopen(data->maindata.index_path, "r");
@@ -473,7 +500,7 @@ void update_html(struct Data *data) //génère index.html en remplaçant les balise
 G_MODULE_EXPORT void change_template(GtkWidget *widget, struct Data *data)
 {
     strcpy(data->template_selected, "");
-    if(widget == data->maindata.template_button[MATERIAL])  //on regarde quel bouton a généré le signal
+    if(widget == data->maindata.template_button[MATERIAL])  //on regarde quel bouton a gÃ©nÃ©rÃ© le signal
     {
         gtk_label_set_text(data->maindata.current_template, "Template currently selected : Material");
         strcpy(data->template_selected, "material");
