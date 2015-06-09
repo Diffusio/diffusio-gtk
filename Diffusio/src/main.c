@@ -458,7 +458,7 @@ void update_html(struct Data *data) //génère index.html en remplaçant les bal
         }
         else if(!(strncmp(ligne, "                    <p id=\"map_legend_address\">", 40)))
         {
-            fprintf(data->maindata.res, "                    <p id=\"map_legend_address\">\n%s</p>\n", data->infos.address);
+            fprintf(data->maindata.res, "                    <p id=\"map_legend_address\">\n%s\n", data->infos.address);
             fgets(ligne, 500, data->maindata.index);
             fgets(ligne, 500, data->maindata.index);
         }
