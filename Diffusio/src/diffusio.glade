@@ -1,4 +1,4 @@
-<!--
+﻿<!--
  * Diffusio - Build presentation websites easily
  * https://github.com/diffusio
  * http://diffusio.co
@@ -1182,7 +1182,7 @@
     <property name="version">0.1</property>
     <property name="website">www.diffusio.co</property>
     <property name="website_label" translatable="yes">www.diffusio.co</property>
-    <property name="authors">KalterKrieg et Pierre Jacquier</property>
+    <property name="authors">Grégoire Duvauchelle et Pierre Jacquier</property>
     <property name="logo">..\res\diffusio-logo_128.png</property>
     <property name="license_type">gpl-2-0</property>
     <child internal-child="vbox">
